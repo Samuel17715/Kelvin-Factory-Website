@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primaryColor: #f4d7a1;
+    --primaryColor2: #545454;
+    --primaryColor3: #dbdbdb;
+    --primaryColor4: #202020;
+    --primaryColor5: #c99e4e;
+}
+
+body {
+    color: var(--primaryColor3);
+    background: #060314;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: var(--primaryColor);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 4.85rem;
+    letter-spacing: -0.7px;
+    line-height: 90px;
+    padding: 2.45rem 0;
+    transition: 0.65s;
+}
+
+h2 {
+    color: var(--primaryColor3);
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    padding: 0.25rem 0;
+    line-height: 30px;
+}
+
+h4 {
+    font-size: 1.38rem;
+    letter-spacing: 0.15px;
+}
+
+h5 {
+    font-size: 1.2rem;
+    line-height: 27px;
+}
+
+h6 {
+    letter-spacing: 0.15px;
+}
+
+p {
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.75em;
+    padding-right: 20px;
+}
+
+.subButton {
+    display: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin: 0.85rem 0;
+    padding: 0.4rem 0.65rem;
+    border-radius: 70px;
+    background: rgba(0,0,0,0.07);
+    text-align: center;
+    transition: 0.45s;
+    width: 44%;
+}
+
+.subButton.active {
+    display: block;
+}
+
+.subButton:hover {
+    background: rgba(0,0,0,0.15);
+}
+
+.subButton svg {
+    stroke: var(--primaryColor4);
+    stroke-width: 2.35;
+    width: 12px;   
+}
+
+.materialHeroSection {
+    padding: 0;
+}
+
+.materialHeroSection .materialHeroContent {
+    padding: 2.5rem 8rem;
+    padding-right: 5rem;
+}
+
+.materialHeroSection h1 {
+  padding-top: 4.5rem;
+}
+
+.materialHeroSection p {
+    color: var(--primaryColor3);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.materialHeroSection img {
+    width: 100%;
+}
+
+.materialHeroSection .heroImageControl {
+    margin-top: 130px;
+}
+
+.materialHeroSection .heroImageControl svg {
+    border: 1px solid var(--primaryColor);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    padding: 7px;
+    stroke: var(--primaryColor3);
+    transition: 0.65s;
+}
+
+.materialHeroSection .heroImageControl svg:hover {
+    background: var(--primaryColor);
+    stroke: var(--primaryColor3);
+}
+
+.materialHeroSection .heroImageControl svg:active {
+    background: var(--primaryColor2);
+}
+
+.materialHeroSection .heroImageControl span {
+    color: var(--primaryColor3);
+    padding: 0 10px;
+}
+
+.materialNavSection {
+    padding: 0.5rem 0;
+}
+
+.materialNavSection ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.materialNavSection ul li {
+    display: inline;
+    font-size: 0.9rem;
+    padding-right: 3.5rem;
+    transition: 0.65s;
+}
+
+.materialNavSection ul li img {
+    width: 135px;
+}
+
+.materialNavSection ul li:hover {
+    color: #404040;
+}
+
+.materialBookingFormContainer {
+    position: relative;
+}
+
+.materialBookingForm {
+    color: var(--primaryColor4);
+    width: calc(100% * 0.825);
+    padding: 2.15rem 2.75rem;
+    background: #ffffff;
+    border: 1.35px solid #dfdfdf;
+    border-radius: 3px;
+    position: relative;
+    z-index: 5;
+    left: 54%;
+    top: -145px;
+    transform: translate(-50%, 0);
+    box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
+    -webkit-box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
+    -moz-box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
+}
+
+.materialBookingForm label {
+    color: var(--secondaryTextColor);
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0 0 6px;
+    letter-spacing: -0.2px;
+}
+
+.materialBookingForm input, .materialBookingForm select {
+    appearance: none;
+    outline: none;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 3.5px;
+    background: var(--secBGColor);
+}
+
+.materialBookingForm input[disabled], .materialBookingForm select[disabled] {
+    opacity: 0.45;
+}
+
+.materialBookingForm input[type="submit"] {
+    color: #ffffff;
+    padding: 1.1rem 1rem;
+    background: var(--primaryColor4);
+    border: none;
+    opacity: 0.935;
+    transition: 0.45s;
+}
+
+.materialBookingForm input[type="submit"]:hover {
+    opacity: 1;
+}
+
+.materialModalButton {
+    cursor: pointer;
+    border: 1px solid #bdbdbd;
+    /* text-align: center; */
+    padding: 0.7rem 1rem;
+    font-size: 0.92rem;
+    border-radius: 3px;
+    transition: 0.45s;
+}
+
+.materialModalButton:hover {
+    color: var(--primaryColor4);
+    background: var(--primaryColor);
+    border: 1px solid var(--primaryColor);
+}
+
+.materialModalButton:active {
+    background: var(--primaryColor5);
+}
+
+.materialModalButton span:first-child {
+    border-radius: 5px;
+    background: var(--primaryColor4);
+    padding: 2.75px 5px;
+    margin-right: 0.45rem;
+}
+
+.materialModalButton span svg {
+    width: 17px;
+    height: 10px;
+    padding-bottom: 1.65px;
+    stroke: var(--primaryColor);
+    stroke-width: 5;
+}
+
+.materialPackagesContainer {
+    margin: 2.5rem 0;
+}
+
+.materialGalleryImage {
+    position: relative;
+    height: 100%;
+    padding: 0 0.75rem;
+}
+
+.materialGalleryImage .gallery {
+    position: absolute;
+    animation: floatImages;
+    cursor: pointer;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.materialGalleryImage .gallery.gallery-1 {
+    width: 70%;
+    z-index: 7;
+    margin-top: 100px;
+    /* box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
+    -webkit-box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
+    -moz-box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14); */
+    animation-direction: reverse;
+}
+
+.materialGalleryImage .gallery.gallery-2 {
+    width: 50%;
+    z-index: 9;
+    right: 0;
+    animation-duration: 8.5s;
+}
+
+.materialGalleryImage .gallery.gallery-3 {
+    width: 45%;
+    top: 75%;
+    right: 0;
+    z-index: 5;
+    animation-duration: 10s;
+}
+
+.materialGalleryImage img {
+    width: 100%;
+    transition: 1.25s;
+}
+
+.materialGalleryImage .gallery:hover img {
+    width: 97%;
+}
+
+.materialListContainer {
+    padding: 0 3.5rem;
+}
+
+@keyframes floatImages {
+    0%   {transform: translateY(0);}
+    25%   {transform: scale(1.025) translateY(-17px);}
+    75%  {transform: scale(1.025) translateY(17px);}
+    100% {transform: translateY(0);}
+}
+
+/* Main Body Right Centent */
+
+.mainBodyRightContainer {
+    display: none; 
+    position: fixed;
+    top: 300px;
+    left: 0;
+    z-index: 12;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur( 12px );
+    -webkit-backdrop-filter: blur( 12px );
+}
+
+.mainBodyRightDivCloseContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 13;
+    width: 100%;
+    height: inherit;
+    overflow-x: hidden;
+}
+
+.mainBodyRightContainer.active {
+    display: block;
+}
+
+.mainBodyRightDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 14;
+    width: calc(100% / 1.85);
+    height: 100vh;
+    padding: 2.2em 2.75rem;
+    background: var(--primaryColor4);
+    box-shadow: 0 8px 25px rgba(16, 16, 16, 0.25);
+}
+
+.mainBodyRightDivTopBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+
+.mainBodyRightDivTopBar svg {
+    cursor: pointer;
+    fill: var(--primaryColor5);
+    margin-right: 0.65rem;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    padding: 0.15rem;
+    opacity: 0.95;
+    transition: 0.45s;
+}
+
+.mainBodyRightDivTopBar svg:hover {
+    opacity: 1;
+}
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .mainBodyRightDiv {
+        width: calc(100% / 1.2);
+        height: 100vh;
+    }
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .mainBodyRightDiv {
+        width: calc(100% / 1.075);
+        height: 100vh;
+        padding: 2rem 0.95rem;
+    }
+    .mainBodyRightDivTopBar svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.materialFormHeader {
+    padding: 0.8rem 0;
+    border-bottom: 1.35px solid #dbdbdb;
+}
+
+.materialInputForm {
+    margin: 0.55rem 0;
+}
+
+.totalPriceDiv {
+    text-align: right;
+}
+
+.totalPriceDiv h5 {
+    font-weight: 400;
+}
+
+.totalPriceDiv h6 {
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.totalPriceDiv.inactive {
+    display: none;
+}
+
+.multiSelectOptionsDiv label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 13.5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.multiSelectOptionsDiv label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.multiSelectOptionsDiv .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.multiSelectOptionsDiv label:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.multiSelectOptionsDiv label input:checked ~ .checkmark {
+    background-color: var(--primaryColor4);
+    border: 5px solid var(--primaryColor5);
+}
+
+.multiSelectOptionsDiv .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.multiSelectOptionsDiv label .checkmark input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.multiSelectOptionsDiv label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.studioMembershipTime span {
+    font-weight: 500;
+}
