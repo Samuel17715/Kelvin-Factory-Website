@@ -207,7 +207,7 @@ p {
 }
 
 .materialBookingForm input[disabled], .materialBookingForm select[disabled] {
-    opacity: 0.45;
+    opacity: 0.25;
 }
 
 .materialBookingForm input[type="submit"] {

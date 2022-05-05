@@ -24,17 +24,16 @@ $(document).ready(function() {
         } else {
             checkboxesValueArray.splice(arrayIndex, 1);
         }
-        console.log(arrayIndex);
-        console.log(checkboxesValueArray);
     });
 
 
     // Flat Pickr (Date & Time) Configuration
     function flatPickrInit(bookingDateTimeRowNumber) {
-        $('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingDate').flatpickr();
-
+        let bookingDateID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingDate'); // Booking Date
         let bookingStartTimeID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingStartTime'); // Start Time
         let bookingEndTimeID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingEndTime'); // End Time
+        
+        let bookingDate= flatpickr(bookingDateID, {});
         
         let bookingStartTime = flatpickr(bookingStartTimeID, {
             enableTime: true,
@@ -57,12 +56,24 @@ $(document).ready(function() {
 
         // Set New Min Date for EndTime
         bookingStartTimeID.addEventListener('change', function (event) {
-            bookingEndTime.set("minDate", bookingStartTimeID.value)
+            bookingEndTime.set("minDate", bookingStartTimeID.value);
             bookingEndTimeID.removeAttribute('disabled');
         });
+
+        // Disable Selected Dates
+        if (bookingDateTimeRowNumber > 1) {
+            let previousRowNumber = bookingDateTimeRowNumber - 1;
+            let previousBookingDateValue = document.querySelector('.bookingDateTimeContainer[data-row-number="'+previousRowNumber+'"] .bookingDate').value;
+            if (!disabledSelectedDatesArray.includes(previousBookingDateValue)) {
+                disabledSelectedDatesArray.push(previousBookingDateValue);
+                bookingDate.set("disable", disabledSelectedDatesArray);
+            }
+        }
     }
 
+    // Default Booking Row Number and Dates Array
     var bookingDateTimeRowNumber = 1;
+    var disabledSelectedDatesArray = [];
 
 
     // Init Flatpickr
@@ -97,14 +108,6 @@ $(document).ready(function() {
     }
 
 
-    // Add New Data & Time Row
-    $('.subButton').on('click', function(){
-        bookingDateTimeRowNumber++;
-        $('.bookingDateTimeAppendContainer').append(appendBookingDateAndTimeRow(bookingDateTimeRowNumber));
-        flatPickrInit(bookingDateTimeRowNumber);
-    });
-
-
     // Show or Hide Add New Booking Input Form
     $('select.studioMembership').on('change', function(){
         $('.studioMembershipHeaderText').html($(this).val() + ' - $' + $(this).find(':selected').data('price'));
@@ -136,12 +139,8 @@ $(document).ready(function() {
         for(let i=1; i<=$('.bookingDateTimeContainer[data-row-number]').length; i++){
            if(($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val() !== '') && ($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val() !== '')) {
                 totalBookingHours += convertTime($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val()) - convertTime($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val());
-           }
-           console.log(i);
+            }
         }
-        console.log('New');
-        
-        console.log(totalBookingHours);
         return totalBookingHours;
     }
 
@@ -189,8 +188,15 @@ $(document).ready(function() {
         }
     }
 
-    $('.materialInputForm select, .materialInputForm input').on('change click', function(){
+    $("body").on("change", ".materialInputForm select, .materialInputForm input", function(){
         sumBookingPrices();
         calculateUnusedHours();
+    });
+
+    // Add New Data & Time Row
+    $('.subButton').on('click', function(){
+        bookingDateTimeRowNumber++;
+        $('.bookingDateTimeAppendContainer').append(appendBookingDateAndTimeRow(bookingDateTimeRowNumber));
+        flatPickrInit(bookingDateTimeRowNumber);
     });
 });
