@@ -9,8 +9,8 @@ $(document).ready(function() {
 
 
     // Appointment Checkboxes
-    const checkboxesValueArray = []
-    $('.multiSelectOptionsDiv input').change(function() {
+    const checkboxesValueArray = [];
+    function getCheckboxesValuesFunc(thisSelector) {
         let checkboxes = $('.multiSelectOptionsDiv input:checkbox:checked').length;
         if(checkboxes === 0) {
             $('.checkBoxesButton .checkBoxesButtonText').html('Add to your appointment');
@@ -18,13 +18,14 @@ $(document).ready(function() {
             $('.checkBoxesButton .checkBoxesButtonText').html(checkboxes + ' items selected');
         }
 
-        let arrayIndex = checkboxesValueArray.findIndex(e => e.name === $(this).val());
+        let arrayIndex = checkboxesValueArray.findIndex(e => e.name === thisSelector.val());
         if( arrayIndex === -1 ){
-            checkboxesValueArray.push({"name": $(this).val(), "price": $(this).attr('data-value')});
+            checkboxesValueArray.push({"name": thisSelector.val(), "price": thisSelector.attr('data-value')});
         } else {
             checkboxesValueArray.splice(arrayIndex, 1);
         }
-    });
+        return checkboxesValueArray;
+    }
 
 
     // Flat Pickr (Date & Time) Configuration
@@ -72,7 +73,7 @@ $(document).ready(function() {
     }
 
     // Append Booking Date And TIme Row
-    function appendBookingDateAndTimeRow(bookingDateTimeRowNumber){
+    function appendBookingDateAndTimeRow(bookingDateTimeRowNumber) {
         let appendBookingDateAndTimeHTML = `
             <div class="row mt-4 bookingDateTimeContainer" data-row-number="${bookingDateTimeRowNumber}">       
                 <div class="col-sm-6">
@@ -111,14 +112,16 @@ $(document).ready(function() {
 
 
     // Calculate Total Hours
-    function calculateTotalHours() {
-        let totalBookingHours = 0
+    function getBookingDateAndTimeValuesFunc() {
+        let bookingDateTimeArray = [];
+        let totalBookingSumHours = 0
         for(let i=1; i<=$('.bookingDateTimeContainer[data-row-number]').length; i++){
-           if(($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val() !== '') && ($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val() !== '')) {
-                totalBookingHours += convertTime($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val()) - convertTime($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val());
+           if(($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingDate').val() !== '') && ($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val() !== '') && ($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val() !== '')) {
+                bookingDateTimeArray.push([$('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingDate').val(), $('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val(), $('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val()]);
+                totalBookingSumHours += convertTime($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val()) - convertTime($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val());
             }
         }
-        return totalBookingHours;
+        return {bookingDateTimeValues: bookingDateTimeArray, totalBookingHoursValues: totalBookingSumHours};
     }
 
 
@@ -128,11 +131,12 @@ $(document).ready(function() {
             studioMembershipValue: $('select.studioMembership').val(),
             studioMembershipHours: parseInt($('select.studioMembership').find(':selected').data('hours')),
             studioMembershipPrice: parseInt($('select.studioMembership').find(':selected').data('price')),
-            bookingDateValue: $('.bookingDate').val(),
-            bookingTotalHours: calculateTotalHours()
+            studioExtraPackages: checkboxesValueArray,
+            bookingDateAndTime: getBookingDateAndTimeValuesFunc().bookingDateTimeValues,
+            bookingTotalHours: getBookingDateAndTimeValuesFunc().totalBookingHoursValues
         }
         
-        if((bookingInputValuesObject.bookingDateValue !== '') && (bookingInputValuesObject.studioMembershipValue !== '') && (bookingInputValuesObject.bookingDateValue !== '')) {
+        if((bookingInputValuesObject.bookingDateAndTime.length !== 0) && (bookingInputValuesObject.studioMembershipValue !== '')) {
             return bookingInputValuesObject;
         } else {
             return false;
@@ -214,6 +218,10 @@ $(document).ready(function() {
     // Init Flatpickr
     flatPickrInit(bookingDateTimeRowNumber);
 
+    // Add to your appointment
+    $('.multiSelectOptionsDiv input').change(function() {
+        getCheckboxesValuesFunc($(this));
+    });
 
     // Add New Data & Time Row
     $('.subButton').on('click', function(){
@@ -222,9 +230,14 @@ $(document).ready(function() {
         flatPickrInit(bookingDateTimeRowNumber);
     });
 
-
+    // Get Total Booking Price and update text
     $("body").on("change", ".materialInputForm select, .materialInputForm input", function(){
         sumBookingPrices();
         headerTextDetails();
     });
-});
+
+    // Submit data to server
+    $('.materialInputForm input[type="submit"]').on('click', function(){
+        console.log(getBookingInputValues());
+    });
+});;
