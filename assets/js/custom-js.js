@@ -42,22 +42,22 @@ $(document).ready(function() {
             dateFormat: "h:i K",
             defaultDate: "06:00 AM",
             minDate: "06:00 AM",
-            maxDate: "11:30 PM"
+            maxDate: "08:00 PM"
         });
         let bookingEndTime = flatpickr(bookingEndTimeID, {
             enableTime: true,
             noCalendar: true,
             minuteIncrement: 30,
             dateFormat: "h:i K",
-            defaultDate: "11:30 PM",
+            defaultDate: "10:00 AM",
             minDate: "06:00 AM",
-            maxDate: "11:30 PM"
+            maxDate: "11:00 PM"
         });
 
         // Set New Min Date for EndTime
         bookingStartTimeID.addEventListener('change', function (event) {
             bookingEndTime.set("minDate", bookingStartTimeID.value);
-            bookingEndTimeID.removeAttribute('disabled');
+            bookingEndTimeID.removeAttribute('disabled'); 
         });
 
         // Disable Selected Dates
@@ -70,15 +70,6 @@ $(document).ready(function() {
             }
         }
     }
-
-    // Default Booking Row Number and Dates Array
-    var bookingDateTimeRowNumber = 1;
-    var disabledSelectedDatesArray = [];
-
-
-    // Init Flatpickr
-    flatPickrInit(bookingDateTimeRowNumber);
-
 
     // Append Booking Date And TIme Row
     function appendBookingDateAndTimeRow(bookingDateTimeRowNumber){
@@ -106,20 +97,6 @@ $(document).ready(function() {
         `;
         return appendBookingDateAndTimeHTML;
     }
-
-
-    // Show or Hide Add New Booking Input Form
-    $('select.studioMembership').on('change', function(){
-        $('.studioMembershipHeaderText').html($(this).val() + ' - $' + $(this).find(':selected').data('price'));
-        $('.studioMembershipHeaderDetails').html($(this).find(':selected').data('text'));
-
-        if(($(this).val() !== 'Studio Rental') && ($(this).val() !== '')) {
-            $('.subButton').addClass('active');
-        } else {
-            $('.subButton').removeClass('active');
-        }
-    });
-
 
     // Convert Time
     function convertTime(timeStr) {
@@ -155,7 +132,7 @@ $(document).ready(function() {
             bookingTotalHours: calculateTotalHours()
         }
         
-        if((bookingInputValuesObject.studioMembershipValue !== '') && (bookingInputValuesObject.bookingDateValue !== '')) {
+        if((bookingInputValuesObject.bookingDateValue !== '') && (bookingInputValuesObject.studioMembershipValue !== '') && (bookingInputValuesObject.bookingDateValue !== '')) {
             return bookingInputValuesObject;
         } else {
             return false;
@@ -173,30 +150,81 @@ $(document).ready(function() {
         }
     }
 
-
     // Calculate Unused hours
     function calculateUnusedHours() {
         if(getBookingInputValues()) {
-            let scheduledTimeDifference = getBookingInputValues().studioMembershipHours - getBookingInputValues().bookingTotalHours;
-            if(scheduledTimeDifference === 0) {
-                $('.studioMembershipTime').html('<span>' + getBookingInputValues().studioMembershipHours + 'Studio Time fully scheduled. </span>');
-                return true;
-            } else {
-                $('.studioMembershipTime').html('<span>You have ' + scheduledTimeDifference + ' hours left. </span> You can schedule unused hours to another day.');
-                return false;
-            }
+            let unusedHours = getBookingInputValues().studioMembershipHours - getBookingInputValues().bookingTotalHours;
+            return unusedHours;
+            // if(scheduledTimeDifference === 0) {
+            //     $('.studioMembershipTime').html('<span>' + getBookingInputValues().studioMembershipHours + 'Studio Time fully scheduled. </span>');
+            //     return true;
+            // } else {
+            //     $('.studioMembershipTime').html('<span>You have ' + scheduledTimeDifference + ' hours left. </span> You can schedule unused hours to another day.');
+            //     return false;
+            // }
         }
     }
 
-    $("body").on("change", ".materialInputForm select, .materialInputForm input", function(){
-        sumBookingPrices();
-        calculateUnusedHours();
-    });
+    // Header Text 
+    function headerTextDetails() {
+        let studioMembershipSelector = $('select.studioMembership');
+        if((studioMembershipSelector.val() === '') || (studioMembershipSelector.val() === null)) {
+        } else {
+            $('.materialInputForm input.bookingDate').removeAttr('disabled');
+            $('.materialInputForm input.bookingStartTime').removeAttr('disabled');
+
+            if(studioMembershipSelector.val() !== 'Studio Rental') {
+                $('.subButton').addClass('active');
+                $('.studioMembershipHeaderText').html(studioMembershipSelector.val() + ' - ' + studioMembershipSelector.find(':selected').data('hours') + 'hr studio time');
+                if((calculateUnusedHours() === null) || (typeof calculateUnusedHours() === 'undefined')) {
+                    $('.studioMembershipTime').html('');
+                } else {
+                    let lastRowNumber = $('.bookingDateTimeContainer[data-row-number]').length
+                        
+                    if(calculateUnusedHours() === 0){
+                        $('.bookingDateTimeContainer[data-row-number="'+lastRowNumber+'"] .bookingEndTime').removeClass('warning');
+                        $('.studioMembershipTime span').removeClass('warning');
+
+                        $('.studioMembershipTime').html('<span>'+ studioMembershipSelector.find(':selected').data('hours') +' hours of ' + studioMembershipSelector.val() + ' fully scheduled</span>. Now Book Studio');
+                    }
+                    if(calculateUnusedHours() < 0){
+                        $('.bookingDateTimeContainer[data-row-number="'+lastRowNumber+'"] .bookingEndTime').addClass('warning');
+                        $('.studioMembershipTime span').addClass('warning');
+
+                        $('.studioMembershipTime').html('<span>Studio Time set has passed ' + studioMembershipSelector.find(':selected').data('hours') + ' hours of ' + studioMembershipSelector.val() +' </span>.<br>Please re adjust the booking Time');
+                    }
+                    if(calculateUnusedHours() > 0){
+                        $('.bookingDateTimeContainer[data-row-number="'+lastRowNumber+'"] .bookingEndTime').removeClass('warning');
+                        $('.studioMembershipTime span').removeClass('warning');
+
+                        $('.studioMembershipTime').html(studioMembershipSelector.find(':selected').data('hours') + ' hours of studio time. You can reschedule to another day<br><span>'+ calculateUnusedHours() +' hours studio time left.</span>');
+                    }
+                }
+            } else {
+                $('.subButton').removeClass('active');
+                $('.studioMembershipHeaderText').html(studioMembershipSelector.val() + ' - $' + studioMembershipSelector.find(':selected').data('price') + '/hr');
+            }
+        }
+    }
+    
+    // Default Booking Row Number and Dates Array
+    var bookingDateTimeRowNumber = 1;
+    var disabledSelectedDatesArray = [];
+
+    // Init Flatpickr
+    flatPickrInit(bookingDateTimeRowNumber);
+
 
     // Add New Data & Time Row
     $('.subButton').on('click', function(){
         bookingDateTimeRowNumber++;
         $('.bookingDateTimeAppendContainer').append(appendBookingDateAndTimeRow(bookingDateTimeRowNumber));
         flatPickrInit(bookingDateTimeRowNumber);
+    });
+
+
+    $("body").on("change", ".materialInputForm select, .materialInputForm input", function(){
+        sumBookingPrices();
+        headerTextDetails();
     });
 });

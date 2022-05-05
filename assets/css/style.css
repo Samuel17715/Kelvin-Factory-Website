@@ -43,7 +43,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1.38rem;
+    font-size: 1.3rem;
     letter-spacing: 0.15px;
 }
 
@@ -204,6 +204,10 @@ p {
     border: 1px solid #bdbdbd;
     border-radius: 3.5px;
     background: var(--secBGColor);
+}
+
+.materialBookingForm input.warning, .materialBookingForm select.warning {
+    border: 1px solid #f12828;
 }
 
 .materialBookingForm input[disabled], .materialBookingForm select[disabled] {
@@ -504,4 +508,8 @@ and (max-width: 480px) {
 
 .studioMembershipTime span {
     font-weight: 500;
+}
+
+.studioMembershipTime span.warning {
+    color:#f12828
 }

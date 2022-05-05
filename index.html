@@ -130,15 +130,14 @@
             <div class="materialBookingForm">
 
                 <div class="row mb-4 materialFormHeader">
-                    <div class="col-sm-8">
+                    <div class="col-sm-9">
                         <h4 class="mb-2 studioMembershipHeaderText">Select Studio Membership</h4>
-                        <p class="studioMembershipHeaderDetails">We have got exciting membership package for you</p>
-                        <p class="studioMembershipTime"><span>You have 35 hours left.</span> You can schedule unused hours to another day</p>
+                        <p class="studioMembershipTime"></p>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="totalPriceDiv">
                             <h6>Total Price</h6>
-                            <h5 class="">$<span class="initialPrice">100</span> x <span class="initialTime">2.5</span>hours<br><span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="totalPrice">23566.75</span></h5>
+                            <h5 class="">$<span class="initialPrice">0</span> x <span class="initialTime">0</span>hours<br><span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="totalPrice">0.00</span></h5>
                         </div>
                     </div>
                 </div>
@@ -151,14 +150,14 @@
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             </label>
                             <select name="select" class="studioMembership">
-                                <option value="" data-price="" selected="" disabled>Select Studio Membership</option>
+                                <option value="" data-price="" selected="selected" disabled>-- Select Studio Membership --</option>
                                 <option value="Studio Rental" data-price="100" data-hours="24" data-text="Schedule studio rent for specified hours in a day at just $100">
-                                    Studio Rental ($100)</option>
-                                <option value="Silver Studio Membership" data-price="400" data-hours="15" data-text="15 hours of studio time. <strong>Unused hours</strong> can roll over to another day">
+                                    Studio Rental ($100/hr)</option>
+                                <option value="Silver Studio Membership" data-price="400" data-hours="15" data-text="You can schedule unused hours to another day">
                                     Silver Studio Membership ($400)</option>
-                                <option value="Gold Studio Membership" data-price="500" data-hours="25" data-text="25 hours of studio time. <strong>Unused hours</strong> can roll over to another day">
+                                <option value="Gold Studio Membership" data-price="500" data-hours="25" data-text="You can schedule unused hours to another day">
                                     Gold Studio Membership ($500)</option>
-                                <option value="Premium Studio Membership" data-price="600" data-hours="40" data-text="40 hours of studio time. <strong>Unused hours</strong> can roll over to another day">
+                                <option value="Premium Studio Membership" data-price="600" data-hours="40" data-text="You can schedule unused hours to another day">
                                     Premium Studio Membership ($600)</option>
                             </select>
                         </div>
@@ -182,13 +181,13 @@
                         <div class="col-sm-6">
                             <div class="materialInputForm">
                                 <label for="">Booking Date</label>
-                                <input type="text" class="bookingDate" placeholder="DD/MM/YYYY">
+                                <input type="text" class="bookingDate" placeholder="DD/MM/YYYY" disabled>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="materialInputForm">
                                 <label for="">Start Time</label>
-                                <input type="date" class="bookingTime bookingStartTime" placeholder="00:00 AM">
+                                <input type="date" class="bookingTime bookingStartTime" placeholder="00:00 AM" disabled>
                             </div>
                         </div>
                         <div class="col-sm-3">
