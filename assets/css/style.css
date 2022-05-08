@@ -5,7 +5,7 @@
     --primaryColor: #f4d7a1;
     --primaryColor2: #545454;
     --primaryColor3: #dbdbdb;
-    --primaryColor4: #202020;
+    --primaryColor4: #1d1d1d;
     --primaryColor5: #c99e4e;
 }
 
@@ -522,7 +522,7 @@ and (max-width: 480px) {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--primaryColor);
+    background: var(--primaryColor4);
 }
 
 .loginFormDivContainer .loginForm {
@@ -531,9 +531,29 @@ and (max-width: 480px) {
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--primaryColor4);
-    width: calc(100% * 0.4);
-    padding: 2.15rem 2.75rem;
+    width: calc(100% * 0.32);
+    padding: 2.15rem 2.35rem;
     background: #ffffff;
     border: 1.35px solid #dfdfdf;
     border-radius: 17px;
+}
+
+.loginFormDivContainer .loginForm input, .loginFormDivContainer .loginForm select {
+    appearance: none;
+    outline: none;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 7px;
+    background: var(--secBGColor);
+}
+
+.loginFormDivContainer .loginForm input[type="submit"] {
+    color: #ffffff;
+    padding: 1.1rem 1rem;
+    background: var(--primaryColor4);
+    border: none;
+    opacity: 0.935;
+    transition: 0.45s;
 }
