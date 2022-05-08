@@ -267,5 +267,43 @@
     <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/logoAnimation.js"></script>
     <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/flatpickr.js"></script>
     <script src="assets/js/custom-js.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Default Booking Row Number and Dates Array
+            var bookingDateTimeRowNumber = 1;
+            var disabledSelectedDatesArray = [];
+
+            // Init Flatpickr
+            flatPickrInit(bookingDateTimeRowNumber);
+
+            // Right Bar
+            $('.mainBodyRightContainerTrigger, .mainBodyRightCloseBtn, .mainBodyRightDivCloseContainer').click(function() {
+                openRightBar();
+            });
+
+            // Add to your appointment
+            $('.multiSelectOptionsDiv input').change(function() {
+                getCheckboxesValuesFunc($(this));
+            });
+
+            // Add New Data & Time Row
+            $('.subButton').on('click', function(){
+                bookingDateTimeRowNumber++;
+                $('.bookingDateTimeAppendContainer').append(appendBookingDateAndTimeRow(bookingDateTimeRowNumber));
+                flatPickrInit(bookingDateTimeRowNumber);
+            });
+
+            // Get Total Booking Price and update text
+            $("body").on("change", ".materialInputForm select, .materialInputForm input", function(){
+                sumBookingPrices();
+                headerTextDetails();
+            });
+
+            // Submit data to server
+            $('.materialInputForm input[type="submit"]').on('click', function(){
+                console.log(getBookingInputValues());
+            });
+        });
+    </script>
 </body>
 </html>

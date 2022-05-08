@@ -20,6 +20,10 @@ body {
     padding: 0;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 h1, h2, h3 {
     color: var(--primaryColor);
     font-family: 'Poppins', sans-serif;
@@ -332,8 +336,9 @@ p {
     100% {transform: translateY(0);}
 }
 
-/* Main Body Right Centent */
 
+
+/* Main Body Right Centent */
 .mainBodyRightContainer {
     display: none; 
     position: fixed;
@@ -426,8 +431,46 @@ and (max-width: 480px) {
     border-bottom: 1.35px solid #dbdbdb;
 }
 
-.materialInputForm {
-    margin: 0.55rem 0;
+.materialFormInput {
+    margin: 1.05rem 0;
+}
+
+.materialFormInput .materialFormGroupInput {
+    display: flex;
+    justify-content: center;
+}
+
+.materialFormInput .materialFormGroupInput .showHideBtn {
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0.85rem 1rem;
+    border: none;
+    border: 1.25px solid #bdbdbd;
+    border-left: 0;
+    border-radius: 0px 7px 7px 0;
+}
+
+.materialFormInput .materialFormGroupInput .showHideBtn {
+    display: none;
+}
+
+.materialFormInput .materialFormGroupInput .showHideBtn.active {
+    display: block;
+}
+
+.materialFormInput .materialFormGroupInput input {
+    border-right: 0;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.materialFormInput .materialFormGroupInput svg {
+    fill: #aeb5be;
+    transition: 0.45s;
+}
+
+.materialFormInput .materialFormGroupInput svg:hover {
+    fill: #656769;
 }
 
 .totalPriceDiv {
@@ -531,6 +574,20 @@ and (max-width: 480px) {
     background: var(--primaryColor4);
 }
 
+.loginFormDivContainer .inputFieldInfo {
+    display: none;
+    font-size: .65rem;
+    color: rgb(234, 97, 97);
+    padding-top: 0.6rem;
+    letter-spacing: 0.35px;
+    font-weight: 500;
+}
+
+.loginFormDivContainer .inputFieldInfo svg {
+    fill: rgb(234, 97, 97);
+    width: 15px;
+}
+
 .loginFormDivContainer .loginForm {
     position: absolute;
     top: 50%;
@@ -544,6 +601,21 @@ and (max-width: 480px) {
     border-radius: 17px;
 }
 
+.loginFormDivContainer .materialFormSecButton {
+    color: inherit;
+    appearance: none;
+    outline: none;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #e7e9ed;
+    margin-top: 1.65rem;
+    font-size: 0.8rem;
+    text-align: center;
+    transition: 0.45s;
+}
+
 .loginFormDivContainer .loginForm input, .loginFormDivContainer .loginForm select {
     appearance: none;
     outline: none;
@@ -555,6 +627,21 @@ and (max-width: 480px) {
     background: var(--secBGColor);
 }
 
+.loginFormDivContainer .loginForm .materialFormGroupInput input {
+    border-right: 0;
+    border-radius: 7px 0px 0px 7px;
+}
+
+.loginFormDivContainer .materialFormGroupLabels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.loginFormDivContainer .materialFormGroupLabels h5 {
+    color: var(--primaryColor5);
+    font-size: 0.8rem;
+}
+
 .loginFormDivContainer .loginForm input[type="submit"] {
     color: #ffffff;
     padding: 1.1rem 1rem;
@@ -562,4 +649,24 @@ and (max-width: 480px) {
     border: none;
     opacity: 0.935;
     transition: 0.45s;
+}
+
+.loginFormDivContainer .googleSignInButton {
+    margin: 2rem 0;
+}
+
+/* Tablet */
+@media only screen and (min-width: 480px) and (max-width: 1024px){
+    .loginFormDivContainer .loginForm {
+        width: calc(100% * 0.75);
+        padding: 2.15rem 1.5rem;
+    }  
+}
+
+/* Mobile */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .loginFormDivContainer .loginForm {
+        width: calc(100% * 0.9);
+        padding: 2.15rem 1.5rem;
+    }
 }
