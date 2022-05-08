@@ -14,8 +14,10 @@
 <body data-page="login">
     <section class="loginFormDivContainer">
         <div class="loginForm">
-            <div id="my-signin2"></div>
-
+            <div class="alignCenter">
+                <div id="my-signin2"></div>
+            </div>
+            
             <h5 class="mt-2 mb-4">Please sign in to continue</h5>
 
             <div class="materialInputForm">
@@ -39,7 +41,6 @@
         //     console.log('Image URL: ' + profile.getImageUrl());
         //     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         // }
-
         function onSuccess(googleUser) {
             console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
         }
