@@ -176,7 +176,7 @@ p {
     padding: 2.15rem 2.75rem;
     background: #ffffff;
     border: 1.35px solid #dfdfdf;
-    border-radius: 3px;
+    border-radius: 17px;
     position: relative;
     z-index: 5;
     left: 54%;
@@ -202,7 +202,7 @@ p {
     padding: 0.7rem 1rem;
     border: none;
     border: 1px solid #bdbdbd;
-    border-radius: 3.5px;
+    border-radius: 7px;
     background: var(--secBGColor);
 }
 
@@ -512,4 +512,28 @@ and (max-width: 480px) {
 
 .studioMembershipTime span.warning {
     color:#f12828
+}
+
+/**** User Registration ****/
+.loginFormDivContainer {
+    width: 100%;
+    height: 100vh;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primaryColor);
+}
+
+.loginFormDivContainer .loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primaryColor4);
+    width: calc(100% * 0.4);
+    padding: 2.15rem 2.75rem;
+    background: #ffffff;
+    border: 1.35px solid #dfdfdf;
+    border-radius: 17px;
 }
