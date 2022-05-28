@@ -109,10 +109,26 @@
                     ( lastNameInputValidationCreateAccount($('.createAccountDiv .lastName').val())) &&
                     ( passwordInputValidationCreateAccount($('.createAccountDiv .passwordInput').val()))
                 ) {
-                    // Submit Form here
-                    console.log('Submitted');
+                    let formData = {
+                        firstName: $('.createAccountDiv .firstName').val(),
+                        lastName: $('.createAccountDiv .lastName').val(),
+                        email: $('.createAccountDiv .emailAddress').val(),
+                        password: $('.createAccountDiv .passwordInput').val(),
+                        requestType: 'addNewUser'
+                    }
+
+                    $.ajax({
+                        url: "http://kelvinshotzz.com/kelvinfactory/serverProcessing.php",
+                        type: "POST",
+                        data: formData,
+                        success:function(data) {
+                            console.log(data);
+                        },
+                        error:function(){
+
+                        }   
+                    });
                 } else {
-                    console.log('Not Submitted');
                 }
             })
         });
