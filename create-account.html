@@ -100,6 +100,7 @@
             });
         }
     </script> -->
+
     <!-- <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
     <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/jquery.min.js"></script>
     <script src="assets/js/form-validation.js"></script>
@@ -124,11 +125,23 @@
             function createAccountCallback(response) {
                 switch (response[0]){
                     case 100:
-                        alert();
-                        otpInnerPage(response[1], response[2]);
+                        otpInnerPage(response[1], response[2], response[3]);
                         break;
                     case 101:
                         console.log('User already exists');
+                        break;
+                    case 104:
+                        console.log('Error! Please try again');
+                        break;
+                    case 105:
+                        console.log('Unable to connect to database');
+                }
+            }
+
+            function resendOTPCallback(response) {
+                switch (response[0]){
+                    case 100:
+                        console.log('OTP Code changed');
                         break;
                     case 104:
                         console.log('Error! Please try again');
@@ -191,10 +204,21 @@
                     email: $('.materialOTPDiv .emailAddress').val(),
                     profileid: $('.materialOTPDiv .profileid').val(),
                     otpCode: $('.materialOTPDiv .otpCode').val(),
-                    otpState: '',
                     requestType: 'confirmUser'
                 }
                 callAjaxFunc(formData, submitOTPCallback);
+            });
+
+            // Resend OTP Code
+            $(document).on('click', '.materialOTPDiv .resendOTPButton', function () {
+                let formData = {
+                    firstName: $('.materialOTPDiv .firstName').val(),
+                    email: $('.materialOTPDiv .emailAddress').val(),
+                    profileid: $('.materialOTPDiv .profileid').val(),
+                    otpCode: $('.materialOTPDiv .otpCode').val(),
+                    requestType: 'resendOTP'
+                }
+                callAjaxFunc(formData, resendOTPCallback);
             });
         });
     </script>  
