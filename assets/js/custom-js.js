@@ -209,3 +209,46 @@ function headerTextDetails() {
         }
     }
 }
+
+
+// Customer Login / Signup
+
+
+function enterOTP() {
+    // Multiple Input Function for OTP and Pin
+    $(document).on('keypress', '.materialMultipleInput input', function (e) {  
+        let charCode = (e.which) ? e.which : event.keyCode    
+        if (String.fromCharCode(charCode).match(/[^0-9]/g))    
+            return false;                        
+    }); 
+
+    $(document).on('keyup', '.materialMultipleInput input', function (e) {
+        if($(this).val() !== '') {
+            $(this).next().focus();
+        } else if($(this).val() == '') {
+            $(this).prev().focus();
+        }
+    });
+
+    function collectMultipleInputValues(parentSelector){
+        let inputValue = '';
+        for(let i=1; i<=$('.'+parentSelector+' .materialMultipleInput input[data-id]').length; i++){
+            if($('.'+parentSelector+' .materialMultipleInput input[data-id="'+i+'"]').val() !== ''){
+                inputValue += $('.'+parentSelector+' .materialMultipleInput input[data-id="'+i+'"]').val();
+            }
+        }
+        $('.'+parentSelector+' .materialMultipleInput input.inputValue').val(inputValue);
+    }
+
+    // OTP
+    $(document).on('change blur keyup', '.materialOTPDiv .materialMultipleInput input', function () {
+        let parentSelector = 'materialOTPDiv';
+        collectMultipleInputValues(parentSelector);
+    }); 
+}
+
+
+
+
+
+

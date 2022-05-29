@@ -655,6 +655,28 @@ and (max-width: 480px) {
     margin: 2rem 0;
 }
 
+.materialInputCodeDiv {
+    text-align: center;
+    padding: 0.75rem 0;
+}
+
+.materialMultipleInput {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.materialMultipleInput input {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1rem;
+    border: 0.6px solid rgb(199, 196, 205);
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
 /* Tablet */
 @media only screen and (min-width: 480px) and (max-width: 1024px){
     .loginFormDivContainer .loginForm {
