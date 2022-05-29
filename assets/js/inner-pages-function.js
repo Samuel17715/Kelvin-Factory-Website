@@ -1,8 +1,8 @@
-let otpInnerPage = () => {
+let otpInnerPage = (email, profileid) => {
     let htmlContent = `
         <div class="materialInputCodeDiv materialOTPDiv">
             <h5>Enter OTP</h5>
-            <p>Enter the OTP sent to your email.</p>
+            <p>Enter the OTP sent to this email (${email}).</p>
             
             <div class="materialMultipleInput">
                 <input class="" type="text" maxlength="1" data-id="1" autocomplete="off" value="">
@@ -11,8 +11,11 @@ let otpInnerPage = () => {
                 <input class="" type="text" maxlength="1" data-id="4" autocomplete="off" value="">
                 <input class="" type="text" maxlength="1" data-id="5" autocomplete="off" value="">
                 <input class="" type="text" maxlength="1" data-id="6" autocomplete="off" value="">
-                <input class="inputValue" type="hidden" autocomplete="off" value=""> <!-- RETRIEVE OTP VALUE HERE -->
+                <input class="emailAddress" type="hidden" value="${email}">
+                <input class="profileid" type="hidden" value="${profileid}">
+                <input class="inputValue otpCode" type="hidden" autocomplete="off" value=""> <!-- RETRIEVE OTP VALUE HERE -->
             </div>
+            <p class="resendOTPButton">Resend OTP Code</p>
             <div class="materialFormInput mt-5">
                 <input type="submit" class="" value="Submit">
 

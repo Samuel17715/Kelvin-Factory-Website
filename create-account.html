@@ -116,15 +116,16 @@
                     dataType: 'json',
                     data: formData,
                     success: callback,
-                    error:function(){
+                    error: function(){
                     }   
                 });
             }
 
             function createAccountCallback(response) {
-                switch (response){
+                switch (response[0]){
                     case 100:
-                        otpInnerPage();
+                        alert();
+                        otpInnerPage(response[1], response[2]);
                         break;
                     case 101:
                         console.log('User already exists');
@@ -137,7 +138,35 @@
                 }
             }
 
-            // Submit Function (Check input Validation for all and Submit)
+            function submitOTPCallback(response) {
+                switch (response[0]){
+                    case 100:
+                        console.log('OTP Confirmed');
+                        break;
+                    case 101:
+                        console.log('User does not exists');
+                        break;
+                    case 102:
+                        console.log('New OTP Sent');
+                        break;
+                    case 103:
+                        console.log('Incorrect OTP');
+                        break;
+                    case 103:
+                        console.log('Incorrect OTP');
+                        break;
+                    case 104:
+                        console.log('Account already validated');
+                        break;
+                    case 105:
+                        console.log('Error! Please try again');
+                        break;
+                    case 105:
+                        console.log('Unable to connect to database');
+                }
+            }
+
+            // Submit Create Account Function (Check input Validation for all and Submit)
             $('.loginForm input[type="submit"]').click(function(event) {
                 if( ( emailInputValidationCreateAccount($('.createAccountDiv .emailAddress').val())) &&
                     ( firstNameInputValidationCreateAccount($('.createAccountDiv .firstName').val())) &&
@@ -155,6 +184,18 @@
                 } else {
                 }
             })
+
+            // Submit OTP Code
+            $(document).on('click', '.materialOTPDiv input[type="submit"]', function () {
+                let formData = {
+                    email: $('.materialOTPDiv .emailAddress').val(),
+                    profileid: $('.materialOTPDiv .profileid').val(),
+                    otpCode: $('.materialOTPDiv .otpCode').val(),
+                    otpState: '',
+                    requestType: 'confirmUser'
+                }
+                callAjaxFunc(formData, submitOTPCallback);
+            });
         });
     </script>  
 </body>

@@ -660,6 +660,13 @@ and (max-width: 480px) {
     padding: 0.75rem 0;
 }
 
+.materialInputCodeDiv .resendOTPButton {
+    font-weight: 600;
+    color: var(--primaryColor5);
+    margin: 0;
+    cursor: pointer;
+}
+
 .materialMultipleInput {
     display: flex;
     justify-content: center;
@@ -690,5 +697,10 @@ and (max-width: 480px) {
     .loginFormDivContainer .loginForm {
         width: calc(100% * 0.9);
         padding: 2.15rem 1.5rem;
+    }
+    .materialMultipleInput input {
+        width: 37px;
+        height: 37px;
+        margin-right: 0.7rem;
     }
 }
