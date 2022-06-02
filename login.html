@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="1097900018701-ficvi8621bmhoiepp6shak4fo25ecb3e.apps.googleusercontent.com">
     <link rel="stylesheet" href="https://kelvinshotzz.com/wp-content/plugins/booking/css/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="https://kelvinshotzz.com/wp-content/plugins/booking/css/flatpickr.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Login to your account - Kelvin Factory</title> 
 </head>
@@ -15,6 +13,10 @@
     <section class="loginFormDivContainer">
         <div class="loginForm">
             <div class="loginDiv">
+                <div class="alignCenter materialFormlogo">
+                    <img src="assets/img/kelvinfactory-logo-3.png" alt="">
+                </div>
+
                 <div class="alignCenter googleSignInButton">
                     <div id="my-signin2"></div>
                 </div>
@@ -112,10 +114,10 @@
                         console.log('Logged In');
                         break;
                     case 101:
-                        console.log('Incorrect Password');
+                        inputValidationFunc('passwordInputDiv', 'Incorrect Password', 'open');
                         break;
                     case 102:
-                        console.log('User does not exists');
+                        inputValidationFunc('emailAddressInput', 'This email does not exists. <a href="create-account.html" style="color: #000;"><strong>Create an account here</strong></a>', 'open');
                         break;
                     case 104:
                         console.log('Error! Please try again');
@@ -123,6 +125,7 @@
                     case 105:
                         console.log('Unable to connect to database');
                 }
+                $('.loginDiv input[type="submit"]').val('Login');
             }
 
             // Submit Function (Check input Validation for all and Submit)
@@ -130,6 +133,7 @@
                 if( ( emailInputValidationLogin($('.loginDiv .emailAddress').val()) ) &&
                     ( passwordInputValidationLogin($('.loginDiv .passwordInput').val()) )
                 ) {
+                    $(this).val('Logging In...');
                     let formData = {
                         email: $('.loginDiv .emailAddress').val(),
                         password: $('.loginDiv .passwordInput').val(),

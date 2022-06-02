@@ -7,11 +7,10 @@
     --primaryColor3: #dbdbdb;
     --primaryColor4: #1d1d1d;
     --primaryColor5: #c99e4e;
+    --light: #fbf9f2;
 }
 
 body {
-    color: var(--primaryColor3);
-    background: #060314;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
@@ -25,7 +24,7 @@ a {
 }
 
 h1, h2, h3 {
-    color: var(--primaryColor);
+    color: var(--primaryColor5);
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-size: 4.85rem;
@@ -36,7 +35,7 @@ h1, h2, h3 {
 }
 
 h2 {
-    color: var(--primaryColor3);
+    color: var(--primaryColor4);
     font-size: 3rem;
 }
 
@@ -52,12 +51,16 @@ h4 {
 }
 
 h5 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 27px;
+    margin: 0;
 }
 
 h6 {
+    font-size: 0.9rem;
+    font-weight: 500;
     letter-spacing: 0.15px;
+    margin: 0;
 }
 
 p {
@@ -65,11 +68,44 @@ p {
     font-weight: 300;
     line-height: 1.75em;
     padding-right: 20px;
+    margin: 0;
+}
+
+.materialTab {
+    margin-bottom: 2rem;
+}
+
+.materialTab ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0;
+}
+
+.materialTab ul li {
+    display: inline;
+    padding: 0.65rem 0;
+    padding-right: 3rem;
+    color: #6d6d6d;
+    font-weight: 400;
+    border-bottom: 0.68px solid #6d6d6d;
+    cursor: pointer;
+}
+
+.materialTab ul li.active {
+    font-weight: 600;
+    color: var(--primaryColor5);
+    border-bottom: 2px solid var(--primaryColor5);
 }
 
 .alignCenter {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.alignSpaceBetween {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -114,7 +150,7 @@ p {
 }
 
 .materialHeroSection p {
-    color: var(--primaryColor3);
+    color: var(--primaryColor4);
     font-size: 0.9rem;
     font-weight: 300;
     line-height: 30px;
@@ -153,27 +189,27 @@ p {
 }
 
 .materialNavSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0.5rem 0;
 }
 
-.materialNavSection ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.materialNavSection ul li {
+.materialNavSection nav a {
+    color: #6d6d6d;
     display: inline;
     font-size: 0.9rem;
     padding-right: 3.5rem;
-    transition: 0.65s;
+    font-weight: 500;
+    transition: 0.25s;
 }
 
-.materialNavSection ul li img {
-    width: 135px;
+.materialNavSection nav a img {
+    width: 120px;
 }
 
-.materialNavSection ul li:hover {
-    color: #404040;
+.materialNavSection nav a:hover {
+    color: #1c1c1c;
 }
 
 .materialBookingFormContainer {
@@ -446,7 +482,7 @@ and (max-width: 480px) {
     outline: none;
     padding: 0.85rem 1rem;
     border: none;
-    border: 1.25px solid #bdbdbd;
+    border: 0.65px solid #d2d2d2;
     border-left: 0;
     border-radius: 0px 7px 7px 0;
 }
@@ -571,7 +607,7 @@ and (max-width: 480px) {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--primaryColor4);
+    background: var(--light);
 }
 
 .loginFormDivContainer .inputFieldInfo {
@@ -583,8 +619,12 @@ and (max-width: 480px) {
     font-weight: 500;
 }
 
+.loginFormDivContainer .inputFieldInfo span.success{
+    color: rgb(0, 186, 19);
+}
+
 .loginFormDivContainer .inputFieldInfo svg {
-    fill: rgb(234, 97, 97);
+    fill: #adadad;
     width: 15px;
 }
 
@@ -592,12 +632,13 @@ and (max-width: 480px) {
     position: absolute;
     top: 50%;
     left: 50%;
+    min-width: 380px;
+    max-width: 600px;
     transform: translate(-50%, -50%);
     color: var(--primaryColor4);
-    width: calc(100% * 0.32);
+    width: calc(100% * 0.34);
     padding: 2.15rem 2.35rem;
     background: #ffffff;
-    border: 1.35px solid #dfdfdf;
     border-radius: 17px;
 }
 
@@ -609,8 +650,7 @@ and (max-width: 480px) {
     padding: 0.85rem 1rem;
     border: none;
     border-radius: 4px;
-    background: #e7e9ed;
-    margin-top: 1.2rem;
+    margin-top: 0.65rem;
     font-size: 0.8rem;
     text-align: center;
     transition: 0.45s;
@@ -620,11 +660,25 @@ and (max-width: 480px) {
     appearance: none;
     outline: none;
     width: 100%;
-    padding: 0.7rem 1rem;
+    padding: 0.9rem 1rem;
     border: none;
-    border: 1px solid #bdbdbd;
+    border: 0.65px solid #d2d2d2;
     border-radius: 7px;
     background: var(--secBGColor);
+}
+
+.loginFormDivContainer .formInlineInput {
+    display: flex;
+    justify-content: space-between;
+}
+
+.loginFormDivContainer .formInlineInput>div {
+    width: 48.5%;
+}
+
+
+.loginFormDivContainer .loginForm input::placeholder {
+    font-size: 0.85rem;
 }
 
 .loginFormDivContainer .loginForm .materialFormGroupInput input {
@@ -652,7 +706,7 @@ and (max-width: 480px) {
 }
 
 .loginFormDivContainer .googleSignInButton {
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .materialInputCodeDiv {
@@ -684,6 +738,10 @@ and (max-width: 480px) {
     margin-right: 1rem;
 }
 
+.materialFormlogo img {
+    width: 130px;
+}
+
 /* Tablet */
 @media only screen and (min-width: 480px) and (max-width: 1024px){
     .loginFormDivContainer .loginForm {
@@ -703,4 +761,51 @@ and (max-width: 480px) {
         height: 37px;
         margin-right: 0.7rem;
     }
+}
+
+.mainContainer {
+    background-color: #ffffff;
+    padding: 1rem 3.5rem;
+}
+
+.profileDivContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.profileDiv {
+    width: 600px;
+}
+
+.profileBio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.profileBio>div {
+    margin: 0 1rem;
+}
+
+.profileBio h3 {
+    color: #1d1d1d;
+    font-weight: 600;
+}
+
+.profileBio h6 {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.profileBio img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.materialGridCard {
+    background: #f7f7f7;
+    padding: 2rem 2rem;
+    border-radius: 18px;
+    margin-top: 1.25rem;
 }

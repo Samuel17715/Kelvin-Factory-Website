@@ -27,13 +27,13 @@ function getCheckboxesValuesFunc(thisSelector) {
 
 
 // Flat Pickr (Date & Time) Configuration
-function flatPickrInit(bookingDateTimeRowNumber) {
+function flatPickrInit(bookingDateTimeRowNumber, disabledSelectedDatesArray) {
+
     let bookingDateID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingDate'); // Booking Date
     let bookingStartTimeID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingStartTime'); // Start Time
     let bookingEndTimeID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingEndTime'); // End Time
-    
     let bookingDate= flatpickr(bookingDateID, {});
-    
+
     let bookingStartTime = flatpickr(bookingStartTimeID, {
         enableTime: true,
         noCalendar: true,
@@ -43,6 +43,7 @@ function flatPickrInit(bookingDateTimeRowNumber) {
         minDate: "06:00 AM",
         maxDate: "08:00 PM"
     });
+
     let bookingEndTime = flatpickr(bookingEndTimeID, {
         enableTime: true,
         noCalendar: true,
@@ -136,9 +137,9 @@ function getBookingInputValues() {
     }
     
     if((bookingInputValuesObject.bookingDateAndTime.length !== 0) && (bookingInputValuesObject.studioMembershipValue !== '')) {
-        return bookingInputValuesObject;
+        return [true, bookingInputValuesObject];
     } else {
-        return false;
+        return [false];
     }
 }
 
@@ -213,7 +214,6 @@ function headerTextDetails() {
 
 // Customer Login / Signup
 
-
 function enterOTP() {
     // Multiple Input Function for OTP and Pin
     $(document).on('keypress', '.materialMultipleInput input', function (e) {  
@@ -246,6 +246,12 @@ function enterOTP() {
         collectMultipleInputValues(parentSelector);
     }); 
 }
+
+// MaterialTab
+$('.materialTab li[data-tab]').on('click', function(){
+    $('.materialTab li[data-tab]').removeClass('active');
+    $(this).addClass('active');
+});
 
 
 

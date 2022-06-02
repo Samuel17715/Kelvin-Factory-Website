@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="1097900018701-ficvi8621bmhoiepp6shak4fo25ecb3e.apps.googleusercontent.com">
     <link rel="stylesheet" href="https://kelvinshotzz.com/wp-content/plugins/booking/css/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="https://kelvinshotzz.com/wp-content/plugins/booking/css/flatpickr.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Create Account - Kelvin Factory</title> 
 </head>
@@ -16,12 +14,34 @@
 
         <div class="loginForm">
             <div class="createAccountDiv">
+                <div class="alignCenter materialFormlogo">
+                    <img src="assets/img/kelvinfactory-logo-3.png" alt="">
+                </div>
+
                 <div class="alignCenter googleSignInButton">
                     <div id="my-signin2"></div>
                 </div>
                 
-                <h5 class="mt-2 mb-4">Create your account</h5>
-                
+                <h5 class="mt-2 mb-4 text-center">Create your account</h5>
+
+                <div class="formInlineInput">
+                    <div class="materialFormInput firstNameInput">
+                        <input type="text" class="firstName" placeholder="First Name" required="">
+                        <span class="inputFieldInfo">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5099 5.85L13.5699 2.42C12.5999 1.86 11.3999 1.86 10.4199 2.42L4.48992 5.85C3.51992 6.41 2.91992 7.45 2.91992 8.58V15.42C2.91992 16.54 3.51992 17.58 4.48992 18.15L10.4299 21.58C11.3999 22.14 12.5999 22.14 13.5799 21.58L19.5199 18.15C20.4899 17.59 21.0899 16.55 21.0899 15.42V8.58C21.0799 7.45 20.4799 6.42 19.5099 5.85ZM11.2499 7.75C11.2499 7.34 11.5899 7 11.9999 7C12.4099 7 12.7499 7.34 12.7499 7.75V13C12.7499 13.41 12.4099 13.75 11.9999 13.75C11.5899 13.75 11.2499 13.41 11.2499 13V7.75ZM12.9199 16.63C12.8699 16.75 12.7999 16.86 12.7099 16.96C12.5199 17.15 12.2699 17.25 11.9999 17.25C11.8699 17.25 11.7399 17.22 11.6199 17.17C11.4899 17.12 11.3899 17.05 11.2899 16.96C11.1999 16.86 11.1299 16.75 11.0699 16.63C11.0199 16.51 10.9999 16.38 10.9999 16.25C10.9999 15.99 11.0999 15.73 11.2899 15.54C11.3899 15.45 11.4899 15.38 11.6199 15.33C11.9899 15.17 12.4299 15.26 12.7099 15.54C12.7999 15.64 12.8699 15.74 12.9199 15.87C12.9699 15.99 12.9999 16.12 12.9999 16.25C12.9999 16.38 12.9699 16.51 12.9199 16.63Z"></path></svg>
+                            <span></span>
+                        </span>
+                    </div>
+        
+                    <div class="materialFormInput lastNameInput">
+                        <input type="text" class="lastName" placeholder="Last Name" required="">
+                        <span class="inputFieldInfo">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5099 5.85L13.5699 2.42C12.5999 1.86 11.3999 1.86 10.4199 2.42L4.48992 5.85C3.51992 6.41 2.91992 7.45 2.91992 8.58V15.42C2.91992 16.54 3.51992 17.58 4.48992 18.15L10.4299 21.58C11.3999 22.14 12.5999 22.14 13.5799 21.58L19.5199 18.15C20.4899 17.59 21.0899 16.55 21.0899 15.42V8.58C21.0799 7.45 20.4799 6.42 19.5099 5.85ZM11.2499 7.75C11.2499 7.34 11.5899 7 11.9999 7C12.4099 7 12.7499 7.34 12.7499 7.75V13C12.7499 13.41 12.4099 13.75 11.9999 13.75C11.5899 13.75 11.2499 13.41 11.2499 13V7.75ZM12.9199 16.63C12.8699 16.75 12.7999 16.86 12.7099 16.96C12.5199 17.15 12.2699 17.25 11.9999 17.25C11.8699 17.25 11.7399 17.22 11.6199 17.17C11.4899 17.12 11.3899 17.05 11.2899 16.96C11.1999 16.86 11.1299 16.75 11.0699 16.63C11.0199 16.51 10.9999 16.38 10.9999 16.25C10.9999 15.99 11.0999 15.73 11.2899 15.54C11.3899 15.45 11.4899 15.38 11.6199 15.33C11.9899 15.17 12.4299 15.26 12.7099 15.54C12.7999 15.64 12.8699 15.74 12.9199 15.87C12.9699 15.99 12.9999 16.12 12.9999 16.25C12.9999 16.38 12.9699 16.51 12.9199 16.63Z"></path></svg>
+                            <span></span>
+                        </span>
+                    </div>
+                </div>
+    
                 <div class="materialFormInput emailAddressInput">
                     <input type="text" class="emailAddress" placeholder="Email Address">
                     <span class="inputFieldInfo">
@@ -29,22 +49,10 @@
                         <span></span>
                     </span>
                 </div>
-    
-                <div class="materialFormInput firstNameInput">
-                    <input type="text" class="firstName" placeholder="First Name" required="">
-                    <span class="inputFieldInfo">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5099 5.85L13.5699 2.42C12.5999 1.86 11.3999 1.86 10.4199 2.42L4.48992 5.85C3.51992 6.41 2.91992 7.45 2.91992 8.58V15.42C2.91992 16.54 3.51992 17.58 4.48992 18.15L10.4299 21.58C11.3999 22.14 12.5999 22.14 13.5799 21.58L19.5199 18.15C20.4899 17.59 21.0899 16.55 21.0899 15.42V8.58C21.0799 7.45 20.4799 6.42 19.5099 5.85ZM11.2499 7.75C11.2499 7.34 11.5899 7 11.9999 7C12.4099 7 12.7499 7.34 12.7499 7.75V13C12.7499 13.41 12.4099 13.75 11.9999 13.75C11.5899 13.75 11.2499 13.41 11.2499 13V7.75ZM12.9199 16.63C12.8699 16.75 12.7999 16.86 12.7099 16.96C12.5199 17.15 12.2699 17.25 11.9999 17.25C11.8699 17.25 11.7399 17.22 11.6199 17.17C11.4899 17.12 11.3899 17.05 11.2899 16.96C11.1999 16.86 11.1299 16.75 11.0699 16.63C11.0199 16.51 10.9999 16.38 10.9999 16.25C10.9999 15.99 11.0999 15.73 11.2899 15.54C11.3899 15.45 11.4899 15.38 11.6199 15.33C11.9899 15.17 12.4299 15.26 12.7099 15.54C12.7999 15.64 12.8699 15.74 12.9199 15.87C12.9699 15.99 12.9999 16.12 12.9999 16.25C12.9999 16.38 12.9699 16.51 12.9199 16.63Z"></path></svg>
-                        <span></span>
-                    </span>
-                </div>
-    
-                <div class="materialFormInput lastNameInput">
-                    <input type="text" class="lastName" placeholder="Last Name" required="">
-                    <span class="inputFieldInfo">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5099 5.85L13.5699 2.42C12.5999 1.86 11.3999 1.86 10.4199 2.42L4.48992 5.85C3.51992 6.41 2.91992 7.45 2.91992 8.58V15.42C2.91992 16.54 3.51992 17.58 4.48992 18.15L10.4299 21.58C11.3999 22.14 12.5999 22.14 13.5799 21.58L19.5199 18.15C20.4899 17.59 21.0899 16.55 21.0899 15.42V8.58C21.0799 7.45 20.4799 6.42 19.5099 5.85ZM11.2499 7.75C11.2499 7.34 11.5899 7 11.9999 7C12.4099 7 12.7499 7.34 12.7499 7.75V13C12.7499 13.41 12.4099 13.75 11.9999 13.75C11.5899 13.75 11.2499 13.41 11.2499 13V7.75ZM12.9199 16.63C12.8699 16.75 12.7999 16.86 12.7099 16.96C12.5199 17.15 12.2699 17.25 11.9999 17.25C11.8699 17.25 11.7399 17.22 11.6199 17.17C11.4899 17.12 11.3899 17.05 11.2899 16.96C11.1999 16.86 11.1299 16.75 11.0699 16.63C11.0199 16.51 10.9999 16.38 10.9999 16.25C10.9999 15.99 11.0999 15.73 11.2899 15.54C11.3899 15.45 11.4899 15.38 11.6199 15.33C11.9899 15.17 12.4299 15.26 12.7099 15.54C12.7999 15.64 12.8699 15.74 12.9199 15.87C12.9699 15.99 12.9999 16.12 12.9999 16.25C12.9999 16.38 12.9699 16.51 12.9199 16.63Z"></path></svg>
-                        <span></span>
-                    </span>
-                </div>
+
+                <div class="materialFormInput phoneNumberInput">
+                    <input type="number" class="phoneNumber" placeholder="Phone Number">
+                 </div>
 
                 <div class="materialFormInput passwordInputDiv">
                     <div class="materialFormGroupInput">
@@ -128,7 +136,7 @@
                         otpInnerPage(response[1], response[2], response[3]);
                         break;
                     case 101:
-                        console.log('User already exists');
+                        inputValidationFunc('emailAddressInput', 'User already exists. Please login <a href="login.html" style="color: #000;"><strong>here</strong></a>', 'open');
                         break;
                     case 104:
                         console.log('Error! Please try again');
@@ -136,12 +144,13 @@
                     case 105:
                         console.log('Unable to connect to database');
                 }
+                $('.createAccountDiv input[type="submit"]').val('Create Account');
             }
 
             function resendOTPCallback(response) {
                 switch (response[0]){
                     case 100:
-                        console.log('OTP Code changed');
+                        inputValidationFunc('otpMessage', '<span class="success">An OTP Code has been sent again to your email</span>', 'open');
                         break;
                     case 104:
                         console.log('Error! Please try again');
@@ -157,16 +166,13 @@
                         console.log('OTP Confirmed');
                         break;
                     case 101:
-                        console.log('User does not exists');
+                        inputValidationFunc('otpMessage', 'User does not exists', 'open');
                         break;
                     case 102:
-                        console.log('New OTP Sent');
+                        inputValidationFunc('otpMessage', '<span class="success">New OTP Sent</span>', 'open');
                         break;
                     case 103:
-                        console.log('Incorrect OTP');
-                        break;
-                    case 103:
-                        console.log('Incorrect OTP');
+                        inputValidationFunc('otpMessage', 'Incorrect OTP', 'open');
                         break;
                     case 104:
                         console.log('Account already validated');
@@ -180,12 +186,13 @@
             }
 
             // Submit Create Account Function (Check input Validation for all and Submit)
-            $('.loginForm input[type="submit"]').click(function(event) {
+            $('.createAccountDiv input[type="submit"]').click(function(event) {
                 if( ( emailInputValidationCreateAccount($('.createAccountDiv .emailAddress').val())) &&
                     ( firstNameInputValidationCreateAccount($('.createAccountDiv .firstName').val())) &&
                     ( lastNameInputValidationCreateAccount($('.createAccountDiv .lastName').val())) &&
                     ( passwordInputValidationCreateAccount($('.createAccountDiv .passwordInput').val()))
                 ) {
+                    $(this).val('Creating Account...');
                     let formData = {
                         firstName: $('.createAccountDiv .firstName').val(),
                         lastName: $('.createAccountDiv .lastName').val(),

@@ -271,10 +271,10 @@
         $(document).ready(function() {
             // Default Booking Row Number and Dates Array
             var bookingDateTimeRowNumber = 1;
-            var disabledSelectedDatesArray = [];
+            const disabledSelectedDatesArray = [];
 
             // Init Flatpickr
-            flatPickrInit(bookingDateTimeRowNumber);
+            flatPickrInit(bookingDateTimeRowNumber, disabledSelectedDatesArray);
 
             // Right Bar
             $('.mainBodyRightContainerTrigger, .mainBodyRightCloseBtn, .mainBodyRightDivCloseContainer').click(function() {
@@ -290,7 +290,7 @@
             $('.subButton').on('click', function(){
                 bookingDateTimeRowNumber++;
                 $('.bookingDateTimeAppendContainer').append(appendBookingDateAndTimeRow(bookingDateTimeRowNumber));
-                flatPickrInit(bookingDateTimeRowNumber);
+                flatPickrInit(bookingDateTimeRowNumber, disabledSelectedDatesArray);
             });
 
             // Get Total Booking Price and update text
@@ -301,7 +301,9 @@
 
             // Submit data to server
             $('.materialInputForm input[type="submit"]').on('click', function(){
-                console.log(getBookingInputValues());
+                if(getBookingInputValues()[0]) {
+                    window.location.href = "login.html";
+                }
             });
         });
     </script>
