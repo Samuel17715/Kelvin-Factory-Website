@@ -230,7 +230,7 @@ and (max-width: 480px) {
 
 .bookingDivContainer {
     width: 600px;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
 }
 
 .materialTab {
@@ -281,4 +281,17 @@ and (max-width: 480px) {
     .materialTab {
         margin: 2rem 0;
     }
+}
+
+.bookingDivContainer .bookingDiv {
+    background-color: #fafafa;
+    padding: 2rem;
+}
+
+.bookingDivContainer .bookingDiv .bookingTime {
+    margin: 3rem 0;
+}
+
+.bookingDivContainer .bookingDiv .bookingTime svg {
+    width: 100px;
 }
