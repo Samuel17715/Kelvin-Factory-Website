@@ -249,13 +249,13 @@
     // Password Reveal
     $('.materialFormGroupInput .showHideBtn.showPassword').click(function(event) {
         event.preventDefault();
-        $('.loginFormDivContainer .passwordInput').attr('type', 'text');
+        $('.userRegistrationForm .passwordInput').attr('type', 'text');
         $('.materialFormGroupInput .showHideBtn').removeClass('active');
         $('.materialFormGroupInput .showHideBtn.hidePassword').addClass('active');
     });
 
     $('.materialFormGroupInput .showHideBtn.hidePassword').click(function(){
-        $('.loginFormDivContainer .passwordInput').attr('type', 'password');
+        $('.userRegistrationForm .passwordInput').attr('type', 'password');
         $('.materialFormGroupInput .showHideBtn').removeClass('active');
         $('.materialFormGroupInput .showHideBtn.showPassword').addClass('active');
     });

@@ -1,7 +1,7 @@
 let otpInnerPage = (firstName, email, profileid) => {
     let htmlContent = `
-        <div class="materialInputCodeDiv materialOTPDiv">
-            <h5>Enter OTP</h5>
+        <div class="userRegistrationForm materialInputCodeDiv materialOTPDiv">
+            <h5 class="mb-3">Enter OTP</h5>
             <p>Enter the OTP sent to this email <strong>(${email}).</strong></p>
             
             <div class="materialMultipleInput">
@@ -34,5 +34,5 @@ let otpInnerPage = (firstName, email, profileid) => {
             </div>
         </div>
     `;
-    $('.loginForm').html(htmlContent);
+    $('.userRegistrationFormContainer').html(htmlContent);
 }

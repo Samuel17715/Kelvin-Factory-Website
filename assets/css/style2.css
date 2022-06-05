@@ -45,6 +45,10 @@ body {
     font-family: 'Gordita Regular', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
@@ -80,7 +84,7 @@ p {
 .materialButton {
     color: var(--white) !important;
     background-color: var(--darkgrey);
-    padding: 0.75rem 1.35rem;
+    padding: 1.1rem 1.35rem;
     border-radius: 4px;
     transition: 0.65s;
 }
@@ -91,6 +95,10 @@ p {
 
 .materialNavSection {
     padding: 1.5rem 3rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 5;
 }
 
 .materialNavSection.mobile {
@@ -105,6 +113,7 @@ p {
     padding: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .materialNavSection ul li {
@@ -152,7 +161,6 @@ p {
 .materialNavSection.mobile li svg {
     stroke: var(--darkgrey);
     stroke-width: 1;
-    margin-top: 0.5rem;
 }
 
 .materialNavSection.mobile nav.dropdown {
@@ -162,6 +170,7 @@ p {
     position: fixed;
     top: 100px;
     left: 0;
+    z-index: 5;
     transition: 0.65s;
     overflow: hidden;
 }
@@ -312,8 +321,9 @@ and (max-width: 480px) {
     width: 200px;
 }
 
-.bookingDivContainer .bookingDiv h5{
+.bookingDivContainer .bookingDiv h5 {
     font-family: 'Gordita Medium';
+    font-size: 1.2rem;
 }
 
 .bookingDivContainer .bookingDiv .bookingDate {
@@ -328,3 +338,141 @@ and (max-width: 480px) {
         width: 105px;
     }
 }
+
+/* User Registration */
+.userRegistrationFormContainer {
+    width: 100%;
+    height: 100vh;
+    background-color: #f4f8fe;
+    padding-top: 3rem;
+}
+
+.userRegistrationForm {
+    background-color: var(--white);
+    padding: 2.2rem 2.5rem;
+    width: 500px;
+}
+
+.userRegistrationForm input, .userRegistrationForm select {
+    appearance: none;
+    outline: none;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: none;
+    border: 0.65px solid #d2d2d2;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-family: 'Gordita Medium';
+}
+
+.userRegistrationForm input[type="submit"] {
+    color: #ffffff;
+    padding: 1.1rem 1rem;
+    background: var(--darkgrey);
+    border: none;
+    opacity: 0.935;
+    transition: 0.45s;
+}
+
+.userRegistrationForm .materialFormSecButton {
+    width: 100%;
+    margin-top: 1.65rem;
+}
+
+.userRegistrationForm .materialFormSecButton a {
+    color: var(--darkgrey);
+    font-size: 0.8rem;
+    display: block;
+    text-align: center;
+}
+
+.userRegistrationForm .formInlineInput>div {
+    width: 48%;
+}
+
+.userRegistrationForm .materialFormInput {
+    margin-top: 1.05rem;
+}
+
+.userRegistrationForm .materialFormGroupInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userRegistrationForm .materialFormGroupInput .showHideBtn {
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0.85rem 1rem;
+    border: none;
+    border: 0.65px solid #d2d2d2;
+    border-left: 0;
+    border-radius: 0px 3px 3px 0;
+}
+
+.userRegistrationForm .materialFormGroupInput .showHideBtn {
+    display: none;
+}
+
+.userRegistrationForm .materialFormGroupInput .showHideBtn.active {
+    display: block;
+}
+
+.userRegistrationForm .materialFormGroupInput input {
+    border-right: 0;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.userRegistrationForm .materialFormGroupInput svg {
+    fill: #aeb5be;
+    transition: 0.45s;
+}
+
+.userRegistrationForm .materialFormGroupInput svg:hover {
+    fill: #656769;
+}
+
+.userRegistrationForm .inputFieldInfo {
+    display: none;
+    font-size: .65rem;
+    color: rgb(234, 97, 97);
+    padding-top: 0.6rem;
+    letter-spacing: 0.35px;
+    font-weight: 500;
+}
+
+.userRegistrationForm .inputFieldInfo svg {
+    fill: #adadad;
+    width: 15px;
+}
+
+.userRegistrationForm .inputFieldInfo span.success {
+    color: rgb(0, 186, 19);
+}
+
+.userRegistrationForm.materialInputCodeDiv {
+    text-align: center;
+}
+
+.userRegistrationForm.materialInputCodeDiv h5 {
+    font-family: 'Gordita Medium';
+}
+
+.userRegistrationForm .materialMultipleInput {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.userRegistrationForm .materialMultipleInput input {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1rem;
+    border: 0.6px solid rgb(199, 196, 205);
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
