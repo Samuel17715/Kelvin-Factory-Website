@@ -35,6 +35,7 @@
 
 :root {
     --primaryColor: #f4d7a1;
+    --primaryColor2:rgb(214, 154, 42);
     --white: #ffffff;
     --lightgrey: #787878;
     --darkgrey: #1d1d1d;
@@ -42,6 +43,26 @@
 
 body {
     font-family: 'Gordita Regular', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .flex-between {
@@ -193,5 +214,71 @@ and (max-width: 480px) {
     }
     .materialNavSection nav img {
         width: 60px;
+    }
+}
+
+.profileBio {
+    margin-top: 4rem;
+}
+
+.profileBio img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+.bookingDivContainer {
+    width: 600px;
+    padding: 1rem 1.5rem;
+}
+
+.materialTab {
+    margin: 5rem 0;
+}
+
+.materialTab ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0;
+}
+
+.materialTab ul li {
+    display: inline;
+    padding: 0.65rem 0;
+    padding-right: 4rem;
+    color: var(--lightgrey);
+    font-weight: 400;
+    border-bottom: 0.68px solid #6d6d6d;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.materialTab ul li.active {
+    color: var(--primaryColor2);
+    font-weight: 700;
+    border-bottom: 3px solid var(--primaryColor2);
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .profileBio {
+        padding: 1rem;
+    }
+    .profileBio img {
+        width: 60px;
+        height: 60px;
+        margin-right: 1rem;
+    }
+    .materialTab ul li {
+        padding-right: 2.65rem;
+    }
+    .bookingDivContainer {
+        width: 100%;
+    }
+    .materialTab {
+        margin: 2rem 0;
     }
 }
