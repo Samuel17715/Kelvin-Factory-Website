@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .flex-center {
@@ -222,6 +222,10 @@ and (max-width: 480px) {
     margin-top: 4rem;
 }
 
+.profileBio h4 {
+    font-family: 'Gordita Medium';
+}
+
 .profileBio img {
     width: 80px;
     height: 80px;
@@ -297,7 +301,7 @@ and (max-width: 480px) {
 
 .bookingDivContainer .bookingDiv {
     background-color: #fafafa;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
 .bookingDivContainer .bookingDiv .bookingTime {
@@ -306,6 +310,14 @@ and (max-width: 480px) {
 
 .bookingDivContainer .bookingDiv .bookingTime svg {
     width: 200px;
+}
+
+.bookingDivContainer .bookingDiv h5{
+    font-family: 'Gordita Medium';
+}
+
+.bookingDivContainer .bookingDiv .bookingDate {
+    font-family: 'Gordita Medium';
 }
 
 /* Mobile Phones */
