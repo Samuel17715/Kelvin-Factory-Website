@@ -254,6 +254,7 @@ and (max-width: 480px) {
     border-bottom: 0.68px solid #6d6d6d;
     cursor: pointer;
     font-size: 0.9rem;
+    font-family: 'Gordita Medium';
 }
 
 .materialTab ul li.active {
@@ -261,6 +262,15 @@ and (max-width: 480px) {
     font-weight: 700;
     border-bottom: 3px solid var(--primaryColor2);
 }
+
+.materialTabContent[data-tab-content] {
+    display: none;
+}
+
+.materialTabContent.active[data-tab-content] {
+    display: block;
+}
+
 
 /* Mobile Phones */
 @media only screen 
