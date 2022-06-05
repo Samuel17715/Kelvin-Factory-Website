@@ -61,7 +61,12 @@ h1, h2, h3 {
 }
 
 h4, h5, h6 {
-    font-family: 'Gordita Bold', sans-serif;
+    font-family: 'Gordita Medium', sans-serif;
+    margin: 0;
+}
+
+nav {
+    font-family: 'Gordita Medium', sans-serif;
 }
 
 h2 {
@@ -226,15 +231,24 @@ p {
     padding: 1.5rem 3rem;
 }
 
+.materialNavSection .navbar {
+    width: 100%;
+}
+
+.materialNavSection .navbar-toggler {
+    border: none;
+}
+
+.materialNavSection li {
+    margin-right: 2rem;
+}
+
 .materialNavSection nav a {
     color: #6d6d6d;
     display: inline;
-    font-size: 0.9rem;
-    padding-right: 3.5rem;
+    font-size: 0.8rem;
     font-weight: 500;
     transition: 0.25s;
-    text-transform: uppercase;
-    font-weight: 500;
 }
 
 .materialNavSection nav a img {
@@ -807,7 +821,7 @@ and (max-width: 480px) {
 }
 
 .profileDiv {
-    width: 600px;
+    width: 700px;
     padding: 0 1.2rem;
 }
 
@@ -870,14 +884,6 @@ and (max-width: 480px) {
     }
     .materialNavSection {
         padding: 1rem 0.75rem;
-    }
-
-    .materialNavSection .navbar {
-        width: 100%;
-    }
-
-    .materialNavSection .navbar-toggler {
-        border: none;
     }
 
     .materialNavSection nav a img {
