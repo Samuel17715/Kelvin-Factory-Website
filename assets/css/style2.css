@@ -141,19 +141,15 @@ body {
     top: 100px;
     left: 0;
     transition: 0.65s;
+    overflow: hidden;
 }
 
 .materialNavSection.mobile nav.dropdown ul {
-    display: none;
     padding: 2rem 0;
 }
 
 .materialNavSection.mobile nav.dropdown.active {
     height: 100%;
-}
-
-.materialNavSection.mobile nav.dropdown.active ul {
-    display: flex;
 }
 
 .materialNavSection.mobile nav.dropdown li {
