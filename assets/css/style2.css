@@ -228,7 +228,7 @@ and (max-width: 480px) {
 }
 
 .profileBio {
-    margin-top: 4rem;
+    margin-top: 9rem;
 }
 
 .profileBio h4 {
@@ -343,14 +343,17 @@ and (max-width: 480px) {
 .userRegistrationFormContainer {
     width: 100%;
     height: 100vh;
-    background-color: #f4f8fe;
+    background-color: #f9fcff;
     padding-top: 3rem;
 }
 
 .userRegistrationForm {
-    background-color: var(--white);
     padding: 2.2rem 2.5rem;
     width: 500px;
+}
+
+.userRegistrationForm h5 {
+    font-family: 'Gordita Medium';
 }
 
 .userRegistrationForm input, .userRegistrationForm select {
@@ -363,6 +366,7 @@ and (max-width: 480px) {
     border-radius: 3px;
     font-size: 0.85rem;
     font-family: 'Gordita Medium';
+    background: none;
 }
 
 .userRegistrationForm input[type="submit"] {

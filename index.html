@@ -302,6 +302,7 @@
             // Submit data to server
             $('.materialInputForm input[type="submit"]').on('click', function(){
                 if(getBookingInputValues()[0]) {
+                    sessionStorage.setItem("bookingInput", JSON.stringify(getBookingInputValues()));
                     window.location.href = "login.html";
                 }
             });

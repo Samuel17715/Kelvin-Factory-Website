@@ -174,7 +174,8 @@
             function submitOTPCallback(response) {
                 switch (response[0]){
                     case 100:
-                        console.log('OTP Confirmed');
+                        sessionStorage.setItem("profileid", response[1]);
+                        window.location.href = "profile.html";
                         break;
                     case 101:
                         inputValidationFunc('otpMessage', 'User does not exists', 'open');
@@ -208,6 +209,7 @@
                         firstName: $('.createAccountDiv .firstName').val(),
                         lastName: $('.createAccountDiv .lastName').val(),
                         email: $('.createAccountDiv .emailAddress').val(),
+                        phoneNumber: $('.createAccountDiv .phoneNumber').val(),
                         password: $('.createAccountDiv .passwordInput').val(),
                         requestType: 'addNewUser'
                     }

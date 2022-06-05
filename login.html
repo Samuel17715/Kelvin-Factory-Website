@@ -122,7 +122,8 @@
             function loginCallback(response) {
                 switch (response[0]){
                     case 100:
-                        console.log('Logged In');
+                        sessionStorage.setItem("profileid", response[1]);
+                        window.location.href = "profile.html";
                         break;
                     case 101:
                         inputValidationFunc('passwordInputDiv', 'Incorrect Password', 'open');

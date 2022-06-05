@@ -4,157 +4,288 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="assets/semantic/semantic.min.css" /> -->
-    <link rel="stylesheet" href="https://kelvinshotzz.com/wp-content/plugins/booking/css/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/style2.css" />
     <title>Kelvin Factory</title> 
 </head>
 <body>
-    <section class="mainContainer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="materialNavSection">
-                        <nav>
-                            <a href="index.html"><img src="assets/img/kelvinfactory-logo-5.png" alt=""></a>
-                            <a href="#">About</a>
-                            <a href="#">Contact</a>
-                            <a href="#">Book Shoots</a>
-                        </nav>
-                        <nav>
-                            <a href="#">Sign Out</a>
-                        </nav>
-                    </div>
-                </div>
+    <section class="materialNavSection">
+        <nav class="flex-between">
+            <div>
+                <img src="assets/img/kelvinshotz-logo.png" alt="">
+            </div>
+            <div>
+                <ul>
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a class="" href="#">About</a></li>
+                    <li><a class="" href="#">Book Shoots</a></li>
+                    <li><a class="" href="#">Contact</a></li>
+                </ul>    
+            </div>
+            <div>
+                <ul>
+                    <li><a class="materialButton" href="#">Sign Out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section class="materialNavSection mobile">
+        <nav class="flex-between">
+            <div>
+                <img src="assets/img/kelvinshotz-logo.png" alt="">
+            </div>
+            <div>
+                <ul>
+                    <li><a class="materialButton" href="#">Sign Out</a></li>
+                    <li class="toggleButton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 21H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 3H22.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="dropdown">
+            <div>
+                <ul class="flex-column">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a class="" href="#">About</a></li>
+                    <li><a class="" href="#">Book Shoots</a></li>
+                    <li><a class="" href="#">Contact</a></li>
+                </ul>    
+            </div>
+        </nav>
+    </section>
+
+    <section class="flex-center">
+        <div class="profileBio flex-start">
+            <div><img src="assets/img/studio-2.jpg"></div>
+            <div>
+                <h4>Sam Owolabi</h4>
+                <p>owolabisamuel15@gmail.com</p>
             </div>
         </div>
     </section>
 
-    <section class="profileDivContainer mb-5">
-        <div class="profileDiv">
-            <div class="profileBio">
-                <div>
-                    <img src="assets/img/studio-2.jpg">
-                </div>
-                <div>
-                    <h3>Inspiration Media</h3>
-                    <p>owolabisamuel15@gmail.com</p>
-                </div>
-            </div>
-                
-            <div class="materialTab">
+    <section class="flex-center">
+        <div class="bookingDivContainer">
+            <div class="materialTab flex-center">
                 <ul>
                     <li class="active" data-tab="1">Active Bookings</li>
                     <li data-tab="2">Past Bookings</li>
                 </ul>
             </div>
-            <div class="materialGridCard">
-                <div class="alignSpaceBetween mb-4">
-                    <div>
-                        <h5>Gold Membership</h5>
-                        <p>25hour studio time</p>
+            
+            <div class="materialTabContent animate__animated active" data-tab-content="1">
+                <div class="bookingDiv mb-5">
+                    <div class="flex-between">
+                        <div>
+                            <h5>Premium Membership</h5>
+                            <p>25 hour studio time</p>
+                        </div>
+                        <div>
+                            <h5>$500.00</h5>
+                        </div>
                     </div>
-                    <div>
-                        <h4>$500.00</h4>
+                    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                        <div><p>05:00 PM</p></div>
                     </div>
-                </div>
-                <h6 class="mt-4 mb-2"><strong>March 05</strong></h6>
-                <div class="alignSpaceBetween mb-3">
-                    <div>
-                        <p>10:00 AM</p>
+    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                        <div><p>05:00 PM</p></div>
                     </div>
-                    <div>
-                        <svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"/><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div>
-                        <p>05:00 PM</p>
-                    </div>
-                </div>
-
-                <h6 class="mt-4 mb-2"><strong>March 07</strong></h6>
-                <div class="alignSpaceBetween mb-3">
-                    <div>
-                        <p>10:00 AM</p>
-                    </div>
-                    <div>
-                        <svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"/><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div>
-                        <p>05:00 PM</p>
-                    </div>
-                </div>
-
-                <h6 class="mt-4 mb-2"><strong>March 25</strong></h6>
-                <div class="alignSpaceBetween mb-3">
-                    <div>
-                        <p>10:00 AM</p>
-                    </div>
-                    <div>
-                        <svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"/><circle cx="878.446" cy="96.5986" r="12.643" fill="white"/><circle cx="921.935" cy="96.5986" r="12.643" fill="white"/><circle cx="965.357" cy="96.5986" r="12.643" fill="white"/></svg>
-                    </div>
-                    <div>
-                        <p>05:00 PM</p>
+    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>
+                        <div><p>05:00 PM</p></div>
                     </div>
                 </div>
-            </div>
-            <div class="materialGridCard">
-                <div class="alignSpaceBetween mb-4">
-                    <div>
-                        <h5>Gold Membership</h5>
-                        <p>25hour studio time</p>
+    
+                <div class="bookingDiv mb-5">
+                    <div class="flex-between">
+                        <div>
+                            <h5>Gold Membership</h5>
+                            <p>25 hour studio time</p>
+                        </div>
+                        <div>
+                            <h5>$500.00</h5>
+                        </div>
                     </div>
-                    <div>
-                        <h4>$450.50</h4>
+                    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                        <div><p>05:00 PM</p></div>
                     </div>
-                </div>
-                <h6 class="mt-4 mb-2"><strong>March 05</strong></h6>
-                <div class="alignSpaceBetween mb-3">
-                    <div>
-                        <p>10:00 AM</p>
+    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>
+                        <div><p>05:00 PM</p></div>
                     </div>
-                    <div>
-                        <svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"/><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </div>
-                    <div>
-                        <p>05:00 PM</p>
-                    </div>
-                </div>
-
-                <h6 class="mt-4 mb-2"><strong>March 07</strong></h6>
-                <div class="alignSpaceBetween mb-3">
-                    <div>
-                        <p>10:00 AM</p>
-                    </div>
-                    <div>
-                        <svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"/><circle cx="878.446" cy="96.5986" r="12.643" fill="white"/><circle cx="921.935" cy="96.5986" r="12.643" fill="white"/><circle cx="965.357" cy="96.5986" r="12.643" fill="white"/></svg>
-                    </div>
-                    <div>
-                        <p>05:00 PM</p>
-                    </div>
-                </div>
-
-                <h6 class="mt-4 mb-2"><strong>March 25</strong></h6>
-                <div class="alignSpaceBetween mb-3">
-                    <div>
-                        <p>10:00 AM</p>
-                    </div>
-                    <div>
-                        <svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"/><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"/><circle cx="878.446" cy="96.5986" r="12.643" fill="white"/><circle cx="921.935" cy="96.5986" r="12.643" fill="white"/><circle cx="965.357" cy="96.5986" r="12.643" fill="white"/></svg>
-                    </div>
-                    <div>
-                        <p>05:00 PM</p>
+    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>
+                        <div><p>05:00 PM</p></div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="materialTabContent animate__animated" data-tab-content="2">
+                <div class="bookingDiv mb-5">
+                    <div class="flex-between">
+                        <div>
+                            <h5>Gold Membership</h5>
+                            <p>25 hour studio time</p>
+                        </div>
+                        <div>
+                            <h5>$500.00</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                        <div><p>05:00 PM</p></div>
+                    </div>
+    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                        <div><p>05:00 PM</p></div>
+                    </div>
+    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>
+                        <div><p>05:00 PM</p></div>
+                    </div>
+                </div>
+    
+                <div class="bookingDiv mb-5">
+                    <div class="flex-between">
+                        <div>
+                            <h5>Gold Membership</h5>
+                            <p>25 hour studio time</p>
+                        </div>
+                        <div>
+                            <h5>$500.00</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+                        <div><p>05:00 PM</p></div>
+                    </div>
+    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>
+                        <div><p>05:00 PM</p></div>
+                    </div>
+    
+                    <div class="bookingTime flex-between">
+                        <div>
+                            <p class="bookingDate">March 5</p>
+                            <p>10:00 AM</p>
+                        </div>
+                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>
+                        <div><p>05:00 PM</p></div>
+                    </div>
+                </div>
+            </div>
+           
+
+
+        </div>   
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/jquery.min.js"></script>
     <script src="assets/js/custom-js.js"></script>
     <script>
-        $(document).ready(function() {
-
+        $('.materialNavSection .toggleButton').on('click', function(){
+            $('.materialNavSection.mobile nav.dropdown').toggleClass('active');
         });
+    </script>
+
+    <script>
+        if (sessionStorage.getItem("profileid") !== null) {
+            let profileid = sessionStorage.getItem("profileid");
+            console.log("Session exists.");
+
+            if (sessionStorage.getItem("bookingInput") !== null) {
+                var bookingInputObject = JSON.parse(sessionStorage.getItem("bookingInput"));
+                console.log(bookingInputObject);
+
+                let callAjaxFunc = (formData, callback) => {
+                    $.ajax({
+                        url: "https://kelvinshotzz.com/kelvinfactory/serverProcessing.php",
+                        type: "POST",
+                        dataType: 'json',
+                        data: formData,
+                        success: callback,
+                        error: function(){
+                        }   
+                    });
+                }
+
+                function saveBookingDetailsCallback(response) {
+
+                }
+
+                let formData = {
+                    bookingInput: bookingInputObject,
+                    profileid: profileid,
+                    requestType: 'saveBookingDetails'
+                };
+                callAjaxFunc(formData, saveBookingDetailsCallback)
+            }
+        } else {
+            console.log("Session does not exist.");
+        }
     </script>
 </body>
 </html>
