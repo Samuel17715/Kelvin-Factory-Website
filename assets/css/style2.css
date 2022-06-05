@@ -51,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin: 0;
+    font-size: 0.9rem;
 }
 
 .flex-center {
@@ -235,6 +236,7 @@ and (max-width: 480px) {
 
 .materialTab {
     margin: 5rem 0;
+    margin-bottom: 3rem;
 }
 
 .materialTab ul {
@@ -293,5 +295,14 @@ and (max-width: 480px) {
 }
 
 .bookingDivContainer .bookingDiv .bookingTime svg {
-    width: 100px;
+    width: 200px;
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .bookingDivContainer .bookingDiv .bookingTime svg {
+        width: 105px;
+    }
 }
