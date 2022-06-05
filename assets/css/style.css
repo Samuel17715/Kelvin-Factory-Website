@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'HKGrotesk-Regular';
+      src: url('../fonts/HKGrotesk-Regular.woff2') format('woff2'),; /* Legacy iOS */
+      font-weight: 400;
+      font-style: normal;
+}
 
 :root {
     --primaryColor: #f4d7a1;
@@ -11,8 +15,9 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'HKGrotesk-Regular', sans-serif;
     overflow-x: hidden;
+    background: #f7f5f5;
 }
 
 .container-fluid {
@@ -25,7 +30,7 @@ a {
 
 h1, h2, h3 {
     color: var(--primaryColor5);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'HKGrotesk', sans-serif;
     font-weight: 800;
     font-size: 4.85rem;
     letter-spacing: -0.7px;
@@ -206,7 +211,7 @@ p {
 }
 
 .materialNavSection nav a img {
-    width: 120px;
+    width: 100px;
 }
 
 .materialNavSection nav a:hover {
