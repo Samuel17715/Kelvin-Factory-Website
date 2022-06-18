@@ -252,37 +252,70 @@
     </script>
 
     <script>
-        if (sessionStorage.getItem("profileid") !== null) {
-            let profileid = sessionStorage.getItem("profileid");
-            console.log("Session exists.");
+        let callAjaxFunc = (formData, callback) => {
+            $.ajax({
+                url: "https://kelvinshotzz.com/kelvinfactory/serverProcessing.php",
+                type: "POST",
+                dataType: 'json',
+                data: formData,
+                success: callback,
+                error: function(){
+                }   
+            });
+        }
 
+        function saveBookingDetailsCallback(response) {
+            console.log(response);
+        }
+
+        function fetchUserDetailsCallback(response) {
+            console.log(response);
+        }
+
+        function savePreEnteredBookingDetails(profileid) {
             if (sessionStorage.getItem("bookingInput") !== null) {
                 var bookingInputObject = JSON.parse(sessionStorage.getItem("bookingInput"));
-                console.log(bookingInputObject);
-
-                let callAjaxFunc = (formData, callback) => {
-                    $.ajax({
-                        url: "https://kelvinshotzz.com/kelvinfactory/serverProcessing.php",
-                        type: "POST",
-                        dataType: 'json',
-                        data: formData,
-                        success: callback,
-                        error: function(){
-                        }   
-                    });
-                }
-
-                function saveBookingDetailsCallback(response) {
-
-                }
-
+                
                 let formData = {
                     bookingInput: bookingInputObject,
                     profileid: profileid,
                     requestType: 'saveBookingDetails'
                 };
-                callAjaxFunc(formData, saveBookingDetailsCallback)
+                callAjaxFunc(formData, saveBookingDetailsCallback);
             }
+        }
+
+        function fetchUserDetails(profileid) {
+            let formData = {
+                profileid: profileid,
+                requestType: 'fetchUserDetails'
+            };
+            callAjaxFunc(formData, fetchUserDetailsCallback);
+        }
+
+        function fetchUserStudioMembershipDetails(profileid) {
+            let formData = {
+                profileid: profileid,
+                requestType: 'fetchUserStudioMembership'
+            };
+            callAjaxFunc(formData, fetchUserDetailsCallback);
+        }
+
+
+        if (sessionStorage.getItem("profileid") !== null) {
+            let profileid = sessionStorage.getItem("profileid");
+            console.log("Session exists.");
+
+            // Save Pre Entered Booking Details before logging in
+            savePreEnteredBookingDetails(profileid);
+
+            // Fetch User Details
+            fetchUserDetails(profileid);
+
+            // Fetch Membership Booking Details
+            fetchUserStudioMembershipDetails(profileid);
+
+            
         } else {
             console.log("Session does not exist.");
         }
