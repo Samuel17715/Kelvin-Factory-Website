@@ -303,7 +303,11 @@
             $('.materialInputForm input[type="submit"]').on('click', function(){
                 if(getBookingInputValues()[0]) {
                     sessionStorage.setItem("bookingInput", JSON.stringify(getBookingInputValues()));
-                    window.location.href = "login.html";
+                    if (sessionStorage.getItem("profileid") !== null) {
+                        window.location.href = "profile.html";
+                    } else {
+                        window.location.href = "login.html";
+                    }
                 }
             });
         });
