@@ -103,15 +103,6 @@
                             <p class="bookingDate">March 5</p>
                             <p>10:00 AM</p>
                         </div>
-                        <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-                        <div><p>05:00 PM</p></div>
-                    </div>
-    
-                    <div class="bookingTime flex-between">
-                        <div>
-                            <p class="bookingDate">March 5</p>
-                            <p>10:00 AM</p>
-                        </div>
                         <div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>
                         <div><p>05:00 PM</p></div>
                     </div>
@@ -155,6 +146,8 @@
                         <div><p>05:00 PM</p></div>
                     </div>
                 </div>
+
+                <div class="bookingMembershipDiv"></div>
             </div>
 
             <div class="materialTabContent animate__animated" data-tab-content="2">
@@ -244,6 +237,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/jquery.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
     <script src="assets/js/custom-js.js"></script>
     <script>
         $('.materialNavSection .toggleButton').on('click', function(){
@@ -272,10 +266,66 @@
             console.log(response);
         }
 
+        function fetchUserStudioMembershipCallback(response) {
+            if(response[0]) {
+                
+                function getDateHasOccured(bookingDate, bookingStartTime, bookingEndTime){
+                    let bookingStartTimeValue = bookingDate + ' ' + bookingStartTime;
+                    let bookingEndTimeValue = bookingDate + ' ' + bookingEndTime;
+                    let todayDate = moment().format("YYYY-MM-DD hh:mm A")
+                    console.log(todayDate);
+                    console.log(bookingEndTimeValue);
+
+                    if(moment(todayDate).isBefore(bookingEndTimeValue)) {
+                        console.log(true);
+                        return '<div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>';
+                    } else {
+                        console.log(false);
+                        return '<div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>';
+                    }
+                }
+                
+                $.each(response[1], function(index, value) {
+                    
+                    let bookingMembershipBookingDiv = ``;
+                    $.each(value.bookingDateAndTime, function(index, value) {
+                        bookingMembershipBookingDiv += `
+                            <div class="bookingTime ">
+                                <div class="mb-3"><p class="bookingDate text-center">${moment(value.bookingdate).format('dddd MMMM d')}</p></div>
+                                <div class="flex-between">
+                                    <div>
+                                        <p>${value.bookingstarttime}</p>
+                                    </div>
+                                    ${getDateHasOccured(value.bookingdate, value.bookingstarttime, value.bookingendtime)}
+                                    <div><p>${value.bookingendtime}</p></div>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    let bookingMembershipDiv = `
+                        <div class="bookingDiv mb-5">
+                            <div class="flex-between">
+                                <div>
+                                    <h5>${value.membershiptype}</h5>
+                                    <p>${value.membershiphours} hour studio time</p>
+                                </div>
+                                <div>
+                                    <h5>$${value.membershipprice}</h5>
+                                </div>
+                            </div>
+                            ${bookingMembershipBookingDiv}
+                        </div>
+                    `;
+                    $('.bookingMembershipDiv').append(bookingMembershipDiv);
+                });
+            }
+        }
+
         function savePreEnteredBookingDetails(profileid) {
             if (sessionStorage.getItem("bookingInput") !== null) {
                 var bookingInputObject = JSON.parse(sessionStorage.getItem("bookingInput"));
-                
+
                 let formData = {
                     bookingInput: bookingInputObject,
                     profileid: profileid,
@@ -298,7 +348,7 @@
                 profileid: profileid,
                 requestType: 'fetchUserStudioMembership'
             };
-            callAjaxFunc(formData, fetchUserDetailsCallback);
+            callAjaxFunc(formData, fetchUserStudioMembershipCallback);
         }
 
 
