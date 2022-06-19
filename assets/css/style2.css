@@ -229,6 +229,168 @@ and (max-width: 480px) {
     }
 }
 
+
+
+
+/* Main Body Right Centent */
+.mainBodyRightContainer {
+    display: none; 
+    position: fixed;
+    top: 300px;
+    left: 0;
+    z-index: 12;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur( 12px );
+    -webkit-backdrop-filter: blur( 12px );
+}
+
+.mainBodyRightDivCloseContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 13;
+    width: 100%;
+    height: inherit;
+    overflow-x: hidden;
+}
+
+.mainBodyRightContainer.active {
+    display: block;
+}
+
+.mainBodyRightDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 14;
+    width: calc(100% / 1.8);
+    height: 100vh;
+    padding: 2.2em 2.75rem;
+    background: var(--white);
+    box-shadow: 0 8px 25px rgba(16, 16, 16, 0.25);
+}
+
+.mainBodyRightDivTopBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+
+.mainBodyRightDivTopBar svg {
+    cursor: pointer;
+    fill: var(--darkgrey);
+    margin-right: 0.65rem;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    padding: 0.15rem;
+    opacity: 0.95;
+    transition: 0.45s;
+}
+
+.mainBodyRightDivTopBar svg:hover {
+    opacity: 1;
+}
+
+.multiSelectOptionsDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.multiSelectOptionsDiv > label {
+    flex: 49%;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 13.5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.multiSelectOptionsDiv label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.multiSelectOptionsDiv .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--lightgrey);
+    border-radius: 50%;
+}
+
+.multiSelectOptionsDiv label:hover input ~ .checkmark {
+    background-color: var(--darkgrey);
+}
+
+.multiSelectOptionsDiv label input:checked ~ .checkmark {
+    background-color: var(--white);
+    border: 5px solid #afda00;
+}
+
+.multiSelectOptionsDiv .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.multiSelectOptionsDiv label .checkmark input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.multiSelectOptionsDiv label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .mainBodyRightDiv {
+        width: calc(100% / 1.2);
+        height: 100vh;
+    }
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .mainBodyRightDiv {
+        width: calc(100% / 1.075);
+        height: 100vh;
+        padding: 2rem 0.95rem;
+    }
+    .mainBodyRightDivTopBar svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+
 /************ Hero Section ************/
 
 .heroSection {
@@ -262,6 +424,14 @@ and (max-width: 480px) {
     margin-top: 3rem;
 }
 
+.heroSection .bookingDateTimeContainer {
+    opacity: 0.2;
+}
+
+.heroSection .bookingDateTimeContainer.active {
+    opacity: 1;
+}
+
 .heroSection .materialBookingForm {
     color: var(--primaryColor4);
     width: calc(100% * 0.815);
@@ -283,7 +453,40 @@ and (max-width: 480px) {
 }
 
 .heroSection .totalPriceDiv {
+    display: none;
     text-align: right;
+}
+
+.heroSection .totalPriceDiv.active {
+    display: block;
+}
+
+.heroSection .totalPriceDiv h5 {
+    font-weight: 400;
+    font-size: 1.05rem;
+}
+
+.heroSection .totalPriceDiv h6 {
+    font-weight: 400;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    padding-bottom: 0.65rem;
+}
+
+.heroSection .totalPriceDiv.inactive {
+    display: none;
+}
+
+.heroSection .studioMembershipTime {
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--lightgrey);
+    padding-top: 1rem;
+}
+
+.heroSection .studioMembershipTime span {
+    color: #02ce54;   
 }
 
 .heroSection .materialBookingForm label {
@@ -330,21 +533,26 @@ and (max-width: 480px) {
     stroke-width: 5;
 }
 
-.heroSection .materialBookingForm input[disabled], .heroSection .materialBookingForm select[disabled] {
-    opacity: 0.25;
-}
-
 .heroSection .subButton {
     display: none;
     cursor: pointer;
-    font-size: 0.7rem;
-    margin: 0.85rem 0;
-    padding: 0.4rem 0.65rem;
+    font-size: 0.8rem;
+    margin: 3rem 0;
+    margin-bottom: 0;
+    padding: 0.85rem 0.35rem;
     border-radius: 70px;
-    background: rgba(0,0,0,0.07);
+    background: rgba(0,0,0,0.12);
     text-align: center;
     transition: 0.45s;
-    width: 44%;
+    width: 350px;
+    font-family: 'Gordita Medium', sans-serif;
+}
+
+.subButton svg {
+    stroke: var(--darkgrey);
+    stroke-width: 2.35;
+    width: 12px;
+    margin-right: 1rem;
 }
 
 .heroSection .subButton.active {
