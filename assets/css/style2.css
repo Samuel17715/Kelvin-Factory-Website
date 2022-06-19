@@ -227,12 +227,136 @@ and (max-width: 480px) {
     }
 }
 
+/************ Hero Section ************/
+
+.heroSection {
+    padding: 10rem 12rem;
+    background-color: #F3F7F6;
+}
+
+.heroSection h1 {
+    text-align: center;
+    font-family: 'Gordita Black', sans-serif;
+    letter-spacing: 0.2px;
+    font-size: 3.65rem;
+}
+
+.heroSection p {
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: 'Gordita Bold', sans-serif;
+    color: var(--lightgrey);
+    padding-top: 1.65rem;
+}
+
+.heroSection .materialBookingForm {
+    color: var(--primaryColor4);
+    width: calc(100% * 0.825);
+    padding: 2.15rem 2.75rem;
+    background: #ffffff;
+    border-radius: 17px;
+    margin-top: 3rem;
+}
+
+.heroSection .materialFormHeader {
+    padding: 0.8rem 0;
+    border-bottom: 1.35px solid #dbdbdb;
+}
+
+.heroSection .totalPriceDiv {
+    text-align: right;
+}
+
+.heroSection .materialBookingForm label {
+    color: var(--secondaryTextColor);
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0 0 6px;
+    letter-spacing: -0.2px;
+}
+
+.heroSection .materialBookingForm input, .heroSection .materialBookingForm select {
+    appearance: none;
+    outline: none;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 7px;
+    background: var(--secBGColor);
+}
+
+.heroSection .materialModalButton {
+    cursor: pointer;
+    border: 1px solid #bdbdbd;
+    /* text-align: center; */
+    padding: 0.7rem 1rem;
+    font-size: 0.92rem;
+    border-radius: 3px;
+    transition: 0.45s;
+}
+
+.heroSection .materialModalButton span:first-child {
+    border-radius: 5px;
+    background: var(--darkgrey);
+    padding: 2.75px 5px;
+    margin-right: 0.45rem;
+}
+
+.heroSection .materialModalButton span svg {
+    width: 17px;
+    height: 10px;
+    padding-bottom: 1.65px;
+    stroke: var(--primaryColor);
+    stroke-width: 5;
+}
+
+.heroSection .materialBookingForm input[disabled], .heroSection .materialBookingForm select[disabled] {
+    opacity: 0.25;
+}
+
+.heroSection .subButton {
+    display: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin: 0.85rem 0;
+    padding: 0.4rem 0.65rem;
+    border-radius: 70px;
+    background: rgba(0,0,0,0.07);
+    text-align: center;
+    transition: 0.45s;
+    width: 44%;
+}
+
+.heroSection .subButton.active {
+    display: block;
+}
+
+.heroSection .materialBookingForm input[type="submit"] {
+    color: #ffffff;
+    padding: 1.1rem 1rem;
+    background: var(--darkgrey);
+    border: none;
+    opacity: 0.935;
+    transition: 0.45s;
+    margin-top: 2rem;
+}
+
+.heroSection .materialBookingForm input[type="submit"]:hover {
+    opacity: 1;
+    transform: scale(1.015);
+}
+
+
+
+
+
 .profileBio {
     margin-top: 9rem;
 }
 
 .profileBio h4 {
-    font-family: 'Gordita Medium';
+    font-family: 'Gordita Medium', sans-serif;
 }
 
 .profileBio img {
