@@ -36,6 +36,7 @@
 :root {
     --primaryColor: #f4d7a1;
     --primaryColor2:rgb(214, 154, 42);
+    --secondary: #1B3839;
     --white: #ffffff;
     --lightgrey: #787878;
     --darkgrey: #1d1d1d;
@@ -230,30 +231,41 @@ and (max-width: 480px) {
 /************ Hero Section ************/
 
 .heroSection {
-    padding: 10rem 12rem;
-    background-color: #F3F7F6;
+    margin: 7rem 4rem;
+    padding: 10rem 8rem 5rem 6rem;
+    background-image: url(../img/hero-bg-5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 25px;
 }
 
 .heroSection h1 {
+    color: #dcfd51;
     text-align: center;
     font-family: 'Gordita Black', sans-serif;
     letter-spacing: 0.2px;
-    font-size: 3.65rem;
+    font-size: 3.85rem;
 }
 
 .heroSection p {
     text-align: center;
     font-size: 1.1rem;
-    font-family: 'Gordita Bold', sans-serif;
-    color: var(--lightgrey);
+    font-family: 'Gordita Medium', sans-serif;
+    color: #bababa;
     padding-top: 1.65rem;
+}
+
+.heroSection .materialBookingFormContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
 }
 
 .heroSection .materialBookingForm {
     color: var(--primaryColor4);
-    width: calc(100% * 0.825);
-    padding: 2.15rem 2.75rem;
-    background: #ffffff;
+    width: calc(100% * 0.815);
+    padding: 2.15rem 1.5rem;
+    background: rgb(255, 255, 255);
     border-radius: 17px;
     margin-top: 3rem;
 }
@@ -261,6 +273,12 @@ and (max-width: 480px) {
 .heroSection .materialFormHeader {
     padding: 0.8rem 0;
     border-bottom: 1.35px solid #dbdbdb;
+}
+
+.heroSection .materialFormHeader h4 {
+    font-family: 'Gordita Bold', sans-serif;
+    color: var(--darkgrey);
+    font-size: 1.25rem;
 }
 
 .heroSection .totalPriceDiv {
