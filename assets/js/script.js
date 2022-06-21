@@ -285,156 +285,20 @@ function bookingFormInit() {
     });
 }
 
+// Call Ajax Function
 
-function createAccountInit() {
-    // Customer Login / Signup
-    function enterOTP() {
-        // Multiple Input Function for OTP and Pin
-        $(document).on('keypress', '.materialMultipleInput input', function (e) {  
-            let charCode = (e.which) ? e.which : event.keyCode    
-            if (String.fromCharCode(charCode).match(/[^0-9]/g))    
-                return false;                        
-        }); 
-
-        $(document).on('keyup', '.materialMultipleInput input', function (e) {
-            if($(this).val() !== '') {
-                $(this).next().focus();
-            } else if($(this).val() == '') {
-                $(this).prev().focus();
-            }
-        });
-
-        function collectMultipleInputValues(parentSelector){
-            let inputValue = '';
-            for(let i=1; i<=$('.'+parentSelector+' .materialMultipleInput input[data-id]').length; i++){
-                if($('.'+parentSelector+' .materialMultipleInput input[data-id="'+i+'"]').val() !== ''){
-                    inputValue += $('.'+parentSelector+' .materialMultipleInput input[data-id="'+i+'"]').val();
-                }
-            }
-            $('.'+parentSelector+' .materialMultipleInput input.inputValue').val(inputValue);
-        }
-
-        // OTP
-        $(document).on('change blur keyup', '.materialOTPDiv .materialMultipleInput input', function () {
-            let parentSelector = 'materialOTPDiv';
-            collectMultipleInputValues(parentSelector);
-        }); 
-    }
-    enterOTP();
-
-    let callAjaxFunc = (formData, callback) => {
-        $.ajax({
-            url: "https://kelvinshotzz.com/kelvinfactory/serverProcessing.php",
-            type: "POST",
-            dataType: 'json',
-            data: formData,
-            success: callback,
-            error: function(){
-            }   
-        });
-    }
-
-    function createAccountCallback(response) {
-        switch (response[0]){
-            case 100:
-                otpInnerPage(response[1], response[2], response[3]);
-                break;
-            case 101:
-                inputValidationFunc('emailAddressInput', 'User already exists. Please login <a href="login.html" style="color: #000;"><strong>here</strong></a>', 'open');
-                break;
-            case 104:
-                console.log('Error! Please try again');
-                break;
-            case 105:
-                console.log('Unable to connect to database');
-        }
-        $('.createAccountDiv input[type="submit"]').val('Create Account');
-    }
-
-    function resendOTPCallback(response) {
-        switch (response[0]){
-            case 100:
-                inputValidationFunc('otpMessage', '<span class="success">An OTP Code has been sent again to your email</span>', 'open');
-                break;
-            case 104:
-                console.log('Error! Please try again');
-                break;
-            case 105:
-                console.log('Unable to connect to database');
-        }
-    }
-
-    function submitOTPCallback(response) {
-        switch (response[0]){
-            case 100:
-                sessionStorage.setItem("profileid", response[1]);
-                window.location.href = "profile.html";
-                break;
-            case 101:
-                inputValidationFunc('otpMessage', 'User does not exists', 'open');
-                break;
-            case 102:
-                inputValidationFunc('otpMessage', '<span class="success">New OTP Sent</span>', 'open');
-                break;
-            case 103:
-                inputValidationFunc('otpMessage', 'Incorrect OTP', 'open');
-                break;
-            case 104:
-                console.log('Account already validated');
-                break;
-            case 105:
-                console.log('Error! Please try again');
-                break;
-            case 105:
-                console.log('Unable to connect to database');
-        }
-    }
-
-    // Submit Create Account Function (Check input Validation for all and Submit)
-    $('.createAccountDiv input[type="submit"]').click(function(event) {
-        if( ( emailInputValidationCreateAccount($('.createAccountDiv .emailAddress').val())) &&
-            ( firstNameInputValidationCreateAccount($('.createAccountDiv .firstName').val())) &&
-            ( lastNameInputValidationCreateAccount($('.createAccountDiv .lastName').val())) &&
-            ( passwordInputValidationCreateAccount($('.createAccountDiv .passwordInput').val()))
-        ) {
-            $(this).val('Creating Account...');
-            let formData = {
-                firstName: $('.createAccountDiv .firstName').val(),
-                lastName: $('.createAccountDiv .lastName').val(),
-                email: $('.createAccountDiv .emailAddress').val(),
-                phoneNumber: $('.createAccountDiv .phoneNumber').val(),
-                password: $('.createAccountDiv .passwordInput').val(),
-                requestType: 'addNewUser'
-            }
-            callAjaxFunc(formData, createAccountCallback);
-        } else {
-        }
-    })
-
-    // Submit OTP Code
-    $(document).on('click', '.materialOTPDiv input[type="submit"]', function () {
-        let formData = {
-            email: $('.materialOTPDiv .emailAddress').val(),
-            profileid: $('.materialOTPDiv .profileid').val(),
-            otpCode: $('.materialOTPDiv .otpCode').val(),
-            requestType: 'confirmUser'
-        }
-        callAjaxFunc(formData, submitOTPCallback);
-    });
-
-    // Resend OTP Code
-    $(document).on('click', '.materialOTPDiv .resendOTPButton', function () {
-        let formData = {
-            firstName: $('.materialOTPDiv .firstName').val(),
-            email: $('.materialOTPDiv .emailAddress').val(),
-            profileid: $('.materialOTPDiv .profileid').val(),
-            otpCode: $('.materialOTPDiv .otpCode').val(),
-            requestType: 'resendOTP'
-        }
-        callAjaxFunc(formData, resendOTPCallback);
+let callAjaxFunc = (formData, callback) => {
+    $.ajax({
+        //url: "https://kelvinshotzz.com/kelvinfactory/serverProcessing.php",
+        url: "serverProcessing.php",
+        type: "POST",
+        dataType: 'json',
+        data: formData,
+        success: callback,
+        error: function(){
+        }   
     });
 }
-
 
 $(document).ready(function() {
     $('.materialNavSection .toggleButton').on('click', function(){
