@@ -1,9 +1,15 @@
 <?php
+    // //PDO Database Configuration
+	// $dbhost = 'inspirationmedia059971.ipagemysql.com';	
+	// $dbname = 'kelvinfactorydb';
+	// $dbuser = 'kelvinfactorydb';	 
+	// $dbpass = 'Kelvinfactory15@';
+
     //PDO Database Configuration
-	$dbhost = 'inspirationmedia059971.ipagemysql.com';	
+	$dbhost = 'localhost';	
 	$dbname = 'kelvinfactorydb';
-	$dbuser = 'kelvinfactorydb';	 
-	$dbpass = 'Kelvinfactory15@';
+	$dbuser = 'root';	 
+	$dbpass = '';
 
     // Email Configuration
     $sentFromAddress = 'booking@kelvinfactory.com';

@@ -48,10 +48,8 @@
         $email = $_REQUEST['email'];
         $profileid = $_REQUEST['profileid'];
         $otpCode = $_REQUEST['otpCode'];
-        $otpState = $_REQUEST['otpState'];
+        //$otpState = $_REQUEST['otpState'];
         $confirmUser = $pdo->confirmUser($email, $profileid, $otpCode);
-
-        setcookie("profileid", $confirmUser[1], time() + (86400 * 30), "/"); // 86400 = 1 day
         return print_r(json_encode($confirmUser));
     }
 
@@ -59,8 +57,6 @@
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
         $loginUser = $pdo->loginUser($email, $password);
-
-        setcookie("profileid", $loginUser[1], time() + (86400 * 30), "/"); // 86400 = 1 day
         return print_r(json_encode($loginUser));
     }
 

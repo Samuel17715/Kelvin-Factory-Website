@@ -38,6 +38,7 @@
     --primaryColor2:rgb(214, 154, 42);
     --secondary: #1B3839;
     --white: #ffffff;
+    --light: rgba(255, 255, 255, 0.7);
     --lightgrey: #787878;
     --darkgrey: #1d1d1d;
 }
@@ -158,6 +159,7 @@ p {
 
 .materialNavSection.mobile li:last-child {
     padding-right: 0;
+    cursor: pointer;
 }
 
 .materialNavSection.mobile li svg {
@@ -414,7 +416,7 @@ and (max-width: 480px) {
     text-align: center;
     font-size: 1.1rem;
     font-family: 'Gordita Medium', sans-serif;
-    color: #bababa;
+    color: var(--light);
     padding-top: 1.65rem;
 }
 
@@ -444,6 +446,7 @@ and (max-width: 480px) {
 .heroSection .materialFormHeader {
     padding: 0.8rem 0;
     border-bottom: 1.35px solid #dbdbdb;
+
 }
 
 .heroSection .materialFormHeader h4 {
@@ -454,11 +457,18 @@ and (max-width: 480px) {
 
 .heroSection .totalPriceDiv {
     display: none;
-    text-align: right;
+    margin-top: 1.2rem;
 }
 
 .heroSection .totalPriceDiv.active {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.heroSection .totalPriceDiv.active > div {
+    flex: 49.2%;
+    margin-top: 1rem;
 }
 
 .heroSection .totalPriceDiv h5 {
@@ -482,7 +492,7 @@ and (max-width: 480px) {
     text-align: left;
     font-size: 0.85rem;
     color: var(--lightgrey);
-    padding-top: 1rem;
+    padding-top: 0.45rem;
 }
 
 .heroSection .studioMembershipTime span {
@@ -577,6 +587,72 @@ and (max-width: 480px) {
 .heroSection .materialBookingForm input[type="submit"]:hover {
     opacity: 1;
     transform: scale(1.015);
+}
+
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .heroSection {
+        margin: 7rem 1rem;
+        padding: 7rem 0.45rem;
+    }
+    .heroSection h1 {
+        letter-spacing: 0.1px;
+        font-size: 2.97rem;
+    }
+    .heroSection p {
+        font-size: 0.96rem;
+    }
+    .heroSection .materialBookingFormContainer {
+        margin-top: 1.5rem;
+    }
+    .heroSection .materialBookingForm {
+        width: 100%;
+        padding: 2rem 0.5rem;
+    }
+    .mainBodyRightDivTopBar h4 {
+        font-size: 1.1rem;
+    }
+    .multiSelectOptionsDiv > label {
+        flex: 100%;
+    }
+    .multiSelectOptionsDiv .checkmark {
+        width: 15px;
+        height: 15px;
+    }
+    .heroSection .materialModalButton {
+        font-size: 0.73rem;
+        padding: 0.7rem;
+    }
+    .heroSection .materialModalButton span:first-child {
+        padding: 4.65px;
+    }
+    .heroSection .materialInputForm {
+        margin: 0.5rem 0;
+    }
+    .mainBodyRightContainer {
+        backdrop-filter: blur( 5px );
+        -webkit-backdrop-filter: blur( 5px );
+    }
+    .materialBookingForm .container-fluid {
+        padding: 0 7px;
+    }
+    .heroSection .totalPriceDiv {
+        text-align: left;
+        margin-top: 2rem;
+    }
+    .heroSection .totalPriceDiv.active {
+        flex-wrap: wrap;
+    }
 }
 
 .membershipSection .membershipDiv {
@@ -894,5 +970,9 @@ and (max-width: 480px) {
     border: 0.6px solid rgb(199, 196, 205);
     border-radius: 10px;
     margin-right: 1rem;
+}
+
+.userRegistrationForm .resendOTPButton {
+    cursor: pointer;
 }
 

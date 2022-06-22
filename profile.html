@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Kelvin Factory</title> 
+</head>
+<body>
+
+    <!-- Main Navigation -->
+    <div class="mainNavHTMLContentDiv"></div>
+
+    <section class="flex-center">
+        <div class="profileBio flex-start">
+            <div><img src="assets/img/studio-2.jpg"></div>
+            <div>
+                <h4 data-name=""></h4>
+                <p data-email=""></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="flex-center">
+        <div class="bookingDivContainer">
+            <div class="materialTab flex-center">
+                <ul>
+                    <li class="active" data-tab="1">Active Bookings</li>
+                    <li data-tab="2">Past Bookings</li>
+                </ul>
+            </div>
+            
+            <div class="materialTabContent animate__animated active" data-tab-content="1">
+                <div class="activeBookingMembershipDiv"></div>
+            </div>
+
+            <div class="materialTabContent animate__animated" data-tab-content="2">
+                <div class="pastBookingMembershipDiv"></div>
+            </div>
+        </div>   
+    </section>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        function savePreEnteredBookingCallback(response) {
+            console.log(response);
+            if(response[0] === 100){
+                sessionStorage.removeItem("bookingInput");
+            }
+        }
+
+        function fetchUserDetailsCallback(response) {
+            console.log(response);
+            if(response[0]) {
+                $('.profileBio h4[data-name]').html(response[1][1] + ' ' + response[1][2]);
+                $('.profileBio p[data-email]').html(response[1][3]);
+            }
+        }
+
+        function fetchUserStudioMembershipCallback(response) {
+            console.log(response);
+            if(response[0] === 100) {
+                if (response[1].length !== 0) {
+                    function getDateHasOccured(bookingDate, bookingEndTime){
+                        let bookingEndTimeValue = bookingDate + ' ' + bookingEndTime;
+                        let todayDateMoment = moment().format("X");
+                        let bookingEndTimeValueMoment = moment(bookingEndTimeValue, "YYYY-MM-DD hh:mm:ss A").format("X");
+                        
+                        if(todayDateMoment < bookingEndTimeValueMoment){
+                            return ['<div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#CE9F43"></circle><circle cx="878.446" cy="96.5986" r="12.643" fill="white"></circle><circle cx="921.935" cy="96.5986" r="12.643" fill="white"></circle><circle cx="965.357" cy="96.5986" r="12.643" fill="white"></circle></svg></div>', 0];
+                        } else {
+                            return ['<div><svg width="250" height="30" viewBox="0 0 1915 193" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="95.25" x2="780" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><line x1="1062" y1="95.25" x2="1915" y2="95.25" stroke="black" stroke-width="3.5" stroke-dasharray="70 30"></line><circle cx="920.5" cy="96.5" r="96.5" fill="#1AC034"></circle><path d="M875.279 107.651L900.27 132.641L966.911 66" stroke="white" stroke-width="12.9821" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>', 1];
+                        }
+                    }
+
+                    $.each(response[1], function(index, value) {
+                        let bookingMembershipBookingDiv = ``;
+                        $.each(value.bookingDateAndTime, function(index, value) {
+                            bookingMembershipBookingDiv += `
+                                <div class="bookingTime ">
+                                    <div class="mb-3"><p class="bookingDate text-center">${moment(value.bookingdate).format('dddd MMMM Do YYYY')}</p></div>
+                                    <div class="flex-between">
+                                        <div>
+                                            <p>${value.bookingstarttime}</p>
+                                        </div>
+                                        ${getDateHasOccured(value.bookingdate, value.bookingendtime)[0]}
+                                        <div><p>${value.bookingendtime}</p></div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+
+                        let bookingMembershipDiv = `
+                            <div class="bookingDiv mb-5">
+                                <div class="flex-between">
+                                    <div>
+                                        <h5>${value.membershiptype}</h5>
+                                        <p>${value.membershiphours} hour studio time</p>
+                                    </div>
+                                    <div>
+                                        <h5>$${value.membershipprice}</h5>
+                                    </div>
+                                </div>
+                                ${bookingMembershipBookingDiv}
+                            </div>
+                        `;
+
+                        // Categorize into Active or Past Booking
+                        let lastBookingDate = value.bookingDateAndTime[value.bookingDateAndTime.length - 1].bookingdate;
+                        let lastBookingTime = value.bookingDateAndTime[value.bookingDateAndTime.length - 1].bookingendtime;
+                        
+                        if(!getDateHasOccured(lastBookingDate, lastBookingTime)[1]){ // Active Booking
+                            $('.activeBookingMembershipDiv').append(bookingMembershipDiv);
+                        } else { // Past Booking
+                            $('.pastBookingMembershipDiv').append(bookingMembershipDiv);
+                        }
+                    });
+
+                }
+            }
+        }
+
+        function savePreEnteredBookingDetails(profileid) {
+            if (sessionStorage.getItem("bookingInput") !== null) {
+                var bookingInputObject = JSON.parse(sessionStorage.getItem("bookingInput"));
+
+                let formData = {
+                    bookingInput: bookingInputObject,
+                    profileid: profileid,
+                    requestType: 'saveBookingDetails'
+                };
+                callAjaxFunc(formData, savePreEnteredBookingCallback);
+            }
+        }
+
+        function fetchUserDetails(profileid) {
+            let formData = {
+                profileid: profileid,
+                requestType: 'fetchUserDetails'
+            };
+            callAjaxFunc(formData, fetchUserDetailsCallback);
+        }
+
+        function fetchUserStudioMembershipDetails(profileid) {
+            let formData = {
+                profileid: profileid,
+                requestType: 'fetchUserStudioMembership'
+            };
+            callAjaxFunc(formData, fetchUserStudioMembershipCallback);
+        }
+
+        $(document).ready(function() {
+            // Get Profile Id
+            let profileid = profileSessionIDFunc();
+
+            // Save Pre Entered Booking Details before logging in
+            savePreEnteredBookingDetails(profileid);
+
+            // Fetch User Details
+            fetchUserDetails(profileid);
+
+            // Fetch Membership Booking Details
+            fetchUserStudioMembershipDetails(profileid);
+
+            // MaterialTab
+            $('.materialTab li[data-tab]').on('click', function(){
+                $('.materialTab li[data-tab]').removeClass('active');
+                $(this).addClass('active');
+                $('.materialTabContent[data-tab-content').removeClass('active');
+                $('.materialTabContent[data-tab-content='+ $(this).data('tab') +']').addClass('active');
+                $('.materialTabContent[data-tab-content='+ $(this).data('tab') +']').addClass('animate__fadeInUp');
+            });
+        });
+        
+    </script>
+</body>
+</html>

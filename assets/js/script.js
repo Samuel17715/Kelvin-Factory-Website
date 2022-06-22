@@ -1,3 +1,29 @@
+/************* Get File Directory ************/
+function getFileName() {
+    let url = window.location.pathname;
+    let filename = url.substring(url.lastIndexOf('/')+1);
+    return filename;
+}
+
+/************* Profile Session ID ***********/
+function profileSessionIDFunc() {
+    let sessionProfileId = "";
+
+    if((sessionStorage.getItem("profileid") !== null) && (typeof sessionStorage.getItem("profileid") !== undefined)) {
+        sessionProfileId = sessionStorage.getItem("profileid");
+    }
+
+    if(getFileName() === "profile.html") {
+        if(sessionProfileId === ""){
+            window.location.href = "login.html";
+        }
+    }
+    return sessionProfileId;
+}
+
+
+
+/************ Booking Form  ***************/
 function bookingFormInit() {
     // Open Right Bar
     function openRightBar() {
@@ -276,21 +302,91 @@ function bookingFormInit() {
     $('.materialInputForm input[type="submit"]').on('click', function(){
         if(getBookingInputValues()[0]) {
             sessionStorage.setItem("bookingInput", JSON.stringify(getBookingInputValues()));
-            if (sessionStorage.getItem("profileid") !== null) {
-                window.location.href = "profile.html";
-            } else {
-                window.location.href = "login.html";
-            }
+            window.location.href = "profile.html";
         }
     });
 }
 
-// Call Ajax Function
 
-let callAjaxFunc = (formData, callback) => {
+
+/************ Append Main Navigation ***************/
+function addMainNav() {
+    let btnURL = 'login.html';
+    let btnText = 'Log in';
+
+    if(profileSessionIDFunc() !== "") {
+        btnURL = "logout.php";                       
+        btnText = "Log Out";     
+    } else {
+        if(getFileName() === 'login.html'){
+            btnURL = "create-account.html";                       
+            btnText = "Sign up";                       
+        }
+    }
+
+    let mainNavHTMLContent = `
+        <section class="materialNavSection">
+            <nav class="flex-between">
+                <div>
+                    <a href="index.html">
+                        <img src="assets/img/kelvinshotz-logo.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <ul>
+                        <li><a class="active" href="#">Home</a></li>
+                        <li><a class="" href="#">About</a></li>
+                        <li><a class="" href="#">Book Shoots</a></li>
+                        <li><a class="" href="#">Contact</a></li>
+                    </ul>    
+                </div>
+                <div>
+                    <ul>
+                        <li><a class="materialButton" href="${btnURL}">${btnText}</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+        <section class="materialNavSection mobile">
+            <nav class="flex-between">
+                <div>
+                    <a href="index.php">
+                        <img src="assets/img/kelvinshotz-logo.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <ul>
+                    <li><a class="materialButton" href="${btnURL}">${btnText}</a></li>
+                        <li class="toggleButton">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 21H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 3H22.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <nav class="dropdown">
+                <div>
+                    <ul class="flex-column">
+                        <li><a class="active" href="#">Home</a></li>
+                        <li><a class="" href="#">About</a></li>
+                        <li><a class="" href="#">Book Shoots</a></li>
+                        <li><a class="" href="#">Contact</a></li>
+                    </ul>    
+                </div>
+            </nav>
+        </section>
+    `;
+
+    $('.mainNavHTMLContentDiv').html(mainNavHTMLContent);
+}
+
+/*********** Submit Data to Server ********/
+const callAjaxFunc = (formData, callback) => {
     $.ajax({
         //url: "https://kelvinshotzz.com/kelvinfactory/serverProcessing.php",
-        url: "serverProcessing.php",
+        //url: "serverProcessing.php",
+        url: "http://localhost/Kelvin-Factory-Website/serverProcessing.php",
         type: "POST",
         dataType: 'json',
         data: formData,
@@ -300,8 +396,16 @@ let callAjaxFunc = (formData, callback) => {
     });
 }
 
+
 $(document).ready(function() {
-    $('.materialNavSection .toggleButton').on('click', function(){
+    // Session ID
+    profileSessionIDFunc();
+
+    // Add Main Nav
+    addMainNav();
+
+    // Toggle Mobile Navigation 
+    $(document).on('click', '.materialNavSection .toggleButton', function(){
         $('.materialNavSection.mobile nav.dropdown').toggleClass('active');
     });
 });
