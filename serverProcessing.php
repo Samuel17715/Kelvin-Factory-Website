@@ -4,7 +4,6 @@
     require_once ('emailSystem/emailProcessing.php');
 
     $requestType = $_REQUEST['requestType'];
-
     
     // User Registration
     if($requestType === 'addNewUser') {
@@ -107,8 +106,8 @@
                 $saveBookingDateAndTimeDetails = $pdo->bookingDateAndTimeDetails($profileid, $studioMembershipId, $value[0], $value[1], $value[2]);
             }
 
-            $fetchUserDetailsEmail = $pdo->fetchUserDetails($profileid=null);
-            if(sendBookingDetails($fetchUserDetailsEmail[3], $fetchUserDetailsEmail[1])){
+            $fetchUserDetailsEmail = $pdo->fetchUserDetails($profileid);
+            if(sendBookingDetails($fetchUserDetailsEmail[1][3], $fetchUserDetailsEmail[1][1])){
                 return print_r(json_encode([100]));
             }        
         }
@@ -117,11 +116,11 @@
             return print_r(json_encode($e->getMessage()));
         }
     }
-
+   
     // Get User Details
     if($requestType === 'fetchUserDetails') {
         $profileid = $_REQUEST['profileid'];
-        $fetchUserDetails = $pdo->fetchUserDetails($profileid=null);
+        $fetchUserDetails = $pdo->fetchUserDetails($profileid);
         return print_r(json_encode($fetchUserDetails));
     }
 
