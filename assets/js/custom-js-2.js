@@ -254,9 +254,3 @@ $('.materialTab li[data-tab]').on('click', function(){
     $('.materialTabContent[data-tab-content='+ $(this).data('tab') +']').addClass('active');
     $('.materialTabContent[data-tab-content='+ $(this).data('tab') +']').addClass('animate__fadeInUp');
 });
-
-
-
-
-
-
