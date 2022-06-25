@@ -4,7 +4,7 @@ $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 
 $fullURL = $protocol.'://'.$_SERVER['HTTP_HOST'];
 
 // Image Path
-$emailTemplateLogoDir = $fullURL.'/kelvinfactory/emailSystem/logo/kelvinfactory-logo.png';
+$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/images/';
 
 $bookingDetailsBody = "
 <!DOCTYPE html>
@@ -113,7 +113,7 @@ $bookingDetailsBody = "
 <table border='0' cellpadding='0' cellspacing='0' class='image_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
 <td style='width:100%;padding-right:0px;padding-left:0px;padding-top:60px;'>
-<div align='center' style='line-height:10px'><img src='images/kelvinfactory-logo_1.png' style='display: block; height: auto; border: 0; width: 136px; max-width: 100%;' width='136'/></div>
+<div align='center' style='line-height:10px'><img src='".$emailTemplateImageDir."kelvinfactory-logo.png' style='display: block; height: auto; border: 0; width: 136px; max-width: 100%;' width='136'/></div>
 </td>
 </tr>
 </table>
@@ -145,7 +145,7 @@ $bookingDetailsBody = "
 <table border='0' cellpadding='0' cellspacing='0' class='image_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
 <td style='width:100%;padding-right:0px;padding-left:0px;'>
-<div align='center' style='line-height:10px'><img alt='Alternate text' class='big' src='images/top.png' style='display: block; height: auto; border: 0; width: 680px; max-width: 100%;' title='Alternate text' width='680'/></div>
+<div align='center' style='line-height:10px'><img alt='Alternate text' class='big' src='".$emailTemplateImageDir."top.png' style='display: block; height: auto; border: 0; width: 680px; max-width: 100%;' title='Alternate text' width='680'/></div>
 </td>
 </tr>
 </table>
@@ -415,7 +415,7 @@ $bookingDetailsBody = "
 <table border='0' cellpadding='0' cellspacing='0' class='image_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
 <td style='width:100%;padding-right:0px;padding-left:0px;padding-bottom:20px;'>
-<div align='center' style='line-height:10px'><img alt='Alternate text' class='big' src='images/bottom.png' style='display: block; height: auto; border: 0; width: 680px; max-width: 100%;' title='Alternate text' width='680'/></div>
+<div align='center' style='line-height:10px'><img alt='Alternate text' class='big' src='".$emailTemplateImageDir."bottom.png' style='display: block; height: auto; border: 0; width: 680px; max-width: 100%;' title='Alternate text' width='680'/></div>
 </td>
 </tr>
 </table>
@@ -540,11 +540,11 @@ $bookingDetailsBody = "
 <td style='padding-bottom:25px;padding-left:10px;padding-right:10px;padding-top:60px;text-align:center;'>
 <table align='center' border='0' cellpadding='0' cellspacing='0' class='social-table' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='230px'>
 <tr>
-<td style='padding:0 7px 0 7px;'><a href='https://kelvinfactory.com' target='_blank'><img alt='Web Site' height='32' src='images/website2x.png' style='display: block; height: auto; border: 0;' title='Web Site' width='32'/></a></td>
-<td style='padding:0 7px 0 7px;'><a href='https://www.instagram.com/kelvinfactory/' target='_blank'><img alt='Instagram' height='32' src='images/instagram2x.png' style='display: block; height: auto; border: 0;' title='Instagram' width='32'/></a></td>
-<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='Twitter' height='32' src='images/twitter2x.png' style='display: block; height: auto; border: 0;' title='Twitter' width='32'/></a></td>
-<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='Facebook' height='32' src='images/facebook2x.png' style='display: block; height: auto; border: 0;' title='Facebook' width='32'/></a></td>
-<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='YouTube' height='32' src='images/youtube2x.png' style='display: block; height: auto; border: 0;' title='YouTube' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='https://kelvinfactory.com' target='_blank'><img alt='Web Site' height='32' src='".$emailTemplateImageDir."website2x.png' style='display: block; height: auto; border: 0;' title='Web Site' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='https://www.instagram.com/kelvinfactory/' target='_blank'><img alt='Instagram' height='32' src='".$emailTemplateImageDir."instagram2x.png' style='display: block; height: auto; border: 0;' title='Instagram' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='Twitter' height='32' src='".$emailTemplateImageDir."twitter2x.png' style='display: block; height: auto; border: 0;' title='Twitter' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='Facebook' height='32' src='".$emailTemplateImageDir."facebook2x.png' style='display: block; height: auto; border: 0;' title='Facebook' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='YouTube' height='32' src='".$emailTemplateImageDir."images/youtube2x.png' style='display: block; height: auto; border: 0;' title='YouTube' width='32'/></a></td>
 </tr>
 </table>
 </td>

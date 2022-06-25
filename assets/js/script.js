@@ -1,3 +1,9 @@
+/****************** Sign Out **************/
+function signOut() {
+    sessionStorage.removeItem("profileid");
+    window.location.href = "login.html";
+}
+
 /************* Get File Directory ************/
 function getFileName() {
     let url = window.location.pathname;
@@ -311,17 +317,12 @@ function bookingFormInit() {
 
 /************ Append Main Navigation ***************/
 function addMainNav() {
-    let btnURL = 'login.html';
-    let btnText = 'Log in';
+    let btnHTML = '';
 
     if(profileSessionIDFunc() !== "") {
-        btnURL = "logout.php";                       
-        btnText = "Log Out";     
+        btnHTML = '<li><a class="materialButton" href="javascript: void(0)" onClick="signOut()">Sign Out</a></li>';  
     } else {
-        if(getFileName() === 'login.html'){
-            btnURL = "create-account.html";                       
-            btnText = "Sign up";                       
-        }
+        btnHTML = '<li><a class="materialButton" href="login.html">Log In</a></li>';  
     }
 
     let mainNavHTMLContent = `
@@ -342,7 +343,7 @@ function addMainNav() {
                 </div>
                 <div>
                     <ul>
-                        <li><a class="materialButton" href="${btnURL}">${btnText}</a></li>
+                        ${btnHTML}
                     </ul>
                 </div>
             </nav>
@@ -357,7 +358,7 @@ function addMainNav() {
                 </div>
                 <div>
                     <ul>
-                    <li><a class="materialButton" href="${btnURL}">${btnText}</a></li>
+                    ${btnHTML}
                         <li class="toggleButton">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 21H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 3H22.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </li>
@@ -380,6 +381,7 @@ function addMainNav() {
 
     $('.mainNavHTMLContentDiv').html(mainNavHTMLContent);
 }
+
 
 /*********** Submit Data to Server ********/
 const callAjaxFunc = (formData, callback) => {
