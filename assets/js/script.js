@@ -329,14 +329,14 @@ function addMainNav() {
             <nav class="flex-between">
                 <div>
                     <a href="index.html">
-                        <img src="assets/img/kelvinshotz-logo.png" alt="">
+                        <img src="assets/img/kelvinfactory-logo.png" alt="">
                     </a>
                 </div>
                 <div>
                     <ul>
-                        <li><a class="active" href="#">Home</a></li>
+                        <li><a class="active" href="profile.html">Profile</a></li>
                         <li><a class="" href="#">About</a></li>
-                        <li><a class="" href="#">Book Shoots</a></li>
+                        <li><a target="_blank" class="" href="https://kelvinshotzz.com">Book Shoots</a></li>
                         <li><a class="" href="#">Contact</a></li>
                     </ul>    
                 </div>
@@ -351,8 +351,8 @@ function addMainNav() {
         <section class="materialNavSection mobile">
             <nav class="flex-between">
                 <div>
-                    <a href="index.php">
-                        <img src="assets/img/kelvinshotz-logo.png" alt="">
+                    <a href="index.html">
+                        <img src="assets/img/kelvinfactory-logo.png" alt="">
                     </a>
                 </div>
                 <div>
@@ -370,7 +370,7 @@ function addMainNav() {
                     <ul class="flex-column">
                         <li><a class="active" href="#">Home</a></li>
                         <li><a class="" href="#">About</a></li>
-                        <li><a class="" href="#">Book Shoots</a></li>
+                        <li><a target="_blank" class="" href="https://kelvinshotzz.com">Book Shoots</a></li>
                         <li><a class="" href="#">Contact</a></li>
                     </ul>    
                 </div>

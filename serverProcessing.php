@@ -90,8 +90,8 @@
     // Save Studio Membership
     if($requestType === 'saveBookingDetails') {
         try {
-            $studioMembershipId = rand(100000000,999999999);
             $profileid = $_REQUEST['profileid'];
+            $studioMembershipId = rand(100000000,999999999);
             $studioMembershipType = $_REQUEST['bookingInput'][1]['studioMembershipValue'];
             $studioMembershipHours = $_REQUEST['bookingInput'][1]['studioMembershipHours'];
             $studioMembershipPrice = $_REQUEST['bookingInput'][1]['studioMembershipPrice'];
@@ -105,8 +105,12 @@
             $bookingDateAndTime = $_REQUEST['bookingInput'][1]['bookingDateAndTime'];
             foreach ($bookingDateAndTime as $value)  {
                 $saveBookingDateAndTimeDetails = $pdo->bookingDateAndTimeDetails($profileid, $studioMembershipId, $value[0], $value[1], $value[2]);
-            } 
-            return print_r(json_encode([100]));            
+            }
+
+            $fetchUserDetailsEmail = $pdo->fetchUserDetails($profileid=null);
+            if(sendBookingDetails($fetchUserDetailsEmail[3], $fetchUserDetailsEmail[1])){
+                return print_r(json_encode([100]));
+            }        
         }
         catch (exception $e) {
             //code to handle the exception
@@ -117,7 +121,7 @@
     // Get User Details
     if($requestType === 'fetchUserDetails') {
         $profileid = $_REQUEST['profileid'];
-        $fetchUserDetails = $pdo->fetchUserDetails($profileid);
+        $fetchUserDetails = $pdo->fetchUserDetails($profileid=null);
         return print_r(json_encode($fetchUserDetails));
     }
 
