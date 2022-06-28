@@ -116,6 +116,7 @@
                 'studioMembershipType' => $studioMembershipType,
                 'studioMembershipHours' => $studioMembershipHours,
                 'studioMembershipPrice' => $studioMembershipPrice,
+                'bookingDateAndTime' => $bookingDateAndTime
             ];
             if(sendBookingDetails($bookingEmailArray)){
                 return print_r(json_encode([100]));

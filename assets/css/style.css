@@ -396,28 +396,47 @@ and (max-width: 480px) {
 /************ Hero Section ************/
 
 .heroSection {
-    margin: 7rem 4rem;
-    padding: 10rem 8rem 5rem 6rem;
-    background-image: url(../img/hero-bg-7.jpg);
+    margin: 7rem 0;
+    padding: 6rem;
+    background: #090909;
+    /* background-image: url(../img/hero-bg-7.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 25px;
+    background-repeat: no-repeat; */
 }
 
-.heroSection h1 {
-    color: #dcfd51;
-    text-align: center;
-    font-family: 'Gordita Black', sans-serif;
-    letter-spacing: 0.2px;
+.heroSection .heroDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroSection .heroDiv > div:first-child {
+    flex: 60%;
+}
+
+.heroSection .heroDiv > div:last-child {
+    flex: 40%;
+}
+
+.heroSection .heroDiv h1 {
+    color: var(--white);
+    /* text-align: center; */
+    font-family: 'Gordita Medium', sans-serif;
+    letter-spacing: -1.5px;
     font-size: 3.85rem;
 }
 
-.heroSection p {
-    text-align: center;
+.heroSection .heroDiv p {
+    /* text-align: center; */
     font-size: 1.1rem;
     font-family: 'Gordita Medium', sans-serif;
     color: var(--light);
     padding-top: 1.65rem;
+}
+
+.heroSection .heroDiv img {
+    width: 100%;
+    border-radius: 12px;
 }
 
 .heroSection .materialBookingFormContainer {

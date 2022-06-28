@@ -21,8 +21,8 @@
     function sendBookingDetails($bookingEmailArray=null) {
         require_once('booking-details-template/index.php');
         $recipientEmailAddress = array(
-            array($bookingEmailArray['email'], $bookingEmailArray['fullName']),
-            array('kelvinshotz14@gmail.com', 'Kelvin Shotz')
+            array($bookingEmailArray['email'], $bookingEmailArray['fullName'])
+            //array('kelvinshotz14@gmail.com', 'Kelvin Shotz')
         );
         return phpEmailMailerFunc($recipientEmailAddress, 'Premium Membership - Kelvin Factory', $bookingDetailsBody);
     }
