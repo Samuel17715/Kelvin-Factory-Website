@@ -4,12 +4,12 @@ $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 
 $fullURL = $protocol.'://'.$_SERVER['HTTP_HOST'];
 
 // Image Path
-$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/images/';
+//$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/booking-details-template/images/kelvinfactory-logo.png';
+$emailTemplateImageDir = 'https://kelvin-factory.netlify.app/emailSystem/booking-details-template/images/';
 
 $bookingDetailsBody = "
 <!DOCTYPE html>
- 
-<html lang='en' xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:v='urn:schemas-microsoft-com:vml'>
+ <html lang='en' xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:v='urn:schemas-microsoft-com:vml'>
 <head>
 <title></title>
 <meta content='text/html; charset=utf-8' http-equiv='Content-Type'/>
@@ -113,7 +113,7 @@ $bookingDetailsBody = "
 <table border='0' cellpadding='0' cellspacing='0' class='image_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
 <td style='width:100%;padding-right:0px;padding-left:0px;padding-top:60px;'>
-<div align='center' style='line-height:10px'><img src='".$emailTemplateImageDir."kelvinfactory-logo.png' style='display: block; height: auto; border: 0; width: 136px; max-width: 100%;' width='136'/></div>
+<div align='center' style='line-height:10px'><img src='" . $emailTemplateImageDir . "kelvinfactory-logo.png' style='display: block; height: auto; border: 0; width: 136px; max-width: 100%;' width='136'/></div>
 </td>
 </tr>
 </table>
@@ -122,8 +122,8 @@ $bookingDetailsBody = "
 <td style='padding-bottom:5px;padding-left:20px;padding-right:20px;padding-top:20px;'>
 <div style='font-family: sans-serif'>
 <div class='txtTinyMce-wrapper' style='font-size: 12px; font-family: Oswald, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #000000; line-height: 1.2;'>
-<p style='margin: 0; font-size: 14px; text-align: center;'><span style='font-size:18px;'><strong>Premium Studio Membership</strong></span></p>
-<p style='margin: 0; font-size: 14px; text-align: center;'><span style='font-size:16px;'><strong>40 hour studio time. Price $600</strong></span></p>
+<p style='margin: 0; font-size: 14px; text-align: center;'><span style='font-size:18px;'><strong>" . $bookingEmailArray['studioMembershipType'] . "</strong></span></p>
+<p style='margin: 0; font-size: 14px; text-align: center;'><span style='font-size:16px;'><strong>" . $bookingEmailArray['studioMembershipHours'] . " hour studio time. Price $" . $bookingEmailArray['studioMembershipPrice'] . "</strong></span></p>
 </div>
 </div>
 </td>
@@ -134,9 +134,9 @@ $bookingDetailsBody = "
 <td style='padding-bottom:35px;padding-left:25px;padding-right:25px;padding-top:20px;'>
 <div style='font-family: Tahoma, Verdana, sans-serif'>
 <div class='txtTinyMce-wrapper' style='font-size: 12px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 18px; color: #555555; line-height: 1.5;'>
-<p style='margin: 0; font-size: 13px; text-align: center; mso-line-height-alt: 19.5px;'><span style='font-size:13px;'><span style=''>Dear Samuel Owolabi,  </span><span style=''>your subscription to <strong>Premium Studio Membership</strong> is successful. 😊</span></span></p>
-<p style='margin: 0; font-size: 13px; text-align: center; mso-line-height-alt: 18px;'> </p>
-<p style='margin: 0; font-size: 13px; text-align: center; mso-line-height-alt: 19.5px;'><span style='font-size:13px;'>Your booking date starts on 24th May, 2022 and ends 30th June, 2022. </span></p>
+<p style='margin: 0; font-size: 13px; text-align: center; mso-line-height-alt: 19.5px;'><span style='font-size:13px;'><span style=''>Dear " . $bookingEmailArray['fullName'] . ", </span><span style=''>your subscription to <strong>" . $bookingEmailArray['studioMembershipType'] . "</strong> is successful.</span></span></p>
+<p style='margin: 0; font-size: 13px; text-align: center; mso-line-height-alt: 18px;'></p>
+<p style='margin: 0; font-size: 13px; text-align: center; mso-line-height-alt: 19.5px;'><span style='font-size:13px;'>Your booking date starts on 24th May, 2022 and ends 30th June, 2022.</span></p>
 </div>
 </div>
 </td>
@@ -145,7 +145,7 @@ $bookingDetailsBody = "
 <table border='0' cellpadding='0' cellspacing='0' class='image_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
 <td style='width:100%;padding-right:0px;padding-left:0px;'>
-<div align='center' style='line-height:10px'><img alt='Alternate text' class='big' src='".$emailTemplateImageDir."top.png' style='display: block; height: auto; border: 0; width: 680px; max-width: 100%;' title='Alternate text' width='680'/></div>
+<div align='center' style='line-height:10px'><img alt='Alternate text' class='big' src='" . $emailTemplateImageDir . "top.png' style='display: block; height: auto; border: 0; width: 680px; max-width: 100%;' title='Alternate text' width='680'/></div>
 </td>
 </tr>
 </table>
@@ -198,7 +198,7 @@ $bookingDetailsBody = "
 <div align='center'>
 <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
-<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #DFDFDF;'><span> </span></td>
+<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #DFDFDF;'><span></span></td>
 </tr>
 </table>
 </div>
@@ -212,7 +212,7 @@ $bookingDetailsBody = "
 <div class='txtTinyMce-wrapper' style='font-size: 12px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 18px; color: #3a4848; line-height: 1.5;'>
 <p style='margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 24px;'><span style='font-size:16px;color:#000000;'>Wednesday June 22nd 2022</span></p>
 <p style='margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;'><span style='font-size:14px;'>7:00 AM to 10:00AM</span></p>
-<p style='margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 18px;'> </p>
+<p style='margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 18px;'></p>
 </div>
 </div>
 </td>
@@ -240,7 +240,7 @@ $bookingDetailsBody = "
 <div align='center'>
 <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
-<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #DFDFDF;'><span> </span></td>
+<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #DFDFDF;'><span></span></td>
 </tr>
 </table>
 </div>
@@ -270,7 +270,7 @@ $bookingDetailsBody = "
 <div class='txtTinyMce-wrapper' style='font-size: 12px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 18px; color: #3a4848; line-height: 1.5;'>
 <p style='margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 24px;'><span style='font-size:16px;color:#000000;'>Thursday June 23nd 2022</span></p>
 <p style='margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 21px;'><span style='font-size:14px;'>7:00 AM to 10:00AM</span></p>
-<p style='margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 18px;'> </p>
+<p style='margin: 0; font-size: 14px; text-align: left; mso-line-height-alt: 18px;'></p>
 </div>
 </div>
 </td>
@@ -282,7 +282,7 @@ $bookingDetailsBody = "
 <div align='center'>
 <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
-<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #DFDFDF;'><span> </span></td>
+<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #DFDFDF;'><span></span></td>
 </tr>
 </table>
 </div>
@@ -329,7 +329,7 @@ $bookingDetailsBody = "
 <tr>
 <td style='padding-top:5px;padding-right:10px;padding-bottom:5px;padding-left:10px;'>
 <div style='color:#000000;font-size:14px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:16.8px;'>
-<p style='margin: 0;'>Samuel Owolabi</p>
+<p style='margin: 0;'>" . $bookingEmailArray['fullName'] . "</p>
 </div>
 </td>
 </tr>
@@ -340,7 +340,7 @@ $bookingDetailsBody = "
 <div align='center'>
 <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
-<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #BBBBBB;'><span> </span></td>
+<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #BBBBBB;'><span></span></td>
 </tr>
 </table>
 </div>
@@ -360,7 +360,7 @@ $bookingDetailsBody = "
 <tr>
 <td style='padding-top:5px;padding-right:10px;padding-bottom:5px;padding-left:10px;'>
 <div style='color:#000000;font-size:14px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:16.8px;'>
-<p style='margin: 0;'>owolabisamuel15@gmail.com</p>
+<p style='margin: 0;'>" . $bookingEmailArray['email'] . "</p>
 </div>
 </td>
 </tr>
@@ -371,7 +371,7 @@ $bookingDetailsBody = "
 <div align='center'>
 <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
-<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #BBBBBB;'><span> </span></td>
+<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #BBBBBB;'><span></span></td>
 </tr>
 </table>
 </div>
@@ -391,7 +391,7 @@ $bookingDetailsBody = "
 <tr>
 <td style='padding-top:5px;padding-right:10px;padding-bottom:30px;padding-left:10px;'>
 <div style='color:#000000;font-size:14px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:16.8px;'>
-<p style='margin: 0;'>2348039497203</p>
+<p style='margin: 0;'>" . $bookingEmailArray['phoneNumber'] . "</p>
 </div>
 </td>
 </tr>
@@ -415,7 +415,7 @@ $bookingDetailsBody = "
 <table border='0' cellpadding='0' cellspacing='0' class='image_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
 <td style='width:100%;padding-right:0px;padding-left:0px;padding-bottom:20px;'>
-<div align='center' style='line-height:10px'><img alt='Alternate text' class='big' src='".$emailTemplateImageDir."bottom.png' style='display: block; height: auto; border: 0; width: 680px; max-width: 100%;' title='Alternate text' width='680'/></div>
+<div align='center' style='line-height:10px'><img alt='Alternate text' class='big' src='" . $emailTemplateImageDir . "bottom.png' style='display: block; height: auto; border: 0; width: 680px; max-width: 100%;' title='Alternate text' width='680'/></div>
 </td>
 </tr>
 </table>
@@ -484,7 +484,7 @@ $bookingDetailsBody = "
 <tbody>
 <tr>
 <td class='column column-1' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;' width='100%'>
-<div class='spacer_block' style='height:50px;line-height:50px;font-size:1px;'> </div>
+<div class='spacer_block' style='height:50px;line-height:50px;font-size:1px;'></div>
 </td>
 </tr>
 </tbody>
@@ -540,11 +540,11 @@ $bookingDetailsBody = "
 <td style='padding-bottom:25px;padding-left:10px;padding-right:10px;padding-top:60px;text-align:center;'>
 <table align='center' border='0' cellpadding='0' cellspacing='0' class='social-table' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='230px'>
 <tr>
-<td style='padding:0 7px 0 7px;'><a href='https://kelvinfactory.com' target='_blank'><img alt='Web Site' height='32' src='".$emailTemplateImageDir."website2x.png' style='display: block; height: auto; border: 0;' title='Web Site' width='32'/></a></td>
-<td style='padding:0 7px 0 7px;'><a href='https://www.instagram.com/kelvinfactory/' target='_blank'><img alt='Instagram' height='32' src='".$emailTemplateImageDir."instagram2x.png' style='display: block; height: auto; border: 0;' title='Instagram' width='32'/></a></td>
-<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='Twitter' height='32' src='".$emailTemplateImageDir."twitter2x.png' style='display: block; height: auto; border: 0;' title='Twitter' width='32'/></a></td>
-<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='Facebook' height='32' src='".$emailTemplateImageDir."facebook2x.png' style='display: block; height: auto; border: 0;' title='Facebook' width='32'/></a></td>
-<td style='padding:0 7px 0 7px;'><a href='http://www.example.com/' target='_blank'><img alt='YouTube' height='32' src='".$emailTemplateImageDir."images/youtube2x.png' style='display: block; height: auto; border: 0;' title='YouTube' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='https://kelvinfactory.com' target='_blank'><img alt='Web Site' height='32' src='" . $emailTemplateImageDir . "website2x.png' style='display: block; height: auto; border: 0;' title='Web Site' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='https://www.instagram.com/kelvinfactory/' target='_blank'><img alt='Instagram' height='32' src='" . $emailTemplateImageDir . "instagram2x.png' style='display: block; height: auto; border: 0;' title='Instagram' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='#' target='_blank'><img alt='Twitter' height='32' src='" . $emailTemplateImageDir . "twitter2x.png' style='display: block; height: auto; border: 0;' title='Twitter' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='#' target='_blank'><img alt='Facebook' height='32' src='" . $emailTemplateImageDir . "facebook2x.png' style='display: block; height: auto; border: 0;' title='Facebook' width='32'/></a></td>
+<td style='padding:0 7px 0 7px;'><a href='#' target='_blank'><img alt='YouTube' height='32' src='" . $emailTemplateImageDir . "youtube2x.png' style='display: block; height: auto; border: 0;' title='YouTube' width='32'/></a></td>
 </tr>
 </table>
 </td>
@@ -589,7 +589,7 @@ $bookingDetailsBody = "
 <div align='center'>
 <table border='0' cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 <tr>
-<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #E0E0E0;'><span> </span></td>
+<td class='divider_inner' style='font-size: 1px; line-height: 1px; border-top: 1px solid #E0E0E0;'><span></span></td>
 </tr>
 </table>
 </div>
@@ -601,7 +601,7 @@ $bookingDetailsBody = "
 <td>
 <div style='font-family: Tahoma, Verdana, sans-serif'>
 <div class='txtTinyMce-wrapper' style='font-size: 12px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 18px; color: #a6a4a2; line-height: 1.5;'>
-<p style='margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 18px;'><span style='font-size:12px;'>This message was sent to <a href='mailto:email@example.com' style='text-decoration: none; color: #a6a4a2;' title='email@example.com'>email@example.com</a></span><span style='font-size:12px;'><u><a href='http://www.example.com/' rel='noopener' style='text-decoration: none; color: #a6a4a2;' target='_blank'></a></u></span></p>
+<p style='margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 18px;'><span style='font-size:12px;'>This message was sent to <a href='mailto:" . $bookingEmailArray['email'] . "' style='text-decoration: none; color: #a6a4a2;' title='email@example.com'>" . $bookingEmailArray['email'] . "</a></span><span style='font-size:12px;'><u><a href='" . $bookingEmailArray['email'] . "' rel='noopener' style='text-decoration: none; color: #a6a4a2;' target='_blank'></a></u></span></p>
 </div>
 </div>
 </td>

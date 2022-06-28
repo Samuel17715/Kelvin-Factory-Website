@@ -295,12 +295,12 @@ class serverProcessing {
 		if($this->dbh){
 			try {
                 $pdoFetchUser = $this->dbh->prepare("
-                    SELECT profileid, firstname, lastname, email 
+                    SELECT profileid, firstname, lastname, email, phonenumber
                     FROM `users` WHERE profileid = '$profileid'
                 ");
                 $pdoFetchUser->execute();
                 $pdoFetchUserRow = $pdoFetchUser->fetch(PDO::FETCH_ASSOC);
-                return [100, [$pdoFetchUserRow['profileid'], $pdoFetchUserRow['firstname'], $pdoFetchUserRow['lastname'], $pdoFetchUserRow['email']]];
+                return [100, [$pdoFetchUserRow['profileid'], $pdoFetchUserRow['firstname'], $pdoFetchUserRow['lastname'], $pdoFetchUserRow['email'], $pdoFetchUserRow['phonenumber']]];
 			}
 			catch (PDOException $e) {
 				return [104];

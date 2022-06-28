@@ -107,7 +107,17 @@
             }
 
             $fetchUserDetailsEmail = $pdo->fetchUserDetails($profileid);
-            if(sendBookingDetails($fetchUserDetailsEmail[1][3], $fetchUserDetailsEmail[1][1])){
+
+            $bookingEmailArray = [
+                'email' => $fetchUserDetailsEmail[1][3],
+                'profileid' => $fetchUserDetailsEmail[1][1],
+                'fullName' => $fetchUserDetailsEmail[1][1].' '.$fetchUserDetailsEmail[1][2],
+                'phoneNumber' => $fetchUserDetailsEmail[1][4],
+                'studioMembershipType' => $studioMembershipType,
+                'studioMembershipHours' => $studioMembershipHours,
+                'studioMembershipPrice' => $studioMembershipPrice,
+            ];
+            if(sendBookingDetails($bookingEmailArray)){
                 return print_r(json_encode([100]));
             }        
         }

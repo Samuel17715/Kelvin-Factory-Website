@@ -18,10 +18,10 @@
         return phpEmailMailerFunc($recipientEmailAddress, 'Reset Password - Kelvin Factory', $forgetPasswordBody);
     }
 
-    function sendBookingDetails($email=null, $firstName=null) {
+    function sendBookingDetails($bookingEmailArray=null) {
         require_once('booking-details-template/index.php');
         $recipientEmailAddress = array(
-            array($email, $firstName),
+            array($bookingEmailArray['email'], $bookingEmailArray['fullName']),
             array('kelvinshotz14@gmail.com', 'Kelvin Shotz')
         );
         return phpEmailMailerFunc($recipientEmailAddress, 'Premium Membership - Kelvin Factory', $bookingDetailsBody);
