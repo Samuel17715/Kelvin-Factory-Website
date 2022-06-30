@@ -98,125 +98,138 @@
     <section class="heroSection">
         <div class="heroDiv">
             <div>
-                <h1>Book a modern <span style="background:none">🤩</span>  studio space</h1>
-                <p>A 2,500 sqt space for videography, photographers that you can create any type of set you want it as a good air cooling and central heater and a nice bathroom.</p>
+                <h1>Book a modern studio space</h1>
+                <p class="heroText">A modern studio space of 2,500 sqt space for videography, photographers which has a capacity of containing 20 people, to make your creative visual concept come to life.</p>
+                
+                <div class="imageNavControl flex-start">
+                    <div class="left-arrow">
+                        <svg width="72" height="40" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.95 9.88333L5.83331 20L15.95 30.1167" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M71 20H7" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div>1/3</div>
+                    <div class="right-arrow">
+                        <svg width="72" height="40" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M56.05 9.88333L66.1667 20L56.05 30.1167" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 20H65" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </div>
+                
+                <div class="powered-by-div flex-start">
+                    <p>Powered By</p>
+                    <img src="assets/img/kelvinshotzz.png" alt="">
+                </div>
             </div>
-            <div>
-                <img src="assets/img/studio-2.jpg" class="img-responsive" alt="">
+            <div class="heroImage">
+                <img class="desktop" src="assets/img/landing-page-img.png" class="img-responsive" alt="">
+                <img class="mobile" src="assets/img/landing-page-img-tablet.png" alt="">
             </div>
         </div>
 
-        <div class="container">
-           <div class="row">
-                <div class="col-sm-12">
-                    <div class="materialBookingFormContainer">
-                        <div class="materialBookingForm">
-                            <div class="container">
-                                <div class="row mb-4 materialFormHeader">
-                                    <div class="col-sm-12">
-                                        <h4 class="mb-2 studioMembershipHeaderText">Studio Membership</h4>
-                                        <p class="studioMembershipTime"></p>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="totalPriceDiv" data-id="1">
-                                            <div>
-                                                <h6>Total Price</h6>
-                                                <h5 class="">$<span class="initialPrice">0</span> x <span class="initialTime">0</span>H <span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="totalPrice">0.00</span></h5>
-                                            </div>
-                                            <div>
-                                                <h6>Grand Total Price</h6>
-                                                <h5>$<span class="totalPrice">0.00</span> + $<span class="extraPackagesPrice">0.00</span> <span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="grandTotalPrice">0.00</span></h5>
-                                            </div>
-                                        </div>
-                                        <div class="totalPriceDiv" data-id="2">
-                                            <div>
-                                                <h6>Total Price</h6>
-                                                <h5>$<span class="totalPrice">0.00</span></h5>
-                                            </div>
-                                            <div>
-                                                <h6>Grand Total Price</h6>
-                                                <h5>$<span class="totalPrice">0.00</span> + $<span class="extraPackagesPrice">0.00</span> <span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="grandTotalPrice">0.00</span></h5>
-                                            </div>
-                                        </div>
-                                    </div>
+        <div class="materialBookingFormContainer">
+            <div class="materialBookingForm">
+                <div class="container">
+                    <div class="row mb-4 materialFormHeader">
+                        <div class="col-sm-12">
+                            <h4 class="mb-2 studioMembershipHeaderText">Studio Membership</h4>
+                            <div class="studioMembershipTimeDiv flex-start">
+                                <p class="studioMembershipTime"></p>
+                                <p class="studioMembershipTimeLeft"></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="totalPriceDiv" data-id="1">
+                                <div>
+                                    <h6>Total Price</h6>
+                                    <h5 class="">$<span class="initialPrice">0</span> x <span class="initialTime">0</span>H <span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="totalPrice">0.00</span></h5>
                                 </div>
-                
-                                <div class="row mt-5">    
-                                    <div class="col-sm-6">
-                                        <div class="materialInputForm">
-                                            <label for="" style="display:flex; justify-content: space-between;">
-                                                Select Booking Package
-                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                            </label>
-                                            <select name="select" class="studioMembership">
-                                                <option value="" data-price="" selected="selected" disabled="">----- Rental or Membership -----</option>
-                                                <option value="Studio Rental" data-price="100" data-hours="24" data-text="Schedule studio rent for specified hours in a day at just $100">
-                                                    Studio Rental ($100/hr)</option>
-                                                <option value="" data-price="" disabled=""></option>
-                                                <option value="" data-price="" disabled="">----- Select Studio Membership -----</option>
-                                                <option value="Silver Studio Membership" data-price="400" data-hours="15" data-text="You can schedule unused hours to another day">
-                                                    Silver Studio Membership ($400)</option>
-                                                <option value="Gold Studio Membership" data-price="500" data-hours="25" data-text="You can schedule unused hours to another day">
-                                                    Gold Studio Membership ($500)</option>
-                                                <option value="Premium Studio Membership" data-price="600" data-hours="40" data-text="You can schedule unused hours to another day">
-                                                    Premium Studio Membership ($600)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                
-                                    <div class="col-sm-6">
-                                        <div class="materialInputForm">
-                                            <label for="">Add Extra Packages</label>
-                                            <div class="materialModalButton mainBodyRightContainerTrigger checkBoxesButton">
-                                                <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22.5L12 1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-                                                <span class="checkBoxesButtonText">Add to your appointment</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div>
+                                    <h6>Grand Total Price</h6>
+                                    <h5>$<span class="totalPrice">0.00</span> + $<span class="extraPackagesPrice">0.00</span> <span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="grandTotalPrice">0.00</span></h5>
                                 </div>
-                
-                
-                                <!-- Append Booking Date & Time -->
-                                <div class="bookingDateTimeAppendContainer">
-                                    <div class="row mt-4 bookingDateTimeContainer" data-row-number="1">       
-                                        <div class="col-sm-6">
-                                            <div class="materialInputForm">
-                                                <label for="">Booking Date</label>
-                                                <input type="text" class="bookingDate flatpickr-input" placeholder="DD/MM/YYYY" disabled="" readonly="readonly">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="materialInputForm">
-                                                <label for="">Start Time</label>
-                                                <input type="text" class="bookingTime bookingStartTime flatpickr-input" placeholder="00:00 AM" disabled="" readonly="readonly">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="materialInputForm">
-                                                <label for="">End Time</label>
-                                                <input type="text" class="bookingTime bookingEndTime flatpickr-input" placeholder="11:59 PM" disabled="" readonly="readonly">
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="totalPriceDiv" data-id="2">
+                                <div>
+                                    <h6>Total Price</h6>
+                                    <h5>$<span class="totalPrice">0.00</span></h5>
                                 </div>
-                
-                
-                                <div class="row">
-                                    <div class="col-sm-12 flex-center">
-                                        <div class="subButton">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22.5L12 1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                            Add another day
-                                        </div>
-                                    </div>
+                                <div>
+                                    <h6>Grand Total Price</h6>
+                                    <h5>$<span class="totalPrice">0.00</span> + $<span class="extraPackagesPrice">0.00</span> <span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="grandTotalPrice">0.00</span></h5>
                                 </div>
-                
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="materialInputForm">
-                                            <input type="submit" class="" value="Book Studio">
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row mt-5">    
+                        <div class="col-sm-6">
+                            <div class="materialInputForm">
+                                <label for="" style="display:flex; justify-content: space-between;">
+                                    Select Booking Package
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                </label>
+                                <select name="select" class="studioMembership">
+                                    <option value="" data-price="" selected="selected" disabled="">----- Rental or Membership -----</option>
+                                    <option value="Studio Rental" data-price="100" data-hours="24" data-text="Schedule studio rent for specified hours in a day at just $100">
+                                        Studio Rental ($100/hr)</option>
+                                    <option value="" data-price="" disabled=""></option>
+                                    <option value="" data-price="" disabled="">----- Select Studio Membership -----</option>
+                                    <option value="Silver Studio Membership" data-price="400" data-hours="15" data-text="You can schedule unused hours to another day">
+                                        Silver Studio Membership ($400)</option>
+                                    <option value="Gold Studio Membership" data-price="500" data-hours="25" data-text="You can schedule unused hours to another day">
+                                        Gold Studio Membership ($500)</option>
+                                    <option value="Premium Studio Membership" data-price="600" data-hours="40" data-text="You can schedule unused hours to another day">
+                                        Premium Studio Membership ($600)</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="col-sm-6">
+                            <div class="materialInputForm">
+                                <label for="">Add Extra Packages</label>
+                                <div class="materialModalButton mainBodyRightContainerTrigger checkBoxesButton">
+                                    <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22.5L12 1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                                    <span class="checkBoxesButtonText">Add to your appointment</span>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <!-- Append Booking Date & Time -->
+                    <div class="bookingDateTimeAppendContainer">
+                        <div class="row mt-4 bookingDateTimeContainer" data-row-number="1">       
+                            <div class="col-sm-6">
+                                <div class="materialInputForm">
+                                    <label for="">Booking Date</label>
+                                    <input type="text" class="bookingDate flatpickr-input" placeholder="DD/MM/YYYY" disabled="" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="materialInputForm">
+                                    <label for="">Start Time</label>
+                                    <input type="text" class="bookingTime bookingStartTime flatpickr-input" placeholder="00:00 AM" disabled="" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="materialInputForm">
+                                    <label for="">End Time</label>
+                                    <input type="text" class="bookingTime bookingEndTime flatpickr-input" placeholder="11:59 PM" disabled="" readonly="readonly">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="row">
+                        <div class="col-sm-12 flex-center">
+                            <div class="subButton">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22.5L12 1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                Add another day
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="materialInputForm">
+                                <input type="submit" class="" value="Book Studio">
                             </div>
                         </div>
                     </div>

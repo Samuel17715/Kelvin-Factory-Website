@@ -8,7 +8,7 @@
 @font-face {
     font-family: 'Gordita Regular';
       src: url('../fonts/Gordita Regular.otf') format('opentype');
-      font-weight: 400;
+      font-weight: 300;
       font-style: normal;
 }
 
@@ -38,14 +38,14 @@
     --primaryColor2:rgb(214, 154, 42);
     --secondary: #1B3839;
     --white: #ffffff;
-    --light: rgba(255, 255, 255, 0.7);
+    --light: rgba(255, 255, 255, 0.8);
     --lightgrey: #787878;
-    --darkgrey: #1d1d1d;
+    --darkgrey: #242424;
 }
 
 body {
     font-family: 'Gordita Regular', sans-serif;
-    background: #F3F7F6;
+    background: #0c0c0c;
 }
 
 a {
@@ -97,7 +97,7 @@ p {
 }
 
 .materialNavSection {
-    padding: 1.5rem 3rem;
+    padding: 2.65rem 7rem;
     position: absolute;
     width: 100%;
     top: 0;
@@ -117,6 +117,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0;
 }
 
 .materialNavSection ul li {
@@ -135,17 +136,22 @@ p {
 }
 
 .materialNavSection li a {
-    color: var(--lightgrey);
+    color: var(--light);
     text-decoration: none;
     transition: color 0.35s;
 }
 
 .materialNavSection li a.active {
-    color: var(--darkgrey);
+    color: var(--white);
 }
 
 .materialNavSection li a:hover {
     color: var(--darkgrey);
+}
+
+.materialNavSection li a.materialButton {
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
 }
 
 .materialNavSection.mobile {
@@ -163,7 +169,7 @@ p {
 }
 
 .materialNavSection.mobile li svg {
-    stroke: var(--darkgrey);
+    stroke: var(--light);
     stroke-width: 1;
 }
 
@@ -207,8 +213,11 @@ and (min-width: 480px)
 and (max-width: 1024px)  {
     .materialNavSection {
         display: none;
-        padding: 1.75rem 2.5rem;
+        padding: 2rem 3.5rem;
 
+    }
+    .materialNavSection nav img {
+        width: 70px;
     }
     .materialNavSection.mobile {
         display: block;
@@ -391,13 +400,11 @@ and (max-width: 480px) {
     }
 }
 
-
-
 /************ Hero Section ************/
 
 .heroSection {
     margin: 7rem 0;
-    padding: 6rem;
+    padding: 6rem 7rem;
     background: #090909;
     /* background-image: url(../img/hero-bg-7.jpg);
     background-size: cover;
@@ -411,11 +418,11 @@ and (max-width: 480px) {
 }
 
 .heroSection .heroDiv > div:first-child {
-    flex: 60%;
+    flex: 55%;
 }
 
 .heroSection .heroDiv > div:last-child {
-    flex: 40%;
+    flex: 45%;
 }
 
 .heroSection .heroDiv h1 {
@@ -423,26 +430,72 @@ and (max-width: 480px) {
     /* text-align: center; */
     font-family: 'Gordita Medium', sans-serif;
     letter-spacing: -1.5px;
-    font-size: 3.85rem;
+    font-size: 5.25rem;
+    line-height: 110.5%;
 }
 
-.heroSection .heroDiv p {
+.heroSection .heroDiv p.heroText {
     /* text-align: center; */
-    font-size: 1.1rem;
-    font-family: 'Gordita Medium', sans-serif;
+    font-size: 0.93rem;
+    font-family: 'Gordita Regular', sans-serif;
     color: var(--light);
     padding-top: 1.65rem;
+    width: 600px;
 }
 
-.heroSection .heroDiv img {
+.heroSection .heroDiv .heroImage img {
     width: 100%;
     border-radius: 12px;
+    display: none;
+}
+
+.heroSection .heroDiv .heroImage img.desktop {
+    display: block;
+}
+.heroSection .heroDiv .heroImage img.mobile {
+    display: none;
+}
+
+.heroSection .heroDiv .imageNavControl {
+    margin-top: 5rem;
+}
+
+.heroSection .heroDiv .imageNavControl svg {
+    width: 50px;
+}
+
+.heroSection .heroDiv .imageNavControl > div:nth-child(2) {
+    color: var(--white);
+    padding: 0 1rem;
+}
+
+.heroSection .heroDiv .powered-by-div {
+    margin-top: 2rem;
+}
+
+.heroSection .heroDiv .powered-by-div p {
+    color: var(--lightgrey);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.heroSection .heroDiv .powered-by-div img {
+    width: 120px;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.heroSection .heroDiv .powered-by-div img:hover {
+    opacity: 1;
 }
 
 .heroSection .materialBookingFormContainer {
     display: flex;
     justify-content: center;
     margin-top: 3rem;
+    padding: 0 1.75rem;
 }
 
 .heroSection .bookingDateTimeContainer {
@@ -507,15 +560,30 @@ and (max-width: 480px) {
     display: none;
 }
 
-.heroSection .studioMembershipTime {
-    text-align: left;
-    font-size: 0.85rem;
-    color: var(--lightgrey);
+.heroSection .studioMembershipTimeDiv {
     padding-top: 0.45rem;
 }
 
-.heroSection .studioMembershipTime span {
+.heroSection p.studioMembershipTime {
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--darkgrey);
+    padding-right: 0.5rem;
+}
+
+.heroSection p.studioMembershipTimeLeft{
+    font-family: 'Gordita Medium', sans-serif;
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--darkgrey);
+}
+
+.heroSection p.studioMembershipTimeLeft span.green {
     color: #02ce54;   
+}
+
+.heroSection p.studioMembershipTimeLeft span.orange {
+    color: #dd9105;   
 }
 
 .heroSection .materialBookingForm label {
@@ -613,7 +681,37 @@ and (max-width: 480px) {
 @media only screen 
 and (min-width: 480px) 
 and (max-width: 1024px)  {
-    
+    .heroSection {
+        padding: 7rem 3.5rem;
+    }
+    .heroSection .heroDiv {
+        flex-direction: column;
+    }
+    .heroSection .heroDiv > div:first-child, .heroSection .heroDiv > div:last-child {
+        flex: 100%;
+    }
+    .heroSection .heroDiv div.heroImage {
+        margin-top: 3.5rem;
+    }
+    .heroSection .heroDiv .heroImage img.desktop {
+        display: none;
+    }
+    .heroSection .heroDiv .heroImage img.mobile {
+        display: block;
+    }
+    .heroSection .heroDiv p.heroText {
+        font-size: 1.25rem;
+        width: 650px;
+    }
+    .heroSection .heroDiv .imageNavControl {
+        margin-top: 4rem;
+    }
+    .heroSection .materialBookingFormContainer {
+        padding: 0;
+    }
+    .heroSection .materialBookingForm {
+        width: 90%;
+    }
 }
 
 /* Mobile Phones */
@@ -630,6 +728,12 @@ and (max-width: 480px) {
     }
     .heroSection p {
         font-size: 0.96rem;
+    }
+    .heroSection .heroDiv .heroImage img.desktop {
+        display: none;
+    }
+    .heroSection .heroDiv .heroImage img.mobile {
+        display: block;
     }
     .heroSection .materialBookingFormContainer {
         margin-top: 1.5rem;
