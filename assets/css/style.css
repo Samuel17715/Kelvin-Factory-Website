@@ -867,7 +867,6 @@ and (min-width: 320px)
 and (max-width: 480px) {
     .studioGallerySection {
         padding: 7rem 1.5rem;
-        margin: 3.5rem 0;
     }
     .studioGallerySection h1 {
         padding-bottom: 2.5rem;
@@ -958,8 +957,127 @@ and (max-width: 480px) {
 }
 
 
+/*********** Footer Section **********/
+.footerSection {
+    color: var(--white);
+    padding: 10rem 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerSection .logo img {
+    width: 100px;
+}
+
+.footerSection ul {
+    display: inline;
+    padding: 0;
+}
+
+.footerSection li {
+    list-style-type: none;
+    display: inline;
+    padding-left: 2rem;
+}
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .footerSection {
+        padding: 10rem 3rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footerSection p {
+        padding: 2rem 0;
+    }
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .footerSection {
+        padding: 10rem 3rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footerSection p {
+        padding: 2rem 0;
+    }
+}
+
+
+.bookOtherSectionDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../img/banner-bg.jpg);
+    background-size: cover;
+    padding: 2.65rem 3rem;
+    margin: 0 10rem;
+    border-radius: 16px;
+    margin-top: -80px;
+}
+
+.bookOtherSectionDiv h1 {
+    font-family: 'Gordita Medium', sans-serif;
+    font-size: 1.87rem;
+}
+
+.bookOtherSectionDiv button {
+    color: var(--white) !important;
+    background-color: var(--darkgrey);
+    padding: 1.5rem 3rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 3.5px;
+    transition: 0.65s;
+    box-shadow: none;
+    border: none;
+}
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .bookOtherSectionDiv {
+        flex-direction: column;
+        margin: 0 5.25rem;
+        margin-top: -80px;
+        text-align: center;
+        padding: 3.75rem 1.5rem;
+    }
+    .bookOtherSectionDiv h1 {
+        padding-bottom: 1.2rem;
+    }  
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .bookOtherSectionDiv {
+        flex-direction: column;
+        margin: 0 1.65rem;
+        margin-top: -90px;
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+    }
+    .bookOtherSectionDiv h1 {
+        font-size: 1.35rem;
+        padding-bottom: 1.35rem;
+    }    
+}
+
+
+
 
 /************** Profile Bio ****************/
+
 .profileBio {
     margin-top: 9rem;
 }
