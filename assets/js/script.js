@@ -226,6 +226,7 @@ function bookingFormInit() {
         } else {
             $('.totalPriceDiv').removeClass('active');
             $('.totalPriceDiv[data-id="2"]').addClass('active');
+            $('.totalPriceDiv[data-id="2"] .totalTime').html(studioMembershipHours);
             $('.totalPriceDiv[data-id="2"] .totalPrice').html(studioMembershipPrice);
             $('.totalPriceDiv[data-id="2"] .extraPackagesPrice').html(calculateTotalAppointmentCheckboxes());
             $('.totalPriceDiv[data-id="2"] .grandTotalPrice').html(parseInt(studioMembershipPrice) + parseInt(calculateTotalAppointmentCheckboxes()));
