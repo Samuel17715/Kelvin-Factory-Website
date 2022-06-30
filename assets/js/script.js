@@ -218,13 +218,9 @@ function bookingFormInit() {
         $('.subButton').addClass('active');
         $("select.studioMembership option[value='Studio Rental']").attr("disabled","disabled");
 
-        $('.studioMembershipHeaderText').html(studioMembershipValue + ' - ' + studioMembershipHours + 'hr studio time');
-        // $('.initialPrice').html(getBookingInputValues()[1].studioMembershipPrice);
-        // $('.initialTime').html(studioMembershipHours);
-        // $('.totalPrice').html(totalPrice);
-
+        $('.studioMembershipHeaderText').html(studioMembershipValue);
+        $('.studioMembershipTimeDiv p.studioMembershipTime').html(studioMembershipHours + ' total hours of studio time. ');
         if((calculateUnusedHours() === null) || (typeof calculateUnusedHours() === 'undefined')) {
-            $('.studioMembershipTime').html('');
             $('.viewPriceDiv').removeClass('active');
             
         } else {
@@ -236,15 +232,15 @@ function bookingFormInit() {
        
 
             if(calculateUnusedHours() === 0) {
-                $('.studioMembershipTime').html('<span>'+ studioMembershipHours +' hours of ' + studioMembershipSelector.val() + ' fully scheduled</span>. Now Book Studio');
+                $('.studioMembershipTimeDiv p.studioMembershipTimeLeft').html('<span class="green">' + studioMembershipHours + ' fully scheduled. Now book studio</span>');
             }
 
             if(calculateUnusedHours() < 0) {
-                $('.studioMembershipTime').html('<span>Studio Time set has passed ' + studioMembershipHours + ' hours of ' + studioMembershipSelector.val() +' </span>.<br>Please re adjust the booking Time');
+                $('.studioMembershipTimeDiv p.studioMembershipTimeLeft').html('<span class="orange">Studio time you set has exceeded ' + studioMembershipHours + ' hours. Re-adjust the booking Time</span>');
             }
 
             if(calculateUnusedHours() > 0){
-                $('.studioMembershipTime').html(studioMembershipHours  + ' hours of studio time. You can reschedule to another day<br><span>'+ calculateUnusedHours() +' hours studio time left.</span>');
+                $('.studioMembershipTimeDiv p.studioMembershipTimeLeft').html(calculateUnusedHours() + ' hours studio time unset.');
             }
         }
         console.log(calculateUnusedHours());
@@ -330,12 +326,12 @@ function addMainNav() {
             <nav class="flex-between">
                 <div>
                     <a href="index.html">
-                        <img src="assets/img/kelvinfactory-logo.png" alt="">
+                        <img src="assets/img/kelvin-factory-logo-2.png" alt="">
                     </a>
                 </div>
                 <div>
                     <ul>
-                        <li><a class="active" href="profile.html">Profile</a></li>
+                        <li><a class="active" href="profile.html">My Bookings</a></li>
                         <li><a class="" href="#">About</a></li>
                         <li><a target="_blank" class="" href="https://kelvinshotzz.com">Book Shoots</a></li>
                         <li><a class="" href="#">Contact</a></li>
@@ -353,7 +349,7 @@ function addMainNav() {
             <nav class="flex-between">
                 <div>
                     <a href="index.html">
-                        <img src="assets/img/kelvinfactory-logo.png" alt="">
+                        <img src="assets/img/kelvin-factory-logo-2.png" alt="">
                     </a>
                 </div>
                 <div>
