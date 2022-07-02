@@ -4,7 +4,8 @@ $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 
 $fullURL = $protocol.'://'.$_SERVER['HTTP_HOST'];
 
 // Image Path
-$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/images/';
+//$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/forget-password-template/images/';
+$emailTemplateImageDir = 'https://kelvin-factory.netlify.app/emailSystem/forget-password-template/images/';
 
 // ForgotPasswordLink
 $forgotPasswordLink = $fullURL.$changePasswordLink;

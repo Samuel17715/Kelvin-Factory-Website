@@ -4,7 +4,8 @@ $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 
 $fullURL = $protocol.'://'.$_SERVER['HTTP_HOST'];
 
 // Image Path
-$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/images/';
+//$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/otp-template/images/';
+$emailTemplateImageDir = 'https://kelvin-factory.netlify.app/emailSystem/otp-template/images/';
 
 $otpBody = " 
    <!DOCTYPE html>

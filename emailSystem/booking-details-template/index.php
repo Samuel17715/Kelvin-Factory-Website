@@ -4,7 +4,7 @@ $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 
 $fullURL = $protocol.'://'.$_SERVER['HTTP_HOST'];
 
 // Image Path
-//$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/booking-details-template/images/kelvinfactory-logo.png';
+//$emailTemplateImageDir = $fullURL.'/kelvinfactory/emailSystem/booking-details-template/images/';
 $emailTemplateImageDir = 'https://kelvin-factory.netlify.app/emailSystem/booking-details-template/images/';
 
 
