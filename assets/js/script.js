@@ -76,6 +76,8 @@ function bookingFormInit() {
         let bookingStartTimeID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingStartTime'); // Start Time
         let bookingEndTimeID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingEndTime'); // End Time
 
+
+        // Create New FlatPickr Instances for Date & Time
         let bookingDate = flatpickr(bookingDateID, {
             minDate: "today"
         });
@@ -100,6 +102,16 @@ function bookingFormInit() {
             maxDate: "11:00 PM"
         });
 
+        
+        // Clean Disabled Dates Array and add New Dates
+        disabledSelectedDatesArray.splice(0, disabledSelectedDatesArray.length);
+        $('.bookingDateTimeContainer[data-row-number] .bookingDate').each(function() {
+            if ((!disabledSelectedDatesArray.includes($(this).val())) && ($(this).val() !== "")) {
+                disabledSelectedDatesArray.push($(this).val());
+            }
+        });
+        bookingDate.set("disable", disabledSelectedDatesArray);
+
         // Set Min Date
         bookingStartTimeID.addEventListener('change', function (event) {
             bookingEndTime.set("minDate", bookingStartTimeID.value);
@@ -107,16 +119,20 @@ function bookingFormInit() {
                 bookingEndTimeID.value = bookingStartTimeID.value;
             }
         });
+    }
 
-        // Disable Selected Dates
-        if (bookingDateTimeRowNumber > 1) {
-            let previousRowNumber = bookingDateTimeRowNumber - 1;
-            let previousBookingDateValue = document.querySelector('.bookingDateTimeContainer[data-row-number="'+previousRowNumber+'"] .bookingDate').value;
-            if (!disabledSelectedDatesArray.includes(previousBookingDateValue)) {
-                disabledSelectedDatesArray.push(previousBookingDateValue);
-                bookingDate.set("disable", disabledSelectedDatesArray);
-            }
-        }
+    // Delete Row
+    function deletebookingDateTimeContainer(bookingDateTimeRowNumber) {
+        // Destroy FlatPickr Instances
+        let bookingDateID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingDate'); // Booking Date
+        let bookingStartTimeID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingStartTime'); // Start Time
+        let bookingEndTimeID = document.querySelector('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"] .bookingEndTime'); // End Time
+
+        flatpickr(bookingDateID).destroy();
+        flatpickr(bookingStartTimeID).destroy();
+        flatpickr(bookingEndTimeID).destroy();
+
+        $('.bookingDateTimeContainer[data-row-number="'+bookingDateTimeRowNumber+'"').remove();
     }
 
 
@@ -124,24 +140,25 @@ function bookingFormInit() {
     function appendBookingDateAndTimeRow(bookingDateTimeRowNumber) {
         let appendBookingDateAndTimeHTML = `
             <div class="row mt-4 bookingDateTimeContainer active" data-row-number="${bookingDateTimeRowNumber}">       
-                <div class="col-sm-6">
-                    <div class="materialInputForm">
-                        <label for="">Booking Date</label>
-                        <input type="text" class="bookingDate" placeholder="DD/MM/YYYY">
-                    </div>
+            <div class="col-sm-6">
+                <div class="materialInputForm">
+                    <label for="">Booking Date</label>
+                    <input type="text" class="bookingDate" placeholder="DD/MM/YYYY">
                 </div>
-                <div class="col-sm-3">
-                    <div class="materialInputForm">
-                        <label for="">Start Time</label>
-                        <input type="date" class="bookingTime bookingStartTime" placeholder="00:00 AM">
-                    </div>
+            </div>
+            <div class="col-sm-6 bookingDateTimeDiv">
+                <div class="materialInputForm">
+                    <label for="">Start Time</label>
+                    <input type="text" class="bookingTime bookingStartTime" placeholder="00:00 AM">
                 </div>
-                <div class="col-sm-3">
-                    <div class="materialInputForm">
-                        <label for="">End Time</label>
-                        <input type="date" class="bookingTime bookingEndTime" placeholder="11:59 PM">
-                    </div>
+                <div class="materialInputForm">
+                    <label for="">End Time</label>
+                    <input type="text" class="bookingTime bookingEndTime" placeholder="11:59 PM">
                 </div>
+                <div class="pt-4 deleteBookingDateAndTime">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.5" y="5.09985" width="15" height="18" rx="1.5" stroke="#51526C" stroke-width="1.5"/><rect x="2.25" y="2.09985" width="19.5" height="3" rx="0.75" stroke="#51526C" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 0.900146L15 0.900146" stroke="#51526C" stroke-width="1.5" stroke-linecap="round"/><path d="M12 9V19.5" stroke="#51526C" stroke-width="1.5" stroke-linecap="round"/><path d="M15.75 9V19.5" stroke="#51526C" stroke-width="1.5" stroke-linecap="round"/><path d="M8.25 9V19.5" stroke="#51526C" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+            </div> 
             </div>
         `;
         return appendBookingDateAndTimeHTML;
@@ -163,12 +180,13 @@ function bookingFormInit() {
     function getBookingDateAndTimeValuesFunc() {
         let bookingDateTimeArray = [];
         let totalBookingSumHours = 0
-        for(let i=1; i<=$('.bookingDateTimeContainer[data-row-number]').length; i++){
-        if(($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingDate').val() !== '') && ($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val() !== '') && ($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val() !== '')) {
-                bookingDateTimeArray.push([$('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingDate').val(), $('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val(), $('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val()]);
-                totalBookingSumHours += convertTime($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingEndTime').val()) - convertTime($('.bookingDateTimeContainer[data-row-number="'+i+'"] .bookingStartTime').val());
+        $('.bookingDateTimeContainer[data-row-number]').each(function() {
+            let rowNumber = $(this).attr('data-row-number');
+            if(($('.bookingDateTimeContainer[data-row-number="'+rowNumber+'"] .bookingDate').val() !== '') && ($('.bookingDateTimeContainer[data-row-number="'+rowNumber+'"] .bookingStartTime').val() !== '') && ($('.bookingDateTimeContainer[data-row-number="'+rowNumber+'"] .bookingEndTime').val() !== '')) {
+                bookingDateTimeArray.push([$('.bookingDateTimeContainer[data-row-number="'+rowNumber+'"] .bookingDate').val(), $('.bookingDateTimeContainer[data-row-number="'+rowNumber+'"] .bookingStartTime').val(), $('.bookingDateTimeContainer[data-row-number="'+rowNumber+'"] .bookingEndTime').val()]);
+                totalBookingSumHours += convertTime($('.bookingDateTimeContainer[data-row-number="'+rowNumber+'"] .bookingEndTime').val()) - convertTime($('.bookingDateTimeContainer[data-row-number="'+rowNumber+'"] .bookingStartTime').val());
             }
-        }
+        });
         return {bookingDateTimeValues: bookingDateTimeArray, totalBookingHoursValues: totalBookingSumHours};
     }
 
@@ -198,9 +216,18 @@ function bookingFormInit() {
         }
     }
 
+    // Studio Rental Function
     function studioRentalFunctions(studioMembershipSelector, studioMembershipValue, studioMembershipHours, studioMembershipPrice) {
+        // Delete Other Row
+        $('.bookingDateTimeContainer[data-row-number]').each(function() {
+            let bookingDateTimeRowNumber = $(this).attr('data-row-number');
+            if(bookingDateTimeRowNumber !== "1") {
+                deletebookingDateTimeContainer(bookingDateTimeRowNumber);
+            }
+        });
+        $('.subButton').removeClass('active');
+        
         $('.studioMembershipHeaderText').html(studioMembershipValue + ' - $' + studioMembershipPrice + '/hr');
-
         $('.totalPriceDiv').removeClass('active');
         $('.totalPriceDiv[data-id="1"]').addClass('active');
 
@@ -214,15 +241,14 @@ function bookingFormInit() {
         }
     }
 
+    // Membership Functions
     function otherMembershipFunctions(studioMembershipSelector, studioMembershipValue, studioMembershipHours, studioMembershipPrice) {
         $('.subButton').addClass('active');
-        $("select.studioMembership option[value='Studio Rental']").attr("disabled","disabled");
 
         $('.studioMembershipHeaderText').html(studioMembershipValue);
         $('.studioMembershipTimeDiv p.studioMembershipTime').html(studioMembershipHours + ' total hours of studio time. ');
         if((calculateUnusedHours() === null) || (typeof calculateUnusedHours() === 'undefined')) {
             $('.viewPriceDiv').removeClass('active');
-            
         } else {
             $('.totalPriceDiv').removeClass('active');
             $('.totalPriceDiv[data-id="2"]').addClass('active');
@@ -244,9 +270,7 @@ function bookingFormInit() {
                 $('.studioMembershipTimeDiv p.studioMembershipTimeLeft').html(calculateUnusedHours() + ' hours studio time unset.');
             }
         }
-        console.log(calculateUnusedHours());
     }
-
 
     function validateInput() {
         let studioMembershipSelector = $('select.studioMembership');
@@ -267,7 +291,6 @@ function bookingFormInit() {
             }
         }
     }
-
 
     // Default Booking Row Number and Dates Array
     var bookingDateTimeRowNumber = 1;
@@ -295,10 +318,17 @@ function bookingFormInit() {
     });
 
     // Add New Data & Time Row
-    $('.subButton').on('click', function(){
+    $('.subButton').on('click', function() {
         bookingDateTimeRowNumber++;
         $('.bookingDateTimeAppendContainer').append(appendBookingDateAndTimeRow(bookingDateTimeRowNumber));
         flatPickrInit(bookingDateTimeRowNumber, disabledSelectedDatesArray);
+    });
+
+    // Delete Row
+    $(document).on('click', '.deleteBookingDateAndTime', function(){
+        let bookingDateTimeRowNumber = $(this).closest('div.bookingDateTimeContainer').attr('data-row-number');
+        deletebookingDateTimeContainer(bookingDateTimeRowNumber);
+        validateInput();
     });
 
     // Submit data to server
@@ -309,7 +339,6 @@ function bookingFormInit() {
         }
     });
 }
-
 
 
 /************ Append Main Navigation ***************/

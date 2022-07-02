@@ -56,6 +56,26 @@ foreach ($bookingEmailArray['bookingDateAndTime'] as $value) {
 	";
 }
 
+
+$bookingExtraPackages = "";
+$extraPackageTotalPrice = 0;
+foreach ($bookingEmailArray['extraPackages'] as $value) {
+   $bookingExtraPackages .= "
+      <table border='0' cellpadding='0' cellspacing='0' class='paragraph_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;' width='100%'>
+         <tr>
+            <td style='padding-top:5px;padding-right:10px;padding-bottom:5px;padding-left:10px;'>
+               <div style='color:#000000;font-size:14px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-weight:400;line-height:120%;text-align:left;direction:ltr;letter-spacing:0px;mso-line-height-alt:16.8px;'>
+               <p style='margin: 0;'>".$value["name"]." @".$value["price"]."</p>
+               </div>
+            </td>
+         </tr>
+      </table>
+   ";
+
+   $extraPackageTotalPrice += intval($value["price"]);
+}
+
+
 $bookingDetailsBody = "
 <!DOCTYPE html>
 <html lang='en' xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:v='urn:schemas-microsoft-com:vml'>
@@ -156,7 +176,7 @@ $bookingDetailsBody = "
                                        <table border='0' cellpadding='0' cellspacing='0' class='image_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
                                           <tr>
                                              <td style='width:100%;padding-right:0px;padding-left:0px;padding-top:60px;'>
-                                                <div align='center' style='line-height:10px'><img src='" . $emailTemplateImageDir . "kelvinfactory-logo.png' style='display: block; height: auto; border: 0; width: 136px; max-width: 100%;' width='136'/></div>
+                                                <div align='center' style='line-height:10px'><img src='" . $emailTemplateImageDir . "kelvinfactory-logo.png' style='display: block; height: auto; border: 0; width: 110px; max-width: 100%;' width='110'/></div>
                                              </td>
                                           </tr>
                                        </table>
@@ -165,8 +185,8 @@ $bookingDetailsBody = "
                                              <td style='padding-bottom:5px;padding-left:20px;padding-right:20px;padding-top:20px;'>
                                                 <div style='font-family: sans-serif'>
                                                    <div class='txtTinyMce-wrapper' style='font-size: 12px; font-family: Oswald, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #000000; line-height: 1.2;'>
-                                                      <p style='margin: 0; font-size: 14px; text-align: center;'><span style='font-size:18px;'><strong>" . $bookingEmailArray['studioMembershipType'] . "</strong></span></p>
-                                                      <p style='margin: 0; font-size: 14px; text-align: center;'><span style='font-size:16px;'><strong>" . $bookingEmailArray['studioMembershipHours'] . " hour studio time. Price $" . $bookingEmailArray['studioMembershipPrice'] . "</strong></span></p>
+                                                      <p style='margin: 0; font-size: 14px; text-align: center;'><span style='font-size:18px;'><strong>" . $bookingEmailArray['studioMembershipType'] . ". ".$bookingEmailArray['studioMembershipHours']." hour studio time.</strong></span></p>
+                                                      <p style='margin: 0; font-size: 14px; text-align: center;'><span style='font-size:16px;'><strong>Price - $" . $bookingEmailArray['studioMembershipPrice'] . ". Extra Package Price - $".$extraPackageTotalPrice.". Total - $".(intval($bookingEmailArray['studioMembershipPrice']) + $extraPackageTotalPrice)."</strong></span></p>
                                                    </div>
                                                 </div>
                                              </td>
@@ -334,6 +354,34 @@ $bookingDetailsBody = "
                      </tr>
                   </tbody>
                </table>
+               <table align='center' border='0' cellpadding='0' cellspacing='0' class='row row-6' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #000000;' width='100%'>
+               <tbody>
+                  <tr>
+                     <td>
+                        <table align='center' border='0' cellpadding='0' cellspacing='0' class='row-content stack' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-position: center top; color: #000000; background-color: #ffffff; width: 680px;' width='680'>
+                           <tbody>
+                              <tr>
+                                 <td class='column column-1' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-left: 25px; padding-right: 25px; padding-top: 0px; padding-bottom: 0px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;' width='100%'>
+                                    <table border='0' cellpadding='0' cellspacing='0' class='text_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;' width='100%'>
+                                       <tr>
+                                          <td style='padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:45px;'>
+                                             <div style='font-family: sans-serif'>
+                                                <div class='txtTinyMce-wrapper' style='font-size: 12px; font-family: Oswald, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #000000; line-height: 1.2;'>
+                                                   <p style='margin: 0; font-size: 14px;'><span style='font-size:18px;'><strong><span style='color:#000000;'>Extra Packages</span></strong></span></p>
+                                                </div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                    ".$bookingExtraPackages."
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
                <table align='center' border='0' cellpadding='0' cellspacing='0' class='row row-7' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #000000;' width='100%'>
                   <tbody>
                      <tr>

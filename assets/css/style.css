@@ -35,7 +35,7 @@
 
 :root {
     --primaryColor: #f4d7a1;
-    --primaryColor2:rgb(214, 154, 42);
+    --primaryColor2: #DCFD51;
     --secondary: #1B3839;
     --white: #ffffff;
     --light: rgba(255, 255, 255, 0.8);
@@ -97,7 +97,7 @@ p {
 }
 
 .materialNavSection {
-    padding: 2.65rem 7rem;
+    padding: 1.5rem 7rem;
     position: absolute;
     width: 100%;
     top: 0;
@@ -110,7 +110,7 @@ p {
 }
 
 .materialNavSection nav img {
-    width: 80px;
+    width: 70px;
 }
 
 .materialNavSection ul {
@@ -151,6 +151,7 @@ p {
 }
 
 .materialNavSection li a.materialButton {
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.17em;
 }
@@ -1079,11 +1080,16 @@ and (max-width: 480px) {
 /************** Profile Bio ****************/
 
 .profileBio {
+    color: var(--white);
     margin-top: 9rem;
 }
 
 .profileBio h4 {
     font-family: 'Gordita Medium', sans-serif;
+}
+
+.profileBio p {
+    color: var(--lightgrey);
 }
 
 .profileBio img {
@@ -1113,18 +1119,19 @@ and (max-width: 480px) {
     display: inline;
     padding: 0.65rem 0;
     padding-right: 4rem;
-    color: var(--lightgrey);
+    color: var(--light);
     font-weight: 400;
-    border-bottom: 0.68px solid #6d6d6d;
+    border-bottom: 0.68px solid var(--light);
     cursor: pointer;
     font-size: 0.9rem;
-    font-family: 'Gordita Medium';
+    font-family: 'Gordita Regular';
 }
 
 .materialTab ul li.active {
-    color: var(--primaryColor2);
-    font-weight: 700;
-    border-bottom: 3px solid var(--primaryColor2);
+    color: var(--white);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primaryColor2);
+    font-family: 'Gordita Medium';
 }
 
 .materialTabContent[data-tab-content] {
@@ -1159,6 +1166,24 @@ and (max-width: 480px) {
     }
 }
 
+.bookingDateTimeContainer {
+    
+}
+
+.bookingDateTimeContainer .bookingDateTimeDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookingDateTimeContainer .bookingDateTimeDiv > div {
+    padding-right: 0.8rem;
+}
+
+.bookingDateTimeContainer .bookingDateTimeDiv > div:last-child {
+    padding: 0;
+}
+
 .bookingDivContainer .bookingDiv {
     background-color: #fafafa;
     padding: 3rem 2rem;
@@ -1175,6 +1200,27 @@ and (max-width: 480px) {
 .bookingDivContainer .bookingDiv h5 {
     font-family: 'Gordita Medium';
     font-size: 1.2rem;
+}
+
+.bookingDivContainer .bookingDiv h6 {
+    font-family: 'Gordita Medium';
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+}
+
+.bookingDivContainer .bookingDiv ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+}
+
+.bookingDivContainer .bookingDiv ul > li {
+    width: 100%;
+    flex: 50%;
+    font-size: 0.75rem;
+    padding: 0.35rem 0;
 }
 
 .bookingDivContainer .bookingDiv .bookingDate {
