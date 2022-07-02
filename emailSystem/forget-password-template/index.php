@@ -152,8 +152,8 @@ $forgetPasswordBody = "
 	<table border='0' cellpadding='0' cellspacing='0' class='button_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 	<tr>
 	<td style='text-align:left;padding-top:35px;padding-right:10px;padding-bottom:10px;padding-left:10px;'>
-	<!--[if mso]><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' style='height:46px;width:196px;v-text-anchor:middle;' arcsize='9%' strokeweight='1.5pt' strokecolor='#bc9249' fillcolor='#bc9249'><w:anchorlock/><v:textbox inset='0px,0px,0px,0px'><center style='color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:14px'><![endif]-->
-	<a href='".$forgotPasswordLink."'><div style='text-decoration:none;display:inline-block;color:#ffffff;background-color:#bc9249;border-radius:4px;width:auto;border-top:1px solid #bc9249;font-weight:400;border-right:1px solid #bc9249;border-bottom:1px solid #bc9249;border-left:1px solid #bc9249;padding-top:5px;padding-bottom:5px;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;'><span style='padding-left:20px;padding-right:20px;font-size:14px;display:inline-block;letter-spacing:2px;'><span style='font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;'><span data-mce-style='font-size: 14px; line-height: 28px;' style='font-size: 14px; line-height: 28px;'>RESET PASSWORD</span></span></span></div></a>
+	<!--[if mso]><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' style='height:46px;width:196px;v-text-anchor:middle;' arcsize='9%' strokeweight='1.5pt' strokecolor='#000000' fillcolor='#000000'><w:anchorlock/><v:textbox inset='0px,0px,0px,0px'><center style='color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:14px'><![endif]-->
+	<a href='".$forgotPasswordLink."'><div style='text-decoration:none;display:inline-block;color:#ffffff;background-color:#000000;border-radius:4px;width:auto;border-top:1px solid #000000;font-weight:400;border-right:1px solid #000000;border-bottom:1px solid #000000;border-left:1px solid #000000;padding-top:5px;padding-bottom:5px;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;'><span style='padding-left:20px;padding-right:20px;font-size:14px;display:inline-block;letter-spacing:2px;'><span style='font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;'><span data-mce-style='font-size: 14px; line-height: 28px;' style='font-size: 14px; line-height: 28px;'>RESET PASSWORD</span></span></span></div></a>
 	<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
 	</td>
 	</tr>
@@ -170,7 +170,7 @@ $forgetPasswordBody = "
 	<table border='0' cellpadding='10' cellspacing='0' class='heading_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
 	<tr>
 	<td>
-	<h3 style='margin: 0; color: #bc9249; direction: ltr; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: normal; line-height: 180%; text-align: left; margin-top: 0; margin-bottom: 0;'><a href='".$forgotPasswordLink."' rel='noopener' style='text-decoration: underline; color: #bc9249;' target='_blank'>".$forgotPasswordLink."</a></h3>
+	<h3 style='margin: 0; color: #000000; direction: ltr; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: normal; line-height: 180%; text-align: left; margin-top: 0; margin-bottom: 0;'><a href='".$forgotPasswordLink."' rel='noopener' style='text-decoration: underline; color: #000000;' target='_blank'>".$forgotPasswordLink."</a></h3>
 	</td>
 	</tr>
 	</table>

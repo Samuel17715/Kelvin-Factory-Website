@@ -149,7 +149,7 @@ $otpBody = "
                                           <table border='0' cellpadding='0' cellspacing='0' class='heading_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
                                              <tr>
                                                 <td style='padding-bottom:30px;padding-left:30px;padding-right:30px;padding-top:45px;text-align:center;width:100%;'>
-                                                   <h1 style='margin: 0; color: #bc9249; direction: ltr; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; font-size: 40px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;'><span class='tinyMce-placeholder'>".$otpCode."</span></h1>
+                                                   <h1 style='margin: 0; color: #000000; direction: ltr; font-family: Lato, Tahoma, Verdana, Segoe, sans-serif; font-size: 40px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;'><span class='tinyMce-placeholder'>".$otpCode."</span></h1>
                                                 </td>
                                              </tr>
                                           </table>
