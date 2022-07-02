@@ -677,6 +677,10 @@ and (max-width: 480px) {
     transform: scale(1.015);
 }
 
+.heroSection .materialBookingForm input[type="submit"][disabled] {
+    opacity: 0.45;
+}
+
 
 /* Tablet */
 @media only screen 
@@ -1182,6 +1186,20 @@ and (max-width: 480px) {
 
 .bookingDateTimeContainer .bookingDateTimeDiv > div:last-child {
     padding: 0;
+}
+
+.bookingDateTimeContainer .deleteBookingDateAndTime {
+    cursor: pointer;
+}
+
+.bookingDateTimeContainer .deleteBookingDateAndTime svg {
+    stroke: var(--darkgrey);
+    stroke-width: 1.5;
+    transition: 0.35s;
+}
+
+.bookingDateTimeContainer .deleteBookingDateAndTime:hover svg {
+    stroke: var(--lightgrey);
 }
 
 .bookingDivContainer .bookingDiv {

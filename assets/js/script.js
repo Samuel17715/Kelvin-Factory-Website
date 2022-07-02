@@ -156,7 +156,7 @@ function bookingFormInit() {
                     <input type="text" class="bookingTime bookingEndTime" placeholder="11:59 PM">
                 </div>
                 <div class="pt-4 deleteBookingDateAndTime">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.5" y="5.09985" width="15" height="18" rx="1.5" stroke="#51526C" stroke-width="1.5"/><rect x="2.25" y="2.09985" width="19.5" height="3" rx="0.75" stroke="#51526C" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 0.900146L15 0.900146" stroke="#51526C" stroke-width="1.5" stroke-linecap="round"/><path d="M12 9V19.5" stroke="#51526C" stroke-width="1.5" stroke-linecap="round"/><path d="M15.75 9V19.5" stroke="#51526C" stroke-width="1.5" stroke-linecap="round"/><path d="M8.25 9V19.5" stroke="#51526C" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.5" y="5.09985" width="15" height="18" rx="1.5"  /><rect x="2.25" y="2.09985" width="19.5" height="3" rx="0.75"   stroke-linejoin="round"/><path d="M9 0.900146L15 0.900146"   stroke-linecap="round"/><path d="M12 9V19.5"   stroke-linecap="round"/><path d="M15.75 9V19.5"   stroke-linecap="round"/><path d="M8.25 9V19.5"   stroke-linecap="round"/></svg>
                 </div>
             </div> 
             </div>
@@ -260,15 +260,20 @@ function bookingFormInit() {
 
             if(calculateUnusedHours() === 0) {
                 $('.studioMembershipTimeDiv p.studioMembershipTimeLeft').html('<span class="green">' + studioMembershipHours + ' fully scheduled. Now book studio</span>');
+                $('.materialBookingForm input[type="submit"]').attr("disabled", false);
             }
 
             if(calculateUnusedHours() < 0) {
                 $('.studioMembershipTimeDiv p.studioMembershipTimeLeft').html('<span class="orange">Studio time you set has exceeded ' + studioMembershipHours + ' hours. Re-adjust the booking Time</span>');
+                $('.materialBookingForm input[type="submit"]').attr("disabled", true);
             }
 
             if(calculateUnusedHours() > 0){
                 $('.studioMembershipTimeDiv p.studioMembershipTimeLeft').html(calculateUnusedHours() + ' hours studio time unset.');
+                $('.materialBookingForm input[type="submit"]').attr("disabled", false);
             }
+
+            console.log(calculateUnusedHours());
         }
     }
 
@@ -343,12 +348,15 @@ function bookingFormInit() {
 
 /************ Append Main Navigation ***************/
 function addMainNav() {
-    let btnHTML = '';
+    let btnDesktopHTML = '';
+    let btnMobileHTML = '';
 
     if(profileSessionIDFunc() !== "") {
-        btnHTML = '<li><a class="materialButton" href="javascript: void(0)" onClick="signOut()">Sign Out</a></li>';  
+        btnDesktopHTML = '<li><a class="materialButton" href="javascript: void(0)" onClick="signOut()">Sign Out</a></li>';  
+        btnMobileHTML = '<li><a class="materialButton" href="profile.html">My Bookings</a></li>';  
     } else {
-        btnHTML = '<li><a class="materialButton" href="login.html">Log In</a></li>';  
+        btnDesktopHTML = '<li><a class="materialButton" href="login.html">Log In</a></li>';
+        btnMobileHTML = '<li><a class="materialButton" href="login.html">Log In</a></li>'
     }
 
     let mainNavHTMLContent = `
@@ -363,13 +371,13 @@ function addMainNav() {
                     <ul>
                         <li><a class="active" href="profile.html">My Bookings</a></li>
                         <li><a class="" href="#">About</a></li>
-                        <li><a target="_blank" class="" href="https://kelvinshotzz.com">Book Shoots</a></li>
                         <li><a class="" href="#">Contact</a></li>
+                        <li><a target="_blank" class="" href="https://kelvinshotzz.com">Book Shoots</a></li>
                     </ul>    
                 </div>
                 <div>
                     <ul>
-                        ${btnHTML}
+                        ${btnDesktopHTML}
                     </ul>
                 </div>
             </nav>
@@ -384,7 +392,7 @@ function addMainNav() {
                 </div>
                 <div>
                     <ul>
-                    ${btnHTML}
+                        ${btnMobileHTML}
                         <li class="toggleButton">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 21H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 3H22.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </li>
@@ -395,10 +403,10 @@ function addMainNav() {
             <nav class="dropdown">
                 <div>
                     <ul class="flex-column">
-                        <li><a class="active" href="#">Home</a></li>
                         <li><a class="" href="#">About</a></li>
-                        <li><a target="_blank" class="" href="https://kelvinshotzz.com">Book Shoots</a></li>
                         <li><a class="" href="#">Contact</a></li>
+                        <li><a target="_blank" class="" href="https://kelvinshotzz.com">Book Shoots</a></li>
+                        <li><a class="" href="javascript: void(0)" onClick="signOut()">Sign Out</a></li>
                     </ul>    
                 </div>
             </nav>
