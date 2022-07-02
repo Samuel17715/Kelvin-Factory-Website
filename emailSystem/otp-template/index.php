@@ -103,7 +103,7 @@ $otpBody = "
                                           <table border='0' cellpadding='0' cellspacing='0' class='image_block' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
                                              <tr>
                                                 <td style='width:100%;padding-right:0px;padding-left:0px;'>
-                                                   <div align='center' style='line-height:10px'><img src='".$emailTemplateImageDir."kelvinfactory-logo.png' style='display: block; height: auto; border: 0; width: 150px; max-width: 100%;' width='150'/></div>
+                                                   <div align='center' style='line-height:10px'><img src='".$emailTemplateImageDir."kelvinfactory-logo.png' style='display: block; height: auto; border: 0; width: 100px; max-width: 100%;' width='100'/></div>
                                                 </td>
                                              </tr>
                                           </table>
