@@ -4,67 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/style2.css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Login to your Account - Kelvin Factory</title> 
 </head>
 <body>
-    <section class="materialNavSection">
-        <nav class="flex-between">
-            <div>
-                <img src="assets/img/kelvinshotz-logo.png" alt="">
-            </div>
-            <div>
-                <ul>
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a class="" href="#">About</a></li>
-                    <li><a class="" href="#">Book Shoots</a></li>
-                    <li><a class="" href="#">Contact</a></li>
-                </ul>    
-            </div>
-            <div>
-                <ul>
-                    <li><a class="materialButton" href="create-account.html">Create Account</a></li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-
-    <section class="materialNavSection mobile">
-        <nav class="flex-between">
-            <div>
-                <img src="assets/img/kelvinshotz-logo.png" alt="">
-            </div>
-            <div>
-                <ul>
-                    <li><a class="materialButton" href="create-account.html">Create Account</a></li>
-                    <li class="toggleButton">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 21H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 3H22.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <nav class="dropdown">
-            <div>
-                <ul class="flex-column">
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a class="" href="#">About</a></li>
-                    <li><a class="" href="#">Book Shoots</a></li>
-                    <li><a class="" href="#">Contact</a></li>
-                </ul>    
-            </div>
-        </nav>
-    </section>
+    
+    <!-- Main Navigation -->
+    <div class="mainNavHTMLContentDiv"></div>
 
     <section class="userRegistrationFormContainer flex-center">
-        <div class="userRegistrationForm">
+        <form class="userRegistrationForm">
             <div class="loginDiv">
                 <h5 class="text-center mb-4">Login to your account</h5>
 
                 <div class="materialFormInput emailAddressInput">
-                    <input type="text" class="emailAddress" placeholder="Email Address">
+                    <input type="text" class="emailAddress" placeholder="Email Address" autocomplete="">
                     <span class="inputFieldInfo">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5099 5.85L13.5699 2.42C12.5999 1.86 11.3999 1.86 10.4199 2.42L4.48992 5.85C3.51992 6.41 2.91992 7.45 2.91992 8.58V15.42C2.91992 16.54 3.51992 17.58 4.48992 18.15L10.4299 21.58C11.3999 22.14 12.5999 22.14 13.5799 21.58L19.5199 18.15C20.4899 17.59 21.0899 16.55 21.0899 15.42V8.58C21.0799 7.45 20.4799 6.42 19.5099 5.85ZM11.2499 7.75C11.2499 7.34 11.5899 7 11.9999 7C12.4099 7 12.7499 7.34 12.7499 7.75V13C12.7499 13.41 12.4099 13.75 11.9999 13.75C11.5899 13.75 11.2499 13.41 11.2499 13V7.75ZM12.9199 16.63C12.8699 16.75 12.7999 16.86 12.7099 16.96C12.5199 17.15 12.2699 17.25 11.9999 17.25C11.8699 17.25 11.7399 17.22 11.6199 17.17C11.4899 17.12 11.3899 17.05 11.2899 16.96C11.1999 16.86 11.1299 16.75 11.0699 16.63C11.0199 16.51 10.9999 16.38 10.9999 16.25C10.9999 15.99 11.0999 15.73 11.2899 15.54C11.3899 15.45 11.4899 15.38 11.6199 15.33C11.9899 15.17 12.4299 15.26 12.7099 15.54C12.7999 15.64 12.8699 15.74 12.9199 15.87C12.9699 15.99 12.9999 16.12 12.9999 16.25C12.9999 16.38 12.9699 16.51 12.9199 16.63Z"></path></svg>
                         <span></span>
@@ -73,7 +29,7 @@
 
                 <div class="materialFormInput passwordInputDiv">
                     <div class="materialFormGroupInput">
-                        <input type="password" class="passwordInput" placeholder="Password" required="">
+                        <input type="password" class="passwordInput" placeholder="Password" autocomplete="" required="">
                         <span class="showHideBtn showPassword active">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.25 9.14969C18.94 5.51969 15.56 3.42969 12 3.42969C10.22 3.42969 8.49 3.94969 6.91 4.91969C5.33 5.89969 3.91 7.32969 2.75 9.14969C1.75 10.7197 1.75 13.2697 2.75 14.8397C5.06 18.4797 8.44 20.5597 12 20.5597C13.78 20.5597 15.51 20.0397 17.09 19.0697C18.67 18.0897 20.09 16.6597 21.25 14.8397C22.25 13.2797 22.25 10.7197 21.25 9.14969ZM12 16.0397C9.76 16.0397 7.96 14.2297 7.96 11.9997C7.96 9.76969 9.76 7.95969 12 7.95969C14.24 7.95969 16.04 9.76969 16.04 11.9997C16.04 14.2297 14.24 16.0397 12 16.0397Z"></path><path d="M11.9984 9.14062C10.4284 9.14062 9.14844 10.4206 9.14844 12.0006C9.14844 13.5706 10.4284 14.8506 11.9984 14.8506C13.5684 14.8506 14.8584 13.5706 14.8584 12.0006C14.8584 10.4306 13.5684 9.14062 11.9984 9.14062Z"></path></svg>
                         </span>
@@ -87,58 +43,51 @@
                         <span></span>
                     </span>
                 </div>
+                <div class="materialFormSecButton link">
+                    <a href="forgot-password.html">Forgot Password?</a>
+                </div>
 
                 <div class="materialFormInput">
                     <input type="submit" class="" value="Sign In">
                 </div>
-
+                
                 <div class="materialFormSecButton">
-                    <a href="forgot-password.html">Forgot Password? <strong> Recover here</strong></a>
+                    <a href="create-account.html">New User? <strong>Create Account</strong></a>
                 </div>
             </div>
-        </div>
+        </f>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/form-validation.js"></script>
     <script src="assets/js/inner-pages-function.js"></script>
-    <script src="assets/js/custom-js.js"></script>
+    <script src="assets/js/script.js"></script>
     <script>
+        function loginCallback(response) {
+            switch (response[0]){
+                case 100:
+                    sessionStorage.setItem("profileid", response[1]);
+                    window.location.href = "profile.html";
+                    break;
+                case 101:
+                    inputValidationFunc('passwordInputDiv', 'Incorrect Password', 'open');
+                    break;
+                case 102:
+                    inputValidationFunc('emailAddressInput', 'This email does not exists. <a href="create-account.html" style="color: #000;"><strong>Create an account here</strong></a>', 'open');
+                    break;
+                case 104:
+                    console.log('Error! Please try again');
+                    break;
+                case 105:
+                    console.log('Unable to connect to database');
+            }
+            $('.loginDiv input[type="submit"]').val('Log in');
+        }
+
         $(document).ready(function() {
-
-            let callAjaxFunc = (formData, callback) => {
-                $.ajax({
-                    url: "https://kelvinshotzz.com/kelvinfactory/serverProcessing.php",
-                    type: "POST",
-                    dataType: 'json',
-                    data: formData,
-                    success: callback,
-                    error: function(){
-                    }   
-                });
-            }
-
-            function loginCallback(response) {
-                switch (response[0]){
-                    case 100:
-                        sessionStorage.setItem("profileid", response[1]);
-                        window.location.href = "profile.html";
-                        break;
-                    case 101:
-                        inputValidationFunc('passwordInputDiv', 'Incorrect Password', 'open');
-                        break;
-                    case 102:
-                        inputValidationFunc('emailAddressInput', 'This email does not exists. <a href="create-account.html" style="color: #000;"><strong>Create an account here</strong></a>', 'open');
-                        break;
-                    case 104:
-                        console.log('Error! Please try again');
-                        break;
-                    case 105:
-                        console.log('Unable to connect to database');
-                }
-                $('.loginDiv input[type="submit"]').val('Login');
-            }
+            $("form.userRegistrationForm").submit(function(e){
+                e.preventDefault();
+            });
 
             // Submit Function (Check input Validation for all and Submit)
             $('.loginDiv input[type="submit"]').click(function(event) {
@@ -152,14 +101,8 @@
                         requestType: 'loginUser'
                     }
                     callAjaxFunc(formData, loginCallback);
-                } else {
                 }
-            })
-        });
-    </script>
-    <script>
-        $('.materialNavSection .toggleButton').on('click', function(){
-            $('.materialNavSection.mobile nav.dropdown').toggleClass('active');
+            });
         });
     </script>
 </body>
