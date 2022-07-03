@@ -1,7 +1,14 @@
 @font-face {
+    font-family: 'Gordita Light';
+      src: url('../fonts/Gordita Light.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+}
+
+@font-face {
     font-family: 'Gordita Regular';
       src: url('../fonts/Gordita Regular.otf') format('opentype');
-      font-weight: 400;
+      font-weight: 300;
       font-style: normal;
 }
 
@@ -28,396 +35,213 @@
 
 :root {
     --primaryColor: #f4d7a1;
-    --primaryColor2: #545454;
-    --primaryColor3: #dbdbdb;
-    --primaryColor4: #1d1d1d;
-    --primaryColor5: #c99e4e;
-    --light: #fbf9f2;
+    --primaryColor2: #DCFD51;
+    --secondary: #1B3839;
+    --white: #ffffff;
+    --light: rgba(255, 255, 255, 0.8);
+    --lightgrey: #787878;
+    --darkgrey: #242424;
 }
 
 body {
     font-family: 'Gordita Regular', sans-serif;
-    overflow-x: hidden;
-    /* background: #f7f5f5; */
-}
-
-.container-fluid {
-    padding: 0;
+    background: #090909;
 }
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
-h1, h2, h3 {
-    color: var(--primaryColor5);
-    font-family: 'Gordita Black', sans-serif;
-    font-weight: 700;
-    font-size: 4.85rem;
-    letter-spacing: -0.7px;
-    line-height: 90px;
-    padding: 2.45rem 0;
-    transition: 0.65s;
-}
-
-h4, h5, h6 {
-    font-family: 'Gordita Medium', sans-serif;
-    margin: 0;
-}
-
-nav {
-    font-family: 'Gordita Medium', sans-serif;
-}
-
-h2 {
-    color: var(--primaryColor4);
-    font-size: 3rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-    padding: 0.25rem 0;
-    line-height: 30px;
-}
-
-h4 {
-    font-size: 1.3rem;
-    letter-spacing: 0.15px;
-}
-
-h5 {
-    font-size: 1.2rem;
-    line-height: 27px;
-    margin: 0;
-}
-
-h6 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.15px;
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
 p {
-    font-size: 0.92rem;
-    font-weight: 300;
-    line-height: 1.75em;
-    padding-right: 20px;
     margin: 0;
+    font-size: 0.85rem;
 }
 
-.materialTab {
-    margin-bottom: 2rem;
-    padding: 0 1.5rem;
-}
-
-.materialTab ul {
-    list-style-type: none;
-    padding-left: 0px;
-    margin: 0;
-}
-
-.materialTab ul li {
-    display: inline;
-    padding: 0.65rem 0;
-    padding-right: 3rem;
-    color: #6d6d6d;
-    font-weight: 400;
-    border-bottom: 0.68px solid #6d6d6d;
-    cursor: pointer;
-}
-
-.materialTab ul li.active {
-    font-weight: 600;
-    color: var(--primaryColor5);
-    border-bottom: 2px solid var(--primaryColor5);
-}
-
-.alignCenter {
+.flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.alignSpaceBetween {
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-between {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.subButton {
-    display: none;
-    cursor: pointer;
-    font-size: 0.7rem;
-    margin: 0.85rem 0;
-    padding: 0.4rem 0.65rem;
-    border-radius: 70px;
-    background: rgba(0,0,0,0.07);
-    text-align: center;
-    transition: 0.45s;
-    width: 44%;
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
-.subButton.active {
-    display: block;
-}
-
-.subButton:hover {
-    background: rgba(0,0,0,0.15);
-}
-
-.subButton svg {
-    stroke: var(--primaryColor4);
-    stroke-width: 2.35;
-    width: 12px;   
-}
-
-.materialHeroSection {
-    padding: 0;
-}
-
-.materialHeroSection .materialHeroContent {
-    padding: 2.5rem 8rem;
-    padding-right: 5rem;
-}
-
-.materialHeroSection h1 {
-  padding-top: 4.5rem;
-}
-
-.materialHeroSection p {
-    color: var(--primaryColor4);
-    font-size: 0.9rem;
-    font-weight: 300;
-    line-height: 30px;
-}
-
-.materialHeroSection img {
-    width: 100%;
-}
-
-.materialHeroSection .heroImageControl {
-    margin-top: 130px;
-}
-
-.materialHeroSection .heroImageControl svg {
-    border: 1px solid var(--primaryColor);
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    padding: 7px;
-    stroke: var(--primaryColor3);
+.materialButton {
+    color: var(--white) !important;
+    background-color: var(--darkgrey);
+    padding: 1.1rem 1.35rem;
+    border-radius: 4px;
     transition: 0.65s;
 }
 
-.materialHeroSection .heroImageControl svg:hover {
-    background: var(--primaryColor);
-    stroke: var(--primaryColor3);
-}
-
-.materialHeroSection .heroImageControl svg:active {
-    background: var(--primaryColor2);
-}
-
-.materialHeroSection .heroImageControl span {
-    color: var(--primaryColor3);
-    padding: 0 10px;
+.materialButton:hover {
+    transform: scale(1.05);
 }
 
 .materialNavSection {
+    padding: 1.5rem 7rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+    background-color: #090909;
+}
+
+.materialNavSection.mobile {
+    display: none;
+}
+
+.materialNavSection nav img {
+    width: 70px;
+}
+
+.materialNavSection ul {
+    padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    margin: 0;
 }
 
-.materialNavSection .navbar {
-    width: 100%;
-}
-
-.materialNavSection .navbar-toggler {
-    border: none;
+.materialNavSection ul li {
+    display: inline;
 }
 
 .materialNavSection li {
-    margin-right: 2rem;
-}
-
-.materialNavSection nav a {
-    color: #6d6d6d;
-    display: inline;
+    font-family: 'Gordita Medium';
     font-size: 0.8rem;
-    font-weight: 500;
-    transition: 0.25s;
+    padding: 0 2rem;
+    list-style-type: none;
 }
 
-.materialNavSection nav a img {
-    width: 100px;
+.materialNavSection li:last-child {
+    padding-right: 0;
 }
 
-.materialNavSection nav a:hover {
-    color: #1c1c1c;
+.materialNavSection li a {
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.35s;
 }
 
-.materialBookingFormContainer {
-    position: relative;
+.materialNavSection li a.active {
+    color: var(--white);
 }
 
-.materialBookingForm {
-    color: var(--primaryColor4);
-    width: calc(100% * 0.825);
-    padding: 2.15rem 2.75rem;
-    background: #ffffff;
-    border: 1.35px solid #dfdfdf;
-    border-radius: 17px;
-    position: relative;
-    z-index: 5;
-    left: 54%;
-    top: -145px;
-    transform: translate(-50%, 0);
-    box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
-    -webkit-box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
-    -moz-box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
+.materialNavSection li a:hover {
+    color: var(--darkgrey);
 }
 
-.materialBookingForm label {
-    color: var(--secondaryTextColor);
-    font-size: 0.95rem;
-    font-weight: 400;
-    margin: 0 0 6px;
-    letter-spacing: -0.2px;
+.materialNavSection li a.materialButton {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
 }
 
-.materialBookingForm input, .materialBookingForm select {
-    appearance: none;
-    outline: none;
+.materialNavSection.mobile {
     width: 100%;
-    padding: 0.7rem 1rem;
-    border: none;
-    border: 1px solid #bdbdbd;
-    border-radius: 7px;
-    background: var(--secBGColor);
 }
 
-.materialBookingForm input.warning, .materialBookingForm select.warning {
-    border: 1px solid #f12828;
+.materialNavSection.mobile li {
+    text-align: center;
+    padding: 0 0.85rem;
 }
 
-.materialBookingForm input[disabled], .materialBookingForm select[disabled] {
-    opacity: 0.25;
-}
-
-.materialBookingForm input[type="submit"] {
-    color: #ffffff;
-    padding: 1.1rem 1rem;
-    background: var(--primaryColor4);
-    border: none;
-    opacity: 0.935;
-    transition: 0.45s;
-}
-
-.materialBookingForm input[type="submit"]:hover {
-    opacity: 1;
-}
-
-.materialModalButton {
+.materialNavSection.mobile li:last-child {
+    padding-right: 0;
     cursor: pointer;
-    border: 1px solid #bdbdbd;
-    /* text-align: center; */
-    padding: 0.7rem 1rem;
-    font-size: 0.92rem;
-    border-radius: 3px;
-    transition: 0.45s;
 }
 
-.materialModalButton:hover {
-    color: var(--primaryColor4);
-    background: var(--primaryColor);
-    border: 1px solid var(--primaryColor);
+.materialNavSection.mobile li svg {
+    stroke: var(--light);
+    stroke-width: 1;
 }
 
-.materialModalButton:active {
-    background: var(--primaryColor5);
+.materialNavSection.mobile nav.dropdown {
+    background-color: var(--darkgrey);
+    width: 100%;
+    height: 0;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    z-index: 5;
+    transition: 0.65s;
+    overflow: hidden;
 }
 
-.materialModalButton span:first-child {
-    border-radius: 5px;
-    background: var(--primaryColor4);
-    padding: 2.75px 5px;
-    margin-right: 0.45rem;
+.materialNavSection.mobile nav.dropdown ul {
+    padding: 2rem 0;
 }
 
-.materialModalButton span svg {
-    width: 17px;
-    height: 10px;
-    padding-bottom: 1.65px;
-    stroke: var(--primaryColor);
-    stroke-width: 5;
-}
-
-.materialPackagesContainer {
-    margin: 2.5rem 0;
-}
-
-.materialGalleryImage {
-    position: relative;
+.materialNavSection.mobile nav.dropdown.active {
     height: 100%;
-    padding: 0 0.75rem;
 }
 
-.materialGalleryImage .gallery {
-    position: absolute;
-    animation: floatImages;
-    cursor: pointer;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+.materialNavSection.mobile nav.dropdown li {
+    padding: 1.5rem 0;
+    font-size: 1.2rem;
+    font-family: 'Gordita Light';
 }
 
-.materialGalleryImage .gallery.gallery-1 {
-    width: 70%;
-    z-index: 7;
-    margin-top: 100px;
-    /* box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
-    -webkit-box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14);
-    -moz-box-shadow: 2px 10px 41px 2px rgba(201,150,93,0.14); */
-    animation-direction: reverse;
+.materialNavSection.mobile nav.dropdown li a {
+    color: var(--white);
 }
 
-.materialGalleryImage .gallery.gallery-2 {
-    width: 50%;
-    z-index: 9;
-    right: 0;
-    animation-duration: 8.5s;
+.materialNavSection.mobile nav.dropdown li a.active {
+    color: var(--primaryColor);
 }
 
-.materialGalleryImage .gallery.gallery-3 {
-    width: 45%;
-    top: 75%;
-    right: 0;
-    z-index: 5;
-    animation-duration: 10s;
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .materialNavSection {
+        display: none;
+        padding: 2rem 3.5rem;
+
+    }
+    .materialNavSection nav img {
+        width: 70px;
+    }
+    .materialNavSection.mobile {
+        display: block;
+    }
 }
 
-.materialGalleryImage img {
-    width: 100%;
-    transition: 1.25s;
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .materialNavSection {
+        display: none;
+        padding: 1.45rem 1.5rem;
+    }
+    .materialNavSection.mobile {
+        display: block;
+    }
+    .materialNavSection nav img {
+        width: 60px;
+    }
 }
 
-.materialGalleryImage .gallery:hover img {
-    width: 97%;
-}
-
-.materialListContainer {
-    padding: 0 3.5rem;
-}
-
-@keyframes floatImages {
-    0%   {transform: translateY(0);}
-    25%   {transform: scale(1.025) translateY(-17px);}
-    75%  {transform: scale(1.025) translateY(17px);}
-    100% {transform: translateY(0);}
-}
 
 
 
@@ -455,10 +279,10 @@ p {
     top: 0;
     right: 0;
     z-index: 14;
-    width: calc(100% / 1.85);
+    width: calc(100% / 1.8);
     height: 100vh;
     padding: 2.2em 2.75rem;
-    background: var(--primaryColor4);
+    background: var(--white);
     box-shadow: 0 8px 25px rgba(16, 16, 16, 0.25);
 }
 
@@ -470,7 +294,7 @@ p {
 
 .mainBodyRightDivTopBar svg {
     cursor: pointer;
-    fill: var(--primaryColor5);
+    fill: var(--darkgrey);
     margin-right: 0.65rem;
     width: 34px;
     height: 34px;
@@ -482,6 +306,75 @@ p {
 
 .mainBodyRightDivTopBar svg:hover {
     opacity: 1;
+}
+
+.multiSelectOptionsDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.multiSelectOptionsDiv > label {
+    flex: 49%;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 13.5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.multiSelectOptionsDiv label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.multiSelectOptionsDiv .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--lightgrey);
+    border-radius: 50%;
+}
+
+.multiSelectOptionsDiv label:hover input ~ .checkmark {
+    background-color: var(--darkgrey);
+}
+
+.multiSelectOptionsDiv label input:checked ~ .checkmark {
+    background-color: var(--white);
+    border: 5px solid #afda00;
+}
+
+.multiSelectOptionsDiv .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.multiSelectOptionsDiv label .checkmark input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.multiSelectOptionsDiv label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 /* Tablet */
@@ -509,21 +402,943 @@ and (max-width: 480px) {
     }
 }
 
-.materialFormHeader {
-    padding: 0.8rem 0;
-    border-bottom: 1.35px solid #dbdbdb;
+/************ Hero Section ************/
+
+.heroSection {
+    margin: 7rem 0;
+    padding: 6rem 7rem;
+    background: #090909;
+    /* background-image: url(../img/hero-bg-7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
 
-.materialFormInput {
-    margin: 1.05rem 0;
-}
-
-.materialFormInput .materialFormGroupInput {
+.heroSection .heroDiv {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.materialFormInput .materialFormGroupInput .showHideBtn {
+.heroSection .heroDiv > div:first-child {
+    flex: 55%;
+}
+
+.heroSection .heroDiv > div:last-child {
+    flex: 45%;
+}
+
+.heroSection .heroDiv h1 {
+    color: var(--white);
+    /* text-align: center; */
+    font-family: 'Gordita Medium', sans-serif;
+    letter-spacing: -1.5px;
+    font-size: 5.25rem;
+    line-height: 110.5%;
+}
+
+.heroSection .heroDiv p.heroText {
+    /* text-align: center; */
+    font-size: 0.93rem;
+    font-family: 'Gordita Regular', sans-serif;
+    color: var(--light);
+    padding-top: 1.65rem;
+    width: 600px;
+}
+
+.heroSection .heroDiv .heroImage img {
+    width: 100%;
+    border-radius: 12px;
+    display: none;
+}
+
+.heroSection .heroDiv .heroImage img.desktop {
+    display: block;
+}
+.heroSection .heroDiv .heroImage img.mobile {
+    display: none;
+}
+
+.heroSection .heroDiv .imageNavControl {
+    margin-top: 5rem;
+}
+
+.heroSection .heroDiv .imageNavControl svg {
+    width: 50px;
+}
+
+.heroSection .heroDiv .imageNavControl > div:nth-child(2) {
+    color: var(--white);
+    padding: 0 1rem;
+}
+
+.heroSection .heroDiv .powered-by-div {
+    margin-top: 2rem;
+}
+
+.heroSection .heroDiv .powered-by-div p {
+    color: var(--lightgrey);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.heroSection .heroDiv .powered-by-div img {
+    width: 120px;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.heroSection .heroDiv .powered-by-div img:hover {
+    opacity: 1;
+}
+
+.heroSection .materialBookingFormContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding: 0 1.75rem;
+}
+
+.heroSection .bookingDateTimeContainer {
+    opacity: 0.2;
+}
+
+.heroSection .bookingDateTimeContainer.active {
+    opacity: 1;
+}
+
+.heroSection .materialBookingForm {
+    color: var(--primaryColor4);
+    width: calc(100% * 0.815);
+    padding: 2.15rem 1.5rem;
+    background: rgb(255, 255, 255);
+    border-radius: 17px;
+    margin-top: 3rem;
+}
+
+.heroSection .materialFormHeader {
+    padding: 0.8rem 0;
+    border-bottom: 1.35px solid #dbdbdb;
+
+}
+
+.heroSection .materialFormHeader h4 {
+    font-family: 'Gordita Bold', sans-serif;
+    color: var(--darkgrey);
+    font-size: 1.25rem;
+}
+
+.heroSection .totalPriceDiv {
+    display: none;
+    margin-top: 1.2rem;
+}
+
+.heroSection .totalPriceDiv.active {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.heroSection .totalPriceDiv.active > div {
+    flex: 49.2%;
+    margin-top: 1rem;
+}
+
+.heroSection .totalPriceDiv h5 {
+    font-size: 1.05rem;
+    font-family: 'Gordita Medium', sans-serif;
+}
+
+.heroSection .totalPriceDiv h6 {
+    font-weight: 400;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    padding-bottom: 0.65rem;
+}
+
+.heroSection .totalPriceDiv.inactive {
+    display: none;
+}
+
+.heroSection .studioMembershipTimeDiv {
+    padding-top: 0.45rem;
+}
+
+.heroSection p.studioMembershipTime {
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--darkgrey);
+    padding-right: 0.5rem;
+}
+
+.heroSection p.studioMembershipTimeLeft{
+    font-family: 'Gordita Medium', sans-serif;
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--darkgrey);
+}
+
+.heroSection p.studioMembershipTimeLeft span.green {
+    color: #02ce54;   
+}
+
+.heroSection p.studioMembershipTimeLeft span.orange {
+    color: #dd9105;   
+}
+
+.heroSection .materialBookingForm label {
+    color: var(--secondaryTextColor);
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0 0 6px;
+    letter-spacing: -0.2px;
+}
+
+.heroSection .materialBookingForm input, .heroSection .materialBookingForm select {
+    appearance: none;
+    outline: none;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 7px;
+    background: var(--secBGColor);
+}
+
+.heroSection .materialModalButton {
+    cursor: pointer;
+    border: 1px solid #bdbdbd;
+    /* text-align: center; */
+    padding: 0.7rem 1rem;
+    font-size: 0.92rem;
+    border-radius: 3px;
+    transition: 0.45s;
+}
+
+.heroSection .materialModalButton span:first-child {
+    border-radius: 5px;
+    background: var(--darkgrey);
+    padding: 2.75px 5px;
+    margin-right: 0.45rem;
+}
+
+.heroSection .materialModalButton span svg {
+    width: 17px;
+    height: 10px;
+    padding-bottom: 1.65px;
+    stroke: var(--primaryColor);
+    stroke-width: 5;
+}
+
+.heroSection .subButton {
+    display: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    padding: 0.85rem 0.35rem;
+    border-radius: 70px;
+    background: rgba(0, 0, 0, 0.065);
+    text-align: center;
+    transition: 0.45s;
+    width: 200px;
+    font-family: 'Gordita Medium', sans-serif;
+}
+
+.subButton svg {
+    stroke: var(--darkgrey);
+    stroke-width: 2.35;
+    width: 12px;
+    margin-right: 0.6rem;
+}
+
+.heroSection .subButton.active {
+    display: block;
+}
+
+.heroSection .materialBookingForm input[type="submit"] {
+    color: var(--white);
+    padding: 1.1rem 1rem;
+    background: var(--darkgrey);
+    border: none;
+    opacity: 0.95;
+    transition: 0.45s;
+    margin-top: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3.78px;
+    font-size: 0.78rem;
+    font-family: 'Gordita Bold', sans-serif;
+}
+
+.heroSection .materialBookingForm input[type="submit"]:hover {
+    opacity: 1;
+    transform: scale(1.015);
+}
+
+.heroSection .materialBookingForm input[type="submit"][disabled] {
+    opacity: 0.45;
+}
+
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .heroSection {
+        padding: 7rem 3.5rem;
+    }
+    .heroSection .heroDiv {
+        flex-direction: column;
+    }
+    .heroSection .heroDiv > div:first-child, .heroSection .heroDiv > div:last-child {
+        flex: 100%;
+    }
+    .heroSection .heroDiv div.heroImage {
+        margin-top: 3.5rem;
+    }
+    .heroSection .heroDiv .heroImage img.desktop {
+        display: none;
+    }
+    .heroSection .heroDiv .heroImage img.mobile {
+        display: block;
+    }
+    .heroSection .heroDiv p.heroText {
+        font-size: 1.25rem;
+        width: 650px;
+    }
+    .heroSection .heroDiv .imageNavControl {
+        margin-top: 4rem;
+    }
+    .heroSection .materialBookingFormContainer {
+        padding: 0;
+    }
+    .heroSection .materialBookingForm {
+        width: 90%;
+    }
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .heroSection {
+        padding: 4rem 1.5rem;
+        padding-bottom: 1rem;
+        margin: 5rem 0;
+        margin-bottom: 2rem;
+    }
+    .heroSection .heroDiv {
+        flex-direction: column;
+    }
+    .heroSection .heroDiv > div:first-child, .heroSection .heroDiv > div:last-child {
+        flex: 100%;
+    }
+    .heroSection .heroDiv .imageNavControl {
+        margin-top: 2.5rem;
+    }
+    .heroSection .heroDiv .powered-by-div {
+        margin-top: 1rem;
+    }
+    .heroSection .heroDiv div.heroImage {
+        margin-top: 3rem;
+    }
+    .heroSection .heroDiv h1 {
+        letter-spacing: 0.1px;
+        font-size: 2.35rem;
+    }
+    .heroSection .heroDiv p.heroText {
+        font-size: 0.96rem;
+        width: auto;
+    }
+    .heroSection .heroDiv .imageNavControl svg {
+        width: 30px;
+    }
+    .heroSection .heroDiv .heroImage img.desktop {
+        display: none;
+    }
+    .heroSection .heroDiv .heroImage img.mobile {
+        display: block;
+    }
+    .heroSection .materialBookingFormContainer {
+        margin-top: 1.5rem;
+        padding: 0;
+    }
+    .heroSection .heroDiv .powered-by-div img {
+        width: 80px;
+    }
+    .heroSection .materialBookingForm {
+        width: 100%;
+        padding: 2rem 0.5rem;
+    }
+    .mainBodyRightDivTopBar h4 {
+        font-size: 1.1rem;
+    }
+    .multiSelectOptionsDiv > label {
+        flex: 100%;
+    }
+    .multiSelectOptionsDiv .checkmark {
+        width: 15px;
+        height: 15px;
+    }
+    .heroSection .materialModalButton {
+        font-size: 0.73rem;
+        padding: 0.7rem;
+    }
+    .heroSection .materialModalButton span:first-child {
+        padding: 4.65px;
+    }
+    .heroSection .materialInputForm {
+        margin: 0.5rem 0;
+    }
+    .mainBodyRightContainer {
+        backdrop-filter: blur( 5px );
+        -webkit-backdrop-filter: blur( 5px );
+    }
+    .materialBookingForm .container-fluid {
+        padding: 0 7px;
+    }
+    .heroSection .totalPriceDiv {
+        text-align: left;
+        margin-top: 2rem;
+    }
+    .heroSection .totalPriceDiv.active {
+        flex-wrap: wrap;
+    }
+}
+
+/******** Studio Gallery **********/
+.studioGallerySection {
+    background-color: #ffffff;
+    padding: 10rem 12rem;
+    text-align: center;
+}
+
+.studioGallerySection h1 {
+    padding-bottom: 8rem;
+}
+
+.studioGallerySection .studioGalleryImages {
+    --gap: 16px;
+    --num-cols: 4;
+    --row-height: 300px;
+    box-sizing: border-box;
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+}
+
+.studioGallerySection .studioGalleryImages > img {
+    border-radius: 26px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-grid-col-2 {
+    grid-column: span 2;
+}
+  
+.image-grid-row-2 {
+    grid-row: span 2;
+}
+
+@media screen and (max-width: 1024px) {
+    .studioGallerySection .studioGalleryImages {
+      --num-cols: 2;
+      --row-height: 200px;
+    }
+}
+
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .studioGallerySection {
+        padding: 8rem 3.5rem;
+    }
+    .studioGallerySection h1 {
+        padding-bottom: 4rem;
+    }
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .studioGallerySection {
+        padding: 7rem 1.5rem;
+    }
+    .studioGallerySection h1 {
+        padding-bottom: 2.5rem;
+    }
+}
+
+
+
+/*********** Membership Section **********/
+
+.membershipSection {
+    color: var(--darkgrey);
+    background-color: #FFFCF3;
+    padding: 7rem;
+}
+
+.membershipSection h1 {
+    font-size: 3rem;
+    font-family: 'Gordita Medium', sans-serif;
+    padding: 3rem 0;
+}
+
+.membershipSection .membershipDiv {
+    border-radius: 15px;
+    font-family: 'Gordita Bold', sans-serif;
+    border: 1px solid #A8A8A8;
+    padding: 3rem 2rem;
+    height: 370px;
+    max-height: 370px;
+    margin-bottom: 2rem;
+}
+
+.membershipSection .membershipDiv img {
+    width: 80px;
+}
+
+.membershipSection .membershipDiv .membershipDivContent {
+    padding-top: 2.75rem;
+}
+
+.membershipSection .membershipDiv h3 {
+    font-size: 1.55rem;
+    font-family: 'Gordita Medium', sans-serif;
+}
+
+.membershipSection .membershipDiv p {
+    padding-top: 1rem;
+    font-family: 'Gordita Regular', sans-serif;
+}
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .membershipSection {
+        color: var(--darkgrey);
+        background-color: #FFFCF3;
+        padding: 7rem 3.5rem;
+    }
+    .membershipSection .membershipDiv img {
+        width: 120px;
+    }
+    .membershipSection .membershipDiv h3 {
+        font-size: 1.75rem;
+    }
+    .membershipSection .membershipDiv p {
+        padding-top: 1.55rem;
+    }
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .membershipSection {
+        padding: 7rem 1.5rem;
+    }
+    .membershipSection h1 {
+        font-size: 2.25rem;
+    }
+    .membershipSection .membershipDiv {
+        height: 420px;
+        max-height: 420px;
+    }
+    .membershipSection .membershipDiv .membershipDivContent {
+        padding-top: 2.25rem;
+    }
+}
+
+
+/*********** Footer Section **********/
+.footerSection {
+    color: var(--white);
+    padding: 10rem 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerSection .logo img {
+    width: 100px;
+}
+
+.footerSection ul {
+    display: inline;
+    padding: 0;
+}
+
+.footerSection li {
+    list-style-type: none;
+    display: inline;
+    padding-left: 2rem;
+}
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .footerSection {
+        padding: 10rem 3rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footerSection p {
+        padding: 2rem 0;
+    }
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .footerSection {
+        padding: 10rem 3rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footerSection p {
+        padding: 2rem 0;
+    }
+}
+
+
+.bookOtherSectionDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../img/banner-bg.jpg);
+    background-size: cover;
+    padding: 2.65rem 3rem;
+    margin: 0 10rem;
+    border-radius: 16px;
+    margin-top: -80px;
+}
+
+.bookOtherSectionDiv h1 {
+    font-family: 'Gordita Medium', sans-serif;
+    font-size: 1.87rem;
+}
+
+.bookOtherSectionDiv button {
+    color: var(--white) !important;
+    background-color: var(--darkgrey);
+    padding: 1.5rem 3rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 3.5px;
+    transition: 0.65s;
+    box-shadow: none;
+    border: none;
+}
+
+/* Tablet */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 1024px)  {
+    .bookOtherSectionDiv {
+        flex-direction: column;
+        margin: 0 5.25rem;
+        margin-top: -80px;
+        text-align: center;
+        padding: 3.75rem 1.5rem;
+    }
+    .bookOtherSectionDiv h1 {
+        padding-bottom: 1.2rem;
+    }  
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .bookOtherSectionDiv {
+        flex-direction: column;
+        margin: 0 1.65rem;
+        margin-top: -90px;
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+    }
+    .bookOtherSectionDiv h1 {
+        font-size: 1.35rem;
+        padding-bottom: 1.35rem;
+    }    
+}
+
+
+
+
+/************** Profile Bio ****************/
+
+.profileBio {
+    color: var(--white);
+    margin-top: 9rem;
+}
+
+.profileBio h4 {
+    font-family: 'Gordita Medium', sans-serif;
+}
+
+.profileBio p {
+    color: var(--lightgrey);
+}
+
+.profileBio img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+.bookingDivContainer {
+    width: 600px;
+    padding: 1rem;
+}
+
+.materialTab {
+    margin: 5rem 0;
+    margin-bottom: 3rem;
+}
+
+.materialTab ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0;
+}
+
+.materialTab ul li {
+    display: inline;
+    padding: 0.65rem 0;
+    padding-right: 4rem;
+    color: var(--light);
+    font-weight: 400;
+    border-bottom: 0.68px solid var(--light);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Gordita Regular';
+}
+
+.materialTab ul li.active {
+    color: var(--white);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primaryColor2);
+    font-family: 'Gordita Medium';
+}
+
+.materialTabContent[data-tab-content] {
+    display: none;
+}
+
+.materialTabContent.active[data-tab-content] {
+    display: block;
+}
+
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .profileBio {
+        padding: 1rem;
+    }
+    .profileBio img {
+        width: 60px;
+        height: 60px;
+        margin-right: 1rem;
+    }
+    .materialTab ul li {
+        padding-right: 2.65rem;
+    }
+    .bookingDivContainer {
+        width: 100%;
+    }
+    .materialTab {
+        margin: 2rem 0;
+    }
+}
+
+.bookingDateTimeContainer {
+    
+}
+
+.bookingDateTimeContainer .bookingDateTimeDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookingDateTimeContainer .bookingDateTimeDiv > div {
+    padding-right: 0.8rem;
+}
+
+.bookingDateTimeContainer .bookingDateTimeDiv > div:last-child {
+    padding: 0;
+}
+
+.bookingDateTimeContainer .deleteBookingDateAndTime {
+    cursor: pointer;
+}
+
+.bookingDateTimeContainer .deleteBookingDateAndTime svg {
+    stroke: var(--darkgrey);
+    stroke-width: 1.5;
+    transition: 0.35s;
+}
+
+.bookingDateTimeContainer .deleteBookingDateAndTime:hover svg {
+    stroke: var(--lightgrey);
+}
+
+.bookingDivContainer .bookingDiv {
+    background-color: #fafafa;
+    padding: 3rem 2rem;
+}
+
+.bookingDivContainer .bookingDiv .bookingTime {
+    margin: 3rem 0;
+}
+
+.bookingDivContainer .bookingDiv .bookingTime svg {
+    width: 200px;
+}
+
+.bookingDivContainer .bookingDiv h5 {
+    font-family: 'Gordita Medium';
+    font-size: 1.2rem;
+}
+
+.bookingDivContainer .bookingDiv h6 {
+    font-family: 'Gordita Medium';
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+}
+
+.bookingDivContainer .bookingDiv ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+}
+
+.bookingDivContainer .bookingDiv ul > li {
+    width: 100%;
+    flex: 50%;
+    font-size: 0.75rem;
+    padding: 0.35rem 0;
+}
+
+.bookingDivContainer .bookingDiv .bookingDate {
+    font-family: 'Gordita Medium';
+}
+
+/* Mobile Phones */
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .bookingDivContainer .bookingDiv .bookingTime svg {
+        width: 105px;
+    }
+}
+
+/* User Registration */
+.userRegistrationFormContainer {
+    width: 100%;
+    height: 100vh;
+    background-color: #f9fcff;
+    padding-top: 3rem;
+}
+
+.userRegistrationForm {
+    padding: 2.2rem 2.5rem;
+    width: 500px;
+}
+
+.userRegistrationForm h5 {
+    font-family: 'Gordita Medium';
+}
+
+.userRegistrationForm input, .userRegistrationForm select {
+    appearance: none;
+    outline: none;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: none;
+    border: 0.65px solid #d2d2d2;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-family: 'Gordita Medium';
+    background: none;
+}
+
+.userRegistrationForm input[type="submit"] {
+    color: #ffffff;
+    padding: 1.1rem 1rem;
+    background: var(--darkgrey);
+    border: none;
+    opacity: 0.935;
+    transition: 0.45s;
+}
+
+.userRegistrationForm .materialFormSecButton {
+    width: 100%;
+    margin-top: 1.65rem;
+}
+
+.userRegistrationForm .materialFormSecButton a {
+    color: var(--darkgrey);
+    font-size: 0.8rem;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+}
+
+.userRegistrationForm .materialFormSecButton.link {
+    padding-top: 0.35rem;
+    padding-bottom: 0.1rem;
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.userRegistrationForm .materialFormSecButton.link a {
+    text-align: right;
+    font-size: 0.75rem;
+    opacity: 0.65;
+    transition: 0.35s;
+}
+
+.userRegistrationForm .materialFormSecButton.link a:hover {
+    opacity: 1;
+}
+
+.userRegistrationForm .formInlineInput>div {
+    width: 48%;
+}
+
+.userRegistrationForm .materialFormInput {
+    margin-top: 1.05rem;
+}
+
+.userRegistrationForm .materialFormGroupInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userRegistrationForm .materialFormGroupInput .showHideBtn {
     appearance: none;
     cursor: pointer;
     outline: none;
@@ -531,133 +1346,32 @@ and (max-width: 480px) {
     border: none;
     border: 0.65px solid #d2d2d2;
     border-left: 0;
-    border-radius: 0px 7px 7px 0;
+    border-radius: 0px 3px 3px 0;
 }
 
-.materialFormInput .materialFormGroupInput .showHideBtn {
+.userRegistrationForm .materialFormGroupInput .showHideBtn {
     display: none;
 }
 
-.materialFormInput .materialFormGroupInput .showHideBtn.active {
+.userRegistrationForm .materialFormGroupInput .showHideBtn.active {
     display: block;
 }
 
-.materialFormInput .materialFormGroupInput input {
+.userRegistrationForm .materialFormGroupInput input {
     border-right: 0;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 3px 0px 0px 3px;
 }
 
-.materialFormInput .materialFormGroupInput svg {
+.userRegistrationForm .materialFormGroupInput svg {
     fill: #aeb5be;
     transition: 0.45s;
 }
 
-.materialFormInput .materialFormGroupInput svg:hover {
+.userRegistrationForm .materialFormGroupInput svg:hover {
     fill: #656769;
 }
 
-.totalPriceDiv {
-    text-align: right;
-}
-
-.totalPriceDiv h5 {
-    font-weight: 400;
-}
-
-.totalPriceDiv h6 {
-    font-weight: 400;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.totalPriceDiv.inactive {
-    display: none;
-}
-
-.multiSelectOptionsDiv label {
-    display: block;
-    position: relative;
-    padding-left: 30px;
-    padding-bottom: 10px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 13.5px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.multiSelectOptionsDiv label input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.multiSelectOptionsDiv .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 16px;
-    width: 16px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-.multiSelectOptionsDiv label:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-.multiSelectOptionsDiv label input:checked ~ .checkmark {
-    background-color: var(--primaryColor4);
-    border: 5px solid var(--primaryColor5);
-}
-
-.multiSelectOptionsDiv .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.multiSelectOptionsDiv label .checkmark input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.multiSelectOptionsDiv label .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.studioMembershipTime span {
-    font-weight: 500;
-}
-
-.studioMembershipTime span.warning {
-    color:#f12828
-}
-
-/**** User Registration ****/
-.loginFormDivContainer {
-    width: 100%;
-    height: 100vh;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--light);
-}
-
-.loginFormDivContainer .inputFieldInfo {
+.userRegistrationForm .inputFieldInfo {
     display: none;
     font-size: .65rem;
     color: rgb(234, 97, 97);
@@ -666,115 +1380,30 @@ and (max-width: 480px) {
     font-weight: 500;
 }
 
-.loginFormDivContainer .inputFieldInfo span.success{
-    color: rgb(0, 186, 19);
-}
-
-.loginFormDivContainer .inputFieldInfo svg {
+.userRegistrationForm .inputFieldInfo svg {
     fill: #adadad;
     width: 15px;
 }
 
-.loginFormDivContainer .loginForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 380px;
-    max-width: 600px;
-    transform: translate(-50%, -50%);
-    color: var(--primaryColor4);
-    width: calc(100% * 0.34);
-    padding: 2.15rem 2.35rem;
-    background: #ffffff;
-    border-radius: 17px;
+.userRegistrationForm .inputFieldInfo span.success {
+    color: rgb(0, 186, 19);
 }
 
-.loginFormDivContainer .materialFormSecButton {
-    color: inherit;
-    appearance: none;
-    outline: none;
-    width: 100%;
-    padding: 0.85rem 1rem;
-    border: none;
-    border-radius: 4px;
-    margin-top: 0.65rem;
-    font-size: 0.8rem;
+.userRegistrationForm.materialInputCodeDiv {
     text-align: center;
-    transition: 0.45s;
 }
 
-.loginFormDivContainer .loginForm input, .loginFormDivContainer .loginForm select {
-    appearance: none;
-    outline: none;
-    width: 100%;
-    padding: 0.9rem 1rem;
-    border: none;
-    border: 0.65px solid #d2d2d2;
-    border-radius: 7px;
-    background: var(--secBGColor);
+.userRegistrationForm.materialInputCodeDiv h5 {
+    font-family: 'Gordita Medium';
 }
 
-.loginFormDivContainer .formInlineInput {
-    display: flex;
-    justify-content: space-between;
-}
-
-.loginFormDivContainer .formInlineInput>div {
-    width: 48.5%;
-}
-
-
-.loginFormDivContainer .loginForm input::placeholder {
-    font-size: 0.85rem;
-}
-
-.loginFormDivContainer .loginForm .materialFormGroupInput input {
-    border-right: 0;
-    border-radius: 7px 0px 0px 7px;
-}
-
-.loginFormDivContainer .materialFormGroupLabels {
-    display: flex;
-    justify-content: space-between;
-}
-
-.loginFormDivContainer .materialFormGroupLabels h5 {
-    color: var(--primaryColor5);
-    font-size: 0.8rem;
-}
-
-.loginFormDivContainer .loginForm input[type="submit"] {
-    color: #ffffff;
-    padding: 1.1rem 1rem;
-    background: var(--primaryColor4);
-    border: none;
-    opacity: 0.935;
-    transition: 0.45s;
-}
-
-.loginFormDivContainer .googleSignInButton {
-    margin: 1rem 0;
-}
-
-.materialInputCodeDiv {
-    text-align: center;
-    padding: 0.75rem 0;
-}
-
-.materialInputCodeDiv .resendOTPButton {
-    font-weight: 600;
-    color: var(--primaryColor5);
-    margin: 0;
-    cursor: pointer;
-}
-
-.materialMultipleInput {
+.userRegistrationForm .materialMultipleInput {
     display: flex;
     justify-content: center;
     margin: 1rem 0;
 }
 
-.materialMultipleInput input {
+.userRegistrationForm .materialMultipleInput input {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -785,108 +1414,7 @@ and (max-width: 480px) {
     margin-right: 1rem;
 }
 
-.materialFormlogo img {
-    width: 130px;
+.userRegistrationForm .resendOTPButton {
+    cursor: pointer;
 }
 
-/* Tablet */
-@media only screen and (min-width: 480px) and (max-width: 1024px){
-    .loginFormDivContainer .loginForm {
-        width: calc(100% * 0.75);
-        padding: 2.15rem 1.5rem;
-    }  
-}
-
-/* Mobile */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-    .loginFormDivContainer .loginForm {
-        width: calc(100% * 0.9);
-        padding: 2.15rem 1.5rem;
-    }
-    .materialMultipleInput input {
-        width: 37px;
-        height: 37px;
-        margin-right: 0.7rem;
-    }
-}
-
-.mainContainer {
-    background-color: #ffffff;
-    padding: 1rem 3.5rem;
-}
-
-.profileDivContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.profileDiv {
-    width: 700px;
-    padding: 0 1.2rem;
-}
-
-.profileBio {
-    display: flex;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.profileBio>div {
-    margin: 0 0.6rem;
-}
-
-.profileBio h3 {
-    color: #1d1d1d;
-    font-weight: 600;
-}
-
-.profileBio h6 {
-    font-size: 0.85rem;
-    font-weight: 400;
-}
-
-.profileBio img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-
-.materialGridCard {
-    background: #f7f7f7;
-    padding: 2rem 2rem;
-    border-radius: 18px;
-    margin-top: 1.25rem;
-}
-
-.materialGridCard svg {
-    width: 170px;
-}
-
-/* Tablet */
-@media only screen 
-and (min-width: 480px) 
-and (max-width: 1024px)  {
-    
-}
-
-/* Mobile Phones */
-@media only screen 
-and (min-width: 320px) 
-and (max-width: 480px) {
-    .materialTab ul li {
-        padding-right: 1.5rem;
-        font-size: 0.9rem;
-    }
-    .profileBio img {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-    }
-    .materialNavSection {
-        padding: 1rem 0.75rem;
-    }
-
-    .materialNavSection nav a img {
-        width: 80px;
-    }
-}

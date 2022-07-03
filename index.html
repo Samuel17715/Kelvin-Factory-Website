@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="assets/semantic/semantic.min.css" /> -->
-    <link rel="stylesheet" href="https://kelvinshotzz.com/wp-content/plugins/booking/css/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="https://kelvinshotzz.com/wp-content/plugins/booking/css/flatpickr.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/flatpickr.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Kelvin Factory</title> 
 </head>
 <body>
-
     <section class="mainBodyRightContainer">
         <div class="mainBodyRightDiv animate__animated">
             <div class="rightTabContent">
@@ -94,126 +92,162 @@
         <div class="mainBodyRightDivCloseContainer"></div>
     </section>
 
-    <section class="materialHeroSection">
-        <div class="container-fluid">
-            <div class="row">
-               <div class="col-sm-7">
-                    <div class="materialHeroContent">
-                        <div class="materialNavSection">
-                            <ul>
-                                <li><img src="assets/img/kelvinfactory-logo-5.png" alt=""></li>
-                                <li>About</li>
-                                <li>Contact Us</li>
-                                <li>Book Shoots</li>
-                            </ul>
-                        </div>
+    <!-- Main Navigation -->
+    <div class="mainNavHTMLContentDiv"></div>
 
-                        <h1 class="mb-2">Kelvin Factory Studios</h1>
-                        <p>This is a 2,500 sqt space that you can create any type of set you want it as a good air cooling and central heater and a nice bathroom  it mainly for only creative ideals like videography photographers.</p>        
-                        
-                        <div class="heroImageControl">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.57 5.92993L3.5 11.9999L9.57 18.0699"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 12H3.67004"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <span>1/2</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.5 12H20.33"  stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                    </div>
+    <section class="heroSection">
+        <div class="heroDiv">
+            <div>
+                <h1>Book a modern studio space</h1>
+                <p class="heroText">A modern studio space of 2,500 sqt space for videography, photographers which has a capacity of containing 20 people, to make your creative visual concept come to life.</p>
+                
+                <div class="powered-by-div flex-start">
+                    <p>Powered By</p>
+                    <img src="assets/img/kelvinshotzz.png" alt="">
                 </div>
-                <div class="col-sm-5">
-                    <img src="assets/img/studio-2.jpg" alt="">
+
+                <div class="imageNavControl flex-start">
+                    <div class="left-arrow">
+                        <svg width="72" height="40" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.95 9.88333L5.83331 20L15.95 30.1167" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M71 20H7" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div>1/3</div>
+                    <div class="right-arrow">
+                        <svg width="72" height="40" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M56.05 9.88333L66.1667 20L56.05 30.1167" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 20H65" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                 </div>
             </div>
+            <div class="heroImage">
+                <img class="desktop" src="assets/img/landing-page-img.png" class="img-responsive" alt="">
+                <img class="mobile" src="assets/img/landing-page-img-tablet.png" alt="">
+            </div>
         </div>
-    </section>
 
-    <section class="materialBookingFormContainer">
-        <div class="container">
+        <div class="materialBookingFormContainer">
             <div class="materialBookingForm">
-
-                <div class="row mb-4 materialFormHeader">
-                    <div class="col-sm-9">
-                        <h4 class="mb-2 studioMembershipHeaderText">Select Studio Membership</h4>
-                        <p class="studioMembershipTime"></p>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="totalPriceDiv">
-                            <h6>Total Price</h6>
-                            <h5 class="">$<span class="initialPrice">0</span> x <span class="initialTime">0</span>hours<br><span style="font-size:16px; color:rgb(74, 74, 74)">=</span> $<span class="totalPrice">0.00</span></h5>
+                <div class="container">
+                    <div class="row mb-4 materialFormHeader">
+                        <div class="col-sm-12">
+                            <h4 class="mb-2 studioMembershipHeaderText">Studio Membership</h4>
+                            <div class="studioMembershipTimeDiv flex-start">
+                                <p class="studioMembershipTime"></p>
+                                <p class="studioMembershipTimeLeft"></p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row mt-4">    
-                    <div class="col-sm-6">
-                        <div class="materialInputForm">
-                            <label for="" style="display:flex; justify-content: space-between;">
-                                Studio Membership
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </label>
-                            <select name="select" class="studioMembership">
-                                <option value="" data-price="" selected="selected" disabled>-- Select Studio Membership --</option>
-                                <option value="Studio Rental" data-price="100" data-hours="24" data-text="Schedule studio rent for specified hours in a day at just $100">
-                                    Studio Rental ($100/hr)</option>
-                                <option value="Silver Studio Membership" data-price="400" data-hours="15" data-text="You can schedule unused hours to another day">
-                                    Silver Studio Membership ($400)</option>
-                                <option value="Gold Studio Membership" data-price="500" data-hours="25" data-text="You can schedule unused hours to another day">
-                                    Gold Studio Membership ($500)</option>
-                                <option value="Premium Studio Membership" data-price="600" data-hours="40" data-text="You can schedule unused hours to another day">
-                                    Premium Studio Membership ($600)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="materialInputForm">
-                            <label for="">Add Extra Packages</label>
-                            <div class="materialModalButton mainBodyRightContainerTrigger checkBoxesButton">
-                                <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22.5L12 1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span class="checkBoxesButtonText">Add to your appointment</span>
+                        <div class="col-sm-12">
+                            <div class="totalPriceDiv" data-id="1">
+                                <div>
+                                    <h6>Time Set</h6>
+                                    <h5><span class="initialTime">0</span>H</h5>
+                                </div>
+                                <div>
+                                    <h6>Price - $<span class="initialPrice">0</span>/hr</h6>
+                                    <h5>$<span class="initialPrice">0.00</span></h5>
+                                </div>
+                                <div>
+                                    <h6>Extra Packages</h6>
+                                    <h5>$<span class="extraPackagesPrice">0.00</span></h5>
+                                </div>
+                                <div>
+                                    <h6>Grand Total</h6>
+                                    <h5>$<span class="grandTotalPrice">0.00</span></h5>
+                                </div>
+                            </div>
+                            <div class="totalPriceDiv" data-id="2">
+                                <div>
+                                    <h6>Total Time</h6>
+                                    <h5><span class="totalTime">0</span>H</h5>
+                                </div>
+                                <div>
+                                    <h6>Price</h6>
+                                    <h5>$<span class="totalPrice">0.00</span></h5>
+                                </div>
+                                <div>
+                                    <h6>Extra Packages</h6>
+                                    <h5>$<span class="extraPackagesPrice">0.00</span></h5>
+                                </div>
+                                <div>
+                                    <h6>Grand Total</h6>
+                                    <h5>$<span class="grandTotalPrice">0.00</span></h5>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <!-- Append Booking Date & Time -->
-                <div class="bookingDateTimeAppendContainer">
-                    <div class="row mt-4 bookingDateTimeContainer" data-row-number="1">       
+    
+                    <div class="row mt-5">    
                         <div class="col-sm-6">
                             <div class="materialInputForm">
-                                <label for="">Booking Date</label>
-                                <input type="text" class="bookingDate" placeholder="DD/MM/YYYY" disabled>
+                                <label for="" style="display:flex; justify-content: space-between;">
+                                    Select Booking Package
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995" stroke="#292D32"  stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                </label>
+                                <select name="select" class="studioMembership">
+                                    <option value="" data-price="" selected="selected" disabled="">-- Rental / Membership --</option>
+                                    <option value="Studio Rental" data-price="100" data-hours="24" data-text="Schedule studio rent for specified hours in a day at just $100">
+                                        Studio Rental ($100/hr)</option>
+                                    <option value="" data-price="" disabled=""></option>
+                                    <option value="" data-price="" disabled="">-- Studio Membership --</option>
+                                    <option value="Silver Studio Membership" data-price="400" data-hours="15" data-text="You can schedule unused hours to another day">
+                                        Silver Studio Membership ($400)</option>
+                                    <option value="Gold Studio Membership" data-price="500" data-hours="25" data-text="You can schedule unused hours to another day">
+                                        Gold Studio Membership ($500)</option>
+                                    <option value="Premium Studio Membership" data-price="600" data-hours="40" data-text="You can schedule unused hours to another day">
+                                        Premium Studio Membership ($600)</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+    
+                        <div class="col-sm-6">
                             <div class="materialInputForm">
-                                <label for="">Start Time</label>
-                                <input type="date" class="bookingTime bookingStartTime" placeholder="00:00 AM" disabled>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="materialInputForm">
-                                <label for="">End Time</label>
-                                <input type="date" class="bookingTime bookingEndTime" placeholder="11:59 PM" disabled>
+                                <label for="">Add Extra Packages</label>
+                                <div class="materialModalButton mainBodyRightContainerTrigger checkBoxesButton">
+                                    <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22.5L12 1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                                    <span class="checkBoxesButtonText">Add to your appointment</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="subButton">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22.5L12 1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            Add another day
+    
+    
+                    <!-- Append Booking Date & Time -->
+                    <div class="bookingDateTimeAppendContainer">
+                        <div class="mt-4 row bookingDateTimeContainer" data-row-number="1">
+                            <div class="col-sm-6">
+                                <div class="materialInputForm">
+                                    <label for="">Booking Date</label>
+                                    <input type="text" class="bookingDate" placeholder="DD/MM/YYYY" disabled="">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 bookingDateTimeDiv">
+                                <div class="materialInputForm">
+                                    <label for="">Start Time</label>
+                                    <input type="text" class="bookingTime bookingStartTime" placeholder="00:00 AM" disabled="">
+                                </div>
+                                <div class="materialInputForm">
+                                    <label for="">End Time</label>
+                                    <input type="text" class="bookingTime bookingEndTime" placeholder="11:59 PM" disabled="">
+                                </div>
+                                <!-- <div class="pt-4 deleteBookingDateAndTime">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4.5" y="5.09985" width="15" height="18" rx="1.5" /><rect x="2.25" y="2.09985" width="19.5" height="3" rx="0.75"  stroke-linejoin="round"/><path d="M9 0.900146L15 0.900146"  stroke-linecap="round"/><path d="M12 9V19.5"  stroke-linecap="round"/><path d="M15.75 9V19.5"  stroke-linecap="round"/><path d="M8.25 9V19.5"  stroke-linecap="round"/></svg>
+                                </div> -->
+                            </div>     
+                       </div>
+                    </div>
+    
+    
+                    <div class="row">
+                        <div class="col-sm-12 flex-start">
+                            <div class="subButton">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 12H22.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 22.5L12 1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                Add another day
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                        
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="materialInputForm">
-                            <input type="submit" class="" value="Book Studio">
+    
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="materialInputForm">
+                                <input type="submit" class="" value="Book Studio">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,95 +255,91 @@
         </div>
     </section>
 
-    <section class="materialPackagesContainer">
-        <div class="container">
-            <siv class="row">
-                <div class="col-sm-12">
-                    <h2>Our Studio Membership</h2>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="materialGalleryImage">
-                        <div class="gallery gallery-1">
-                            <img src="assets/img/gallery-1.jpg" alt="">
-                        </div>
-                        <div class="gallery gallery-2">
-                            <img src="assets/img/gallery-2.jpg" alt="">
-                        </div>
-                        <div class="gallery gallery-3">
-                            <img src="assets/img/gallery-3.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 materialListContainer">
-                    <div class="materialListDiv mb-5">
-                        <h3>Silver Studio Membership</h3>
-                        <p>15 hours of studio time. Unused hours roll over with account in good standing.</p>
-                        <p>Access to the entire studio (creative sets, all background colors available, strobes,etc).</p>
-                    </div>
-                    <div class="materialListDiv mb-5">
-                        <h3>Gold Studio Membership</h3>
-                        <p>25 hours of studio time. Unused hours roll over with account in good standing.</p>
-                        <p>Access to the entire studio (creative sets, all background colors available, strobes,etc).</p>
-                    </div>
-                    <div class="materialListDiv mb-5">
-                        <h3>Premium Studio Membership</h3>
-                        <p>40 hours of studio time. Unused hours roll over with account in good standing.</p>
-                        <p>Access to the entire studio( creative sets, all background colors available, strobes,etc).</p>
-                    </div>
-                </div>
-            </siv>
+    <section class="studioGallerySection">
+        <h1>Boost productivity<br>more space more props.</h1>
+        <div class="studioGalleryImages">
+            <img class="image-grid-col-2 image-grid-row-2" src="assets/img/kelvin-factory-img-1.png" alt="">
+            <img src="assets/img/kelvin-factory-img-2.png" alt="">
+            <img src="assets/img/kelvin-factory-img-3.png" alt="">
+            <img src="assets/img/kelvin-factory-img-4.png" alt="">
+            <img src="assets/img/kelvin-factory-img-5.png" alt="">
         </div>
     </section>
 
-    <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/jquery.min.js"></script>
-    <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/logoAnimation.js"></script>
-    <script src="https://kelvinshotzz.com/wp-content/plugins/booking/js/flatpickr.js"></script>
-    <script src="assets/js/custom-js.js"></script>
+    <section class="membershipSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>More with our Studio<br>Memberships</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="membershipDiv">
+                        <img src="assets/img/space-ship.png" alt="">
+                        <div class="membershipDivContent">
+                            <h3>Silver Membership</h3>
+                            <p>
+                                15 hours of studio time. Unused hours roll over with account in good standing.<br>
+                                Access to the entire studio (creative sets, all background colors available, strobes,etc).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="membershipDiv">
+                        <img src="assets/img/camera-a.png" alt="">
+                        <div class="membershipDivContent">
+                            <h3>Gold Membership</h3>
+                            <p>
+                                15 hours of studio time. Unused hours roll over with account in good standing.<br>
+                                Access to the entire studio (creative sets, all background colors available, strobes,etc).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="membershipDiv">
+                        <img src="assets/img/rocket-a.png" alt="">
+                        <div class="membershipDivContent">
+                            <h3>Premium Membership</h3>
+                            <p>
+                                40 hours of studio time. Unused hours roll over with account in good standing.<br>
+                                Access to the entire studio( creative sets, all background colors available, strobes,etc).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bookOtherSection">
+        <div class="bookOtherSectionDiv">
+            <h1>Photoshoots Booking Available on Kelvinshotz</h1>
+            <button>Book Now</button>
+        </div>
+    </section>
+
+    <section class="footerSection">
+        <div class="logo"><img src="assets/img/kelvin-factory-logo-2.png" alt=""></div>
+        <div><p>The space is cleaned and disinfected in accordance with<br>guidelines from local health authorities</p></div>
+        <div>
+            <ul>
+                <li><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.8258 2.4502H8.57533C5.19244 2.4502 2.45007 5.19257 2.45007 8.57545V20.826C2.45007 24.2089 5.19244 26.9512 8.57533 26.9512H20.8258C24.2087 26.9512 26.9511 24.2089 26.9511 20.826V8.57545C26.9511 5.19257 24.2087 2.4502 20.8258 2.4502Z" stroke="white" stroke-width="2.4501" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.6008 13.9285C19.752 14.948 19.5778 15.9893 19.1031 16.9042C18.6284 17.819 17.8773 18.5609 16.9567 19.0243C16.036 19.4877 14.9927 19.649 13.9751 19.4853C12.9575 19.3215 12.0174 18.8411 11.2886 18.1122C10.5598 17.3834 10.0794 16.4434 9.91563 15.4258C9.75189 14.4082 9.91318 13.3648 10.3766 12.4442C10.84 11.5235 11.5818 10.7725 12.4967 10.2977C13.4116 9.82304 14.4528 9.64889 15.4724 9.80008C16.5124 9.95429 17.4752 10.4389 18.2186 11.1823C18.962 11.9257 19.4466 12.8885 19.6008 13.9285Z" stroke="white" stroke-width="2.4501" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.4384 7.96289H21.4506" stroke="white" stroke-width="2.4501" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
+                <li><svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3_58)"><path d="M28.7988 4.27355C27.6257 5.10104 26.3268 5.73394 24.9521 6.14788C24.2143 5.29954 23.2338 4.69826 22.1431 4.42537C21.0525 4.15247 19.9043 4.22111 18.8539 4.62202C17.8035 5.02293 16.9016 5.73675 16.2702 6.66695C15.6387 7.59715 15.3082 8.69885 15.3232 9.82303V11.0481C13.1704 11.1039 11.0371 10.6264 9.11345 9.6582C7.18979 8.68996 5.53545 7.261 4.29776 5.4986C4.29776 5.4986 -0.602447 16.5241 10.423 21.4243C7.90006 23.1368 4.89455 23.9956 1.84766 23.8744C12.8731 29.9996 26.3487 23.8744 26.3487 9.78628C26.3476 9.44505 26.3147 9.10466 26.2507 8.76949C27.501 7.53647 28.3833 5.97969 28.7988 4.27355V4.27355Z" stroke="white" stroke-width="2.4501" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_3_58"><rect width="29.4012" height="29.4012" fill="white" transform="translate(0.622559 0.598633)"/></clipPath></defs></svg></li>
+                <li><svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_3_60)"><path d="M28.3626 8.46365C28.217 7.88225 27.9207 7.34955 27.5034 6.91936C27.0861 6.48916 26.5626 6.1767 25.986 6.01355C23.8789 5.49902 15.4505 5.49902 15.4505 5.49902C15.4505 5.49902 7.02216 5.49902 4.91507 6.06255C4.33837 6.22571 3.81494 6.53816 3.39765 6.96836C2.98036 7.39855 2.68399 7.93125 2.53847 8.51265C2.15284 10.651 1.96421 12.8203 1.97494 14.9932C1.9612 17.1824 2.14984 19.3682 2.53847 21.5227C2.6989 22.086 3.00191 22.5985 3.41823 23.0105C3.83455 23.4225 4.3501 23.7202 4.91507 23.8748C7.02216 24.4383 15.4505 24.4383 15.4505 24.4383C15.4505 24.4383 23.8789 24.4383 25.986 23.8748C26.5626 23.7116 27.0861 23.3992 27.5034 22.969C27.9207 22.5388 28.217 22.0061 28.3626 21.4247C28.7452 19.3024 28.9338 17.1497 28.9261 14.9932C28.9398 12.8039 28.7512 10.6181 28.3626 8.46365V8.46365Z" stroke="white" stroke-width="2.4501" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6942 18.9991L19.7382 14.9932L12.6942 10.9873V18.9991Z" stroke="white" stroke-width="2.4501" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="clip0_3_60"><rect width="29.4012" height="29.4012" fill="white" transform="translate(0.749878 0.598633)"/></clipPath></defs></svg></li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/flatpickr.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
     <script>
         $(document).ready(function() {
-            // Default Booking Row Number and Dates Array
-            var bookingDateTimeRowNumber = 1;
-            const disabledSelectedDatesArray = [];
-
-            // Init Flatpickr
-            flatPickrInit(bookingDateTimeRowNumber, disabledSelectedDatesArray);
-
-            // Right Bar
-            $('.mainBodyRightContainerTrigger, .mainBodyRightCloseBtn, .mainBodyRightDivCloseContainer').click(function() {
-                openRightBar();
-            });
-
-            // Add to your appointment
-            $('.multiSelectOptionsDiv input').change(function() {
-                getCheckboxesValuesFunc($(this));
-            });
-
-            // Add New Data & Time Row
-            $('.subButton').on('click', function(){
-                bookingDateTimeRowNumber++;
-                $('.bookingDateTimeAppendContainer').append(appendBookingDateAndTimeRow(bookingDateTimeRowNumber));
-                flatPickrInit(bookingDateTimeRowNumber, disabledSelectedDatesArray);
-            });
-
-            // Get Total Booking Price and update text
-            $("body").on("change", ".materialInputForm select, .materialInputForm input", function(){
-                sumBookingPrices();
-                headerTextDetails();
-            });
-
-            // Submit data to server
-            $('.materialInputForm input[type="submit"]').on('click', function(){
-                if(getBookingInputValues()[0]) {
-                    sessionStorage.setItem("bookingInput", JSON.stringify(getBookingInputValues()));
-                    if (sessionStorage.getItem("profileid") !== null) {
-                        window.location.href = "profile.html";
-                    } else {
-                        window.location.href = "login.html";
-                    }
-                }
-            });
+            bookingFormInit();
         });
     </script>
 </body>
