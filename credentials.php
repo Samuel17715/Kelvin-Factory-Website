@@ -20,6 +20,6 @@
     // Email PHPMailer Configuration
     $mailHost = 'smtp.ipage.com';
     $mailUsername = 'booking@kelvinfactory.com'; 
-    $mailPassword = 'Bookingkelvinfactory15@';
+    $mailPassword = 'Kelvinfactory15@';
     $mailPort = 465;
     $mailSuccessMessage = 'success';
